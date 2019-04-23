@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\etien\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\etien\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Ayaya.-1710840011.00" t="ExcludeRecursive" />
-    <e p="C:\Users\etien\OneDrive\Bureau\Hidelifev3\Ayaya" t="IncludeRecursive">
+    <e p="C:\Users\etien\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Ayaya.-2014996515.00" t="ExcludeRecursive" />
+    <e p="C:\Users\etien\OneDrive\Bureau\HideLifeCommun\Ayaya" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="network.cs" t="Include" />
         <e p="SampleScenes" t="Include">
           <e p="Menu" t="Include">
             <e p="Scripts" t="Include">
@@ -275,6 +276,7 @@
             </e>
           </e>
         </e>
+        <e p="test1.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
             <e p="Fonts" t="Include">
