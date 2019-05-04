@@ -19,7 +19,7 @@ public class PlayerControler : MonoBehaviour
    private PlayerMotor motor;
    public bool IsRunning;
    private Rigidbody rb;
-   
+   public bool IsAiming = false;
    private void Start()
    {
        actualspeed = speed;         
@@ -32,17 +32,45 @@ public class PlayerControler : MonoBehaviour
        }
 
    }
-
- 
-
-   private void Update()
+   public void Aim()
    {
-       
-       
+    Camera camera= motor.player.GetComponentInChildren<Camera>();
+      
+      
+       if (Input.GetButtonDown("Fire2") && !IsAiming)
+       {
+         
+           camera.fieldOfView -=25;
+           
+           LookSensibility =(PlayerPrefs.GetFloat("sensibilité")*10+3)/5;
+           
+           IsAiming = true;
+           
+
+       }
+
+       else
+       {
+
+
+           if (Input.GetButtonDown("Fire2") && IsAiming)
+           {
+               
+               camera.fieldOfView = 50;
+               IsAiming = false;
+
+           }
+       }
+   }
+   private void Update()
+   { 
        IsRunning = false;
        bool IsMoving = false; 
+       if(!IsAiming)
+           LookSensibility = PlayerPrefs.GetFloat("sensibilité")*10+3;
        
-       LookSensibility = PlayerPrefs.GetFloat("sensibilité")*10+3;
+       
+       Debug.Log(LookSensibility);
        Vector3 moveVertical = Vector3.zero;
        Vector3 moveHorizontal = Vector3.zero; //Modification du script pour fonctionner avec l'input manager
        float xMov = 1;
@@ -56,21 +84,18 @@ public class PlayerControler : MonoBehaviour
 
        if (SprintCooldown > 0)
            SprintCooldown -= Time.deltaTime;
-       if(Input.GetKey((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("RunKey", "E")))&&stamina>0&&SprintCooldown<=0)
+       if(Input.GetKey((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("RunKey", "E")))&&stamina>0&&SprintCooldown<=0&&!IsAiming)
        {
            IsRunning = true;
            actualspeed = speed * 3f;
-           
          
        }
        else
        {
-           actualspeed = speed;
-          
+           actualspeed = speed;          
        }
-       
        if (Input.GetKey((KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ForwardKey", "Z")))) 
-        moveVertical = transform.forward * zMov;
+           moveVertical = transform.forward * zMov;
        if(Input.GetKey((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("BackwardKey", "S"))))
            moveVertical = transform.forward * -zMov;
 
@@ -82,10 +107,10 @@ public class PlayerControler : MonoBehaviour
        }
        if (Input.GetKey((KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftKey", "Q"))))
             
-               moveHorizontal = transform.right * -xMov;
+           moveHorizontal = transform.right * -xMov;
 
-
-
+       Aim();
+      
        Vector3 velocity = (moveHorizontal + moveVertical).normalized * actualspeed;
 
        IsMoving = IsRunning && velocity != Vector3.zero;
@@ -95,9 +120,7 @@ public class PlayerControler : MonoBehaviour
        }
        if(stamina<100&&!IsMoving)
            stamina += 0.07f;
-           
-           
-      
+               
        //explication simple = théorème de Pythagore pour calculer le mouvement/vélocité du joueur.
 
        motor.Move(velocity);
@@ -110,17 +133,11 @@ public class PlayerControler : MonoBehaviour
        
        float xRot = Input.GetAxisRaw("Mouse Y");
        float camerarotationX = xRot*LookSensibility;             
-       motor.RotateCamera(camerarotationX);
-       
-       
-       
+       motor.RotateCamera(camerarotationX);        
    }
 
    public void ModifyLookSensibility(float sliderInput) //modifie la sensibilité
    {
        LookSensibility = LookSensibility;
    }
-
-  
-
 }

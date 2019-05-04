@@ -52,9 +52,20 @@ public class PlayerMotor : MonoBehaviour
             isGrounded = true;
         }
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && isGrounded) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
+        {
+            Debug.Log(PlayerPrefs.GetString("JumpKey"));
+            PlayerJump();
+            isGrounded = false;
+        }
+    }
+
     private void FixedUpdate() //recommandé pour le rigidBody
     {
-        Debug.Log(Gravitydmg);
+       
         if(!isGrounded)
             Gravitydmg += (Time.deltaTime)*30;
         else
@@ -70,12 +81,7 @@ public class PlayerMotor : MonoBehaviour
         PerformMovement();
         PerformRotation();
 
-        if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && isGrounded) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
-        {
-            Debug.Log(PlayerPrefs.GetString("JumpKey"));
-            PlayerJump();
-            isGrounded = false;
-        }
+       
 
 
     }

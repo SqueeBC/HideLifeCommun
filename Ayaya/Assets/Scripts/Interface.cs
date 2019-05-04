@@ -13,6 +13,7 @@ public class Interface : MonoBehaviour
     public GameObject Player;
     public Text Staminatext;
     public Text HPtext;
+    public Image HPbar;
     public Text AmmoText;
     public Text Cooldownleft;
     public GameObject ReloadingText;
@@ -21,18 +22,28 @@ public class Interface : MonoBehaviour
     public Player player;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        Localplayershoot = player.GetComponent<PlayerShoot>(); //a modifier pour le multi, avec GetComponent<Newwork.Behaviour>().IsLocalPlayer
-        playerControler= (PlayerControler) player.GetComponent("PlayerControler");
+       Update();
         
     }
 
-
+    public void FindPlayer()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+        Localplayershoot = player.GetComponent<PlayerShoot>(); //a modifier pour le multi, avec GetComponent<Newwork.Behaviour>().IsLocalPlayer
+        playerControler= (PlayerControler) player.GetComponent("PlayerControler");
+    }
     // Update is called once per frame
     void Update()
     {
-        
-        Staminabar.fillAmount =1- playerControler.stamina/100;        
+
+        while (player==null)
+        {
+            FindPlayer();
+        }
+
+        HPbar.fillAmount =1-(float)player.currentHP/100;
+       
+        Staminabar.fillAmount =1-  playerControler.stamina/100;        
         StaminaText();
         CoolDownText();
         AmmoUpdate();
@@ -47,7 +58,7 @@ public class Interface : MonoBehaviour
     
     public void HPText()
     {
-        HPtext.text = "STAMINA:"+Mathf.Round(player.currentHP)  + "%";
+        HPtext.text = "HP:"+Mathf.Round(player.currentHP)  + "%";
     }
 
     public void Reloading()

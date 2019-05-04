@@ -24,6 +24,11 @@ public class EchapMenu : MonoBehaviour
 
     void Update()
     {
+        
+        if(player==null)
+            Start();  
+        
+    Debug.Log(player);
         if (Input.GetButtonDown("Cancel"))
         {
             if (GameIsPaused)
@@ -54,7 +59,7 @@ public class EchapMenu : MonoBehaviour
         }
         
         void Pause()
-        {
+        {  
             pauseMenu.SetActive(true);
             GameIsPaused = true;
             réticule.SetActive(false);

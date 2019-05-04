@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Menu.unity
     guid: 2eb0b1a54e909644780e108f49cc8e3e
   - enabled: 1
-    path: Assets/Game.unity
-    guid: d08ff847054ec2246be3fca96e07f63c
+    path: Assets/Scenes/Sol.unity
+    guid: 81c9fe246d2aae047b8511b1921adb17
   - enabled: 1
     path: Assets/CommandsOption.unity
     guid: c0312e68cb1d99c48a538dea103a919b
   - enabled: 1
     path: Assets/Options.unity
     guid: c2496690e1259334993c09a3838fe8b4
+  - enabled: 1
+    path: Assets/Game.unity
+    guid: d08ff847054ec2246be3fca96e07f63c
   m_configObjects: {}
