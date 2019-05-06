@@ -20,9 +20,10 @@ public class Interface : MonoBehaviour
     public PlayerControler playerControler;
     public PlayerShoot Localplayershoot;
     public Player player;
+    public GameObject hitmarker;
+    private float time;
     private void Start()
-    {
-       Update();
+    {FindPlayer();
         
     }
 
@@ -36,11 +37,15 @@ public class Interface : MonoBehaviour
     void Update()
     {
 
-        while (player==null)
+        if (player==null)
         {
             FindPlayer();
         }
-
+        
+        if (time > 0)
+            time -= Time.deltaTime;
+        if(hitmarker.active&&time<0)
+            hitmarker.SetActive(false);
         HPbar.fillAmount =1-(float)player.currentHP/100;
        
         Staminabar.fillAmount =1-  playerControler.stamina/100;        
@@ -52,9 +57,9 @@ public class Interface : MonoBehaviour
     }
 
     public void StaminaText()
-         {
-             Staminatext.text = "STAMINA:"+Mathf.Round(playerControler.stamina)  + "%";
-         }
+    {
+        Staminatext.text = "STAMINA:"+Mathf.Round(playerControler.stamina)  + "%";
+    }
     
     public void HPText()
     {
@@ -91,4 +96,12 @@ public class Interface : MonoBehaviour
         }
 
     }
+
+    public void ShowHitmarker()
+    {
+        time = 1;
+        hitmarker.SetActive(true);
+    }
+
+
 }
