@@ -60,10 +60,7 @@ namespace DefaultNamespace
             Marquage.Add(  runtext.text,"RunKey");
             Marquage.Add(reloadtext.text,"ReloadKey");
 
-            foreach (KeyValuePair<string,string> VARIABLE in Marquage)
-            {
-                Debug.Log(VARIABLE);
-            }
+         
         }
         
 

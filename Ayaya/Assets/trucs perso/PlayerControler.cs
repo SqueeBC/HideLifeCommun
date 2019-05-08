@@ -70,7 +70,7 @@ public class PlayerControler : MonoBehaviour
            LookSensibility = PlayerPrefs.GetFloat("sensibilité")*10+3;
        
        
-       Debug.Log(LookSensibility);
+     
        Vector3 moveVertical = Vector3.zero;
        Vector3 moveHorizontal = Vector3.zero; //Modification du script pour fonctionner avec l'input manager
        float xMov = 1;

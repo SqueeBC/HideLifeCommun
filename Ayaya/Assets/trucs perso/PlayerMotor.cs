@@ -1,4 +1,6 @@
-﻿using trucs_perso;
+﻿using System.Collections.Generic;
+using System.Linq;
+using trucs_perso;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -22,13 +24,20 @@ public class PlayerMotor : MonoBehaviour
     public GameObject transformer; 
     float yRot;
     float xRot;
+    private bool IsMoving;
     float lookSensitivity = 3f;
-    RaycastHit raytransfo;
+    private float notmovingtime;
+    private List<AudioSource> taunts;
+    RaycastHit raytransfo;  
     //mathieu
    
 
     private void Start()
     {
+        notmovingtime = 20;
+        
+        taunts = GameObject.Find("Taunts").GetComponentsInChildren<AudioSource>().ToList();
+        
         player = GetComponentInParent<Player>();
         rb = GetComponent<Rigidbody>(); //on implémente le rigidbody au début
         //mathieu
@@ -48,18 +57,28 @@ public class PlayerMotor : MonoBehaviour
     {
        
         if (collision.gameObject.CompareTag("Ground"))
-        {        Debug.Log("sol");
+        {     
             isGrounded = true;
         }
     }
 
     private void Update()
-    {
+    {Debug.Log(IsMoving);
+        Debug.Log(notmovingtime);
+        if(notmovingtime>0&&!IsMoving)
+        notmovingtime -= Time.deltaTime;
         if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && isGrounded) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
-        {
+        {    
             Debug.Log(PlayerPrefs.GetString("JumpKey"));
             PlayerJump();
             isGrounded = false;
+        }
+
+        if (notmovingtime<=0&&taunts.Count>0)
+        {
+            System.Random randomtaunt = new System.Random();
+            taunts[randomtaunt.Next(taunts.Count)].Play();
+            notmovingtime = 20;
         }
     }
 
@@ -117,8 +136,14 @@ public class PlayerMotor : MonoBehaviour
         } 
     
     private void PerformMovement()
-    {if(velocity!= Vector3.zero)
-        rb.MovePosition(rb.position+velocity * Time.fixedDeltaTime);
+    {
+        if (velocity != Vector3.zero)
+        {
+            rb.MovePosition(rb.position+velocity * Time.fixedDeltaTime);
+            
+            notmovingtime = 10;
+        }
+        IsMoving = velocity != Vector3.zero;
     //Bouge le personnage en fonction du temps 
         
     }
