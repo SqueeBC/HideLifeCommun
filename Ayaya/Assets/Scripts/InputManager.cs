@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
@@ -44,7 +45,7 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            
+            ChangeLanguage();
             forwardtext.text = PlayerPrefs.GetString("ForwardKey", "Z");
             backwardtext.text = PlayerPrefs.GetString("BackwardKey", "S");
             lefttext.text = PlayerPrefs.GetString("LeftKey", "Q");
@@ -61,6 +62,36 @@ namespace DefaultNamespace
             Marquage.Add(reloadtext.text,"ReloadKey");
 
          
+        }
+
+      
+
+        public void ChangeLanguage()
+        {Debug.Log(PlayerPrefs.GetString("language"));
+            if (PlayerPrefs.GetString("language")=="français")
+
+
+
+            {
+                forwardtext.transform.parent.GetChild(1).GetComponent<Text>().text = "Avancer";
+                backwardtext.transform.parent.GetChild(1).GetComponent<Text>().text = "Reculer";
+                lefttext.transform.parent.GetChild(1).GetComponent<Text>().text = "Gauche";
+                righttext.transform.parent.GetChild(1).GetComponent<Text>().text = "Droite";
+                jumptext.transform.parent.GetChild(1).GetComponent<Text>().text = "Sauter";
+                runtext.transform.parent.GetChild(1).GetComponent<Text>().text = "Courir";
+                reloadtext.transform.parent.GetChild(1).GetComponent<Text>().text = "Recharger";
+            }
+            else
+            {
+                forwardtext.transform.parent.GetChild(1).GetComponent<Text>().text = "forward";
+                backwardtext.transform.parent.GetChild(1).GetComponent<Text>().text = "backward";
+                lefttext.transform.parent.GetChild(1).GetComponent<Text>().text = "left";
+                righttext.transform.parent.GetChild(1).GetComponent<Text>().text = "right";
+                jumptext.transform.parent.GetChild(1).GetComponent<Text>().text = "jump";
+                runtext.transform.parent.GetChild(1).GetComponent<Text>().text = "run";
+                reloadtext.transform.parent.GetChild(1).GetComponent<Text>().text = "reload";
+            }
+
         }
         
 
@@ -96,7 +127,7 @@ namespace DefaultNamespace
             if(CurrentKey!=null)  // si on déjà selectionné une autre touche
                 CurrentKey.GetComponent<Image>().color = normal;
         
-                CurrentKey = clicked;
+            CurrentKey = clicked;
             
             CurrentKey.GetComponent<Image>().color = selected;
          

@@ -9,9 +9,9 @@ public class OptionMenuIG : MonoBehaviour
     public Slider slider;
     public AudioMixer audioMixer;
     public Text VolumePercentage;
-
+    public Dropdown dropdown;
     private void Start()
-    {
+    {    
         slider.value = PlayerPrefs.GetFloat("Volume");
     }
 
@@ -29,6 +29,7 @@ public class OptionMenuIG : MonoBehaviour
     private void Update() 
     {
         VolumePercentageUpdate();
+        Changelanguage();
     }
 
 
@@ -37,5 +38,16 @@ public class OptionMenuIG : MonoBehaviour
         
         VolumePercentage.text = Mathf.RoundToInt( PlayerPrefs.GetFloat("Volume") *100/80+100) + "%";
     }
-  
+
+    public void Changelanguage()
+    {
+       
+        if(dropdown.value== 1)
+            PlayerPrefs.SetString("language", "english");
+        else
+        {
+            PlayerPrefs.SetString("language", "français");
+        }
+
+    }
 }
