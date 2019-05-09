@@ -17,7 +17,7 @@ public class PlayerMotor : MonoBehaviour
     private int Jump = 10; //à modifier
     private ForceMode JumpForce; 
     bool isGrounded = false;
-    public Player player;
+    public Player player;    
     private float Gravitydmg = -15;
     [SerializeField] private float cameraRotationLimit = 85f; //Permet d'empecher le bug de cam 
     //mathieu 
@@ -26,7 +26,7 @@ public class PlayerMotor : MonoBehaviour
     float xRot;
     private bool IsMoving;
     float lookSensitivity = 3f;
-    private float notmovingtime;
+    private float notmovingtime = 20;
     private List<AudioSource> taunts;
     RaycastHit raytransfo;  
     //mathieu
@@ -63,8 +63,8 @@ public class PlayerMotor : MonoBehaviour
     }
 
     private void Update()
-    {Debug.Log(IsMoving);
-        Debug.Log(notmovingtime);
+    {
+      
         if(notmovingtime>0&&!IsMoving)
         notmovingtime -= Time.deltaTime;
         if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && isGrounded) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
@@ -77,7 +77,7 @@ public class PlayerMotor : MonoBehaviour
         if (notmovingtime<=0&&taunts.Count>0)
         {
             System.Random randomtaunt = new System.Random();
-            taunts[randomtaunt.Next(taunts.Count)].Play();
+            AudioSource.PlayClipAtPoint(taunts[randomtaunt.Next(taunts.Count)].clip,this.transform.position);
             notmovingtime = 20;
         }
     }
@@ -141,7 +141,7 @@ public class PlayerMotor : MonoBehaviour
         {
             rb.MovePosition(rb.position+velocity * Time.fixedDeltaTime);
             
-            notmovingtime = 10;
+            notmovingtime = 20;
         }
         IsMoving = velocity != Vector3.zero;
     //Bouge le personnage en fonction du temps 
