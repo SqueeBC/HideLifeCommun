@@ -7,13 +7,13 @@ using UnityEngine.UI;
 namespace DefaultNamespace
 {
     public class InputManager : MonoBehaviour
-    {   
+    {
+        
         private GameObject CurrentKey;
         private Dictionary<string,string> Marquage = new Dictionary<string, string>();
         private Color32 normal = new Color32(255, 255, 255,255);
         private Color32 selected = new Color32(239, 116, 36,255);
-        
-        public static InputManager inputManager;
+        private Dropdown dropdown;
         public KeyCode ForwardKey { get; set; }
         public KeyCode BackwardKey { get; set; }
         public KeyCode LeftKey { get; set; }
@@ -45,7 +45,11 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            ChangeLanguage();
+            dropdown = GameObject.Find("Language").GetComponent<Dropdown>();
+            if (PlayerPrefs.GetString("language") == "english")
+                dropdown.value = 0;
+            if (PlayerPrefs.GetString("language") == "français")
+                dropdown.value = 1;        
             forwardtext.text = PlayerPrefs.GetString("ForwardKey", "Z");
             backwardtext.text = PlayerPrefs.GetString("BackwardKey", "S");
             lefttext.text = PlayerPrefs.GetString("LeftKey", "Q");
@@ -60,18 +64,25 @@ namespace DefaultNamespace
             Marquage.Add( jumptext.text,"JumpKey");
             Marquage.Add(  runtext.text,"RunKey");
             Marquage.Add(reloadtext.text,"ReloadKey");
+            ApplyChangeLanguage();
 
-         
+
         }
 
-      
+        public void Changelanguage(Dropdown dropdown)
+        { 
+           
+            if (dropdown.value==0)
+                PlayerPrefs.SetString("language", "english");
 
-        public void ChangeLanguage()
-        {Debug.Log(PlayerPrefs.GetString("language"));
+            else if (dropdown.value == 1)    
+                PlayerPrefs.SetString("language", "français");
+            ApplyChangeLanguage();
+            }
+
+        public void ApplyChangeLanguage()
+        {   
             if (PlayerPrefs.GetString("language")=="français")
-
-
-
             {
                 forwardtext.transform.parent.GetChild(1).GetComponent<Text>().text = "Avancer";
                 backwardtext.transform.parent.GetChild(1).GetComponent<Text>().text = "Reculer";
@@ -92,6 +103,7 @@ namespace DefaultNamespace
                 reloadtext.transform.parent.GetChild(1).GetComponent<Text>().text = "reload";
             }
 
+            
         }
         
 
@@ -123,7 +135,7 @@ namespace DefaultNamespace
         }
 
         public void ChangeKey(GameObject clicked)
-        {   Debug.Log(clicked.ToString());
+        {  
             if(CurrentKey!=null)  // si on déjà selectionné une autre touche
                 CurrentKey.GetComponent<Image>().color = normal;
         

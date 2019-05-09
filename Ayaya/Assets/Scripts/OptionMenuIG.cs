@@ -9,16 +9,17 @@ public class OptionMenuIG : MonoBehaviour
     public Slider slider;
     public AudioMixer audioMixer;
     public Text VolumePercentage;
-    public Dropdown dropdown;
+    
+
     private void Start()
-    {    
+    {
         slider.value = PlayerPrefs.GetFloat("Volume");
     }
 
     public void SetVolume(float volume)
     {
-        PlayerPrefs.SetFloat("Volume",volume);
-        audioMixer.SetFloat("Volume",PlayerPrefs.GetFloat("Volume",volume));
+        PlayerPrefs.SetFloat("Volume", volume);
+        audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("Volume", volume));
     }
 
     public void FullScreen(bool isFullScreen)
@@ -26,28 +27,25 @@ public class OptionMenuIG : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
-    private void Update() 
+    private void Update()
     {
+
         VolumePercentageUpdate();
-        Changelanguage();
+        
     }
 
 
     public void VolumePercentageUpdate()
     {
-        
-        VolumePercentage.text = Mathf.RoundToInt( PlayerPrefs.GetFloat("Volume") *100/80+100) + "%";
-    }
-
-    public void Changelanguage()
-    {
-       
-        if(dropdown.value== 1)
-            PlayerPrefs.SetString("language", "english");
+        if (PlayerPrefs.GetString("language", "english") == "english")
+            slider.transform.parent.GetChild(1).GetComponent<Text>().text ="Game Volume";
         else
         {
-            PlayerPrefs.SetString("language", "français");
+            slider.transform.parent.GetChild(1).GetComponent<Text>().text = "Volume";
         }
 
+        VolumePercentage.text = Mathf.RoundToInt(PlayerPrefs.GetFloat("Volume") * 100 / 80 + 100) + "%";
     }
+
+
 }

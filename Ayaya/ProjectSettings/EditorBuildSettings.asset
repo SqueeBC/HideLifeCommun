@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/CommandsOption.unity
     guid: c0312e68cb1d99c48a538dea103a919b
   - enabled: 1
-    path: Assets/Options.unity
+    path: Assets/Test.unity
     guid: c2496690e1259334993c09a3838fe8b4
   - enabled: 1
     path: Assets/Game.unity

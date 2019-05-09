@@ -38,7 +38,7 @@ public class Sensitivity : MonoBehaviour
         PlayerPrefs.SetFloat("sensibilité",value);
         SensibilityPercentage.text = Mathf.RoundToInt( PlayerPrefs.GetFloat("sensibilité") * 100) + "%";
     }
-
+    
    
 
  
