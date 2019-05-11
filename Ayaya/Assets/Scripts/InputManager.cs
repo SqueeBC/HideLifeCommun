@@ -13,7 +13,7 @@ namespace DefaultNamespace
         private Dictionary<string,string> Marquage = new Dictionary<string, string>();
         private Color32 normal = new Color32(255, 255, 255,255);
         private Color32 selected = new Color32(239, 116, 36,255);
-        private Dropdown dropdown;
+        public Dropdown dropdown;
         public KeyCode ForwardKey { get; set; }
         public KeyCode BackwardKey { get; set; }
         public KeyCode LeftKey { get; set; }
@@ -40,16 +40,14 @@ namespace DefaultNamespace
             PauseKey = (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("PauseKey", "A"));           
             RunKey = (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("RunKey", "E"));
             ReloadKey = (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("ReloadKey", "R"));
+           
+          
+            ApplyChangeLanguage();
 
         }
 
-        private void Start()
-        {
-            dropdown = GameObject.Find("Language").GetComponent<Dropdown>();
-            if (PlayerPrefs.GetString("language") == "english")
-                dropdown.value = 0;
-            if (PlayerPrefs.GetString("language") == "français")
-                dropdown.value = 1;        
+        private void Start()    
+        { 
             forwardtext.text = PlayerPrefs.GetString("ForwardKey", "Z");
             backwardtext.text = PlayerPrefs.GetString("BackwardKey", "S");
             lefttext.text = PlayerPrefs.GetString("LeftKey", "Q");
@@ -64,6 +62,17 @@ namespace DefaultNamespace
             Marquage.Add( jumptext.text,"JumpKey");
             Marquage.Add(  runtext.text,"RunKey");
             Marquage.Add(reloadtext.text,"ReloadKey");
+            
+            Debug.Log(dropdown.value);
+            if (PlayerPrefs.GetString("language") == "english")           
+                dropdown.value = 0;
+                
+            
+
+            if (PlayerPrefs.GetString("language") == "français")            
+                dropdown.value = 1;
+           
+          
             ApplyChangeLanguage();
 
 
@@ -78,7 +87,7 @@ namespace DefaultNamespace
             else if (dropdown.value == 1)    
                 PlayerPrefs.SetString("language", "français");
             ApplyChangeLanguage();
-            }
+        }
 
         public void ApplyChangeLanguage()
         {   
@@ -102,6 +111,7 @@ namespace DefaultNamespace
                 runtext.transform.parent.GetChild(1).GetComponent<Text>().text = "run";
                 reloadtext.transform.parent.GetChild(1).GetComponent<Text>().text = "reload";
             }
+           
 
             
         }
@@ -116,7 +126,7 @@ namespace DefaultNamespace
                 Event e = Event.current; //cet event est égal a la touche activée 
                 if (e.isKey)
                 {
-                    if (!Marquage.ContainsKey(    e.keyCode.ToString()) && e.keyCode!=KeyCode.None)
+                    if (!Marquage.ContainsKey(    e.keyCode.ToString()) && (e.keyCode!=KeyCode.None)&&e.keyCode!=KeyCode.Escape)
                     {
                       
                            

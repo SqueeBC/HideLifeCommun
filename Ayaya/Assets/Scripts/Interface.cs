@@ -10,7 +10,7 @@ public class Interface : MonoBehaviour
 {
     public GameObject CooldownReminder;
     public Image Staminabar;
-    public GameObject Player;
+    
     public Text Staminatext;
     public Text HPtext;
     public Image HPbar;
@@ -58,12 +58,25 @@ public class Interface : MonoBehaviour
 
     public void StaminaText()
     {
-        Staminatext.text = "STAMINA:"+Mathf.Round(playerControler.stamina)  + "%";
+        if (PlayerPrefs.GetString("language") == "français")
+            Staminatext.text = "ENDURANCE:" + Mathf.Round(playerControler.stamina) + "%";
+            else
+        {
+
+
+            Staminatext.text = "STAMINA:" + Mathf.Round(playerControler.stamina) + "%";
+        }
     }
-    
+
     public void HPText()
-    {
-        HPtext.text = "HP:"+Mathf.Round(player.currentHP)  + "%";
+    {    if (PlayerPrefs.GetString("language") == "français")
+            HPtext.text = "PV:"+Mathf.Round(player.currentHP)  + "%";
+        else
+        {
+
+            HPtext.text = "HP:"+Mathf.Round(player.currentHP)  + "%";
+        }
+    
     }
 
     public void Reloading()

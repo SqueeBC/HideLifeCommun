@@ -276,6 +276,7 @@
             </e>
           </e>
         </e>
+        <e p="TagApplication.cs" t="Include" />
         <e p="test1.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

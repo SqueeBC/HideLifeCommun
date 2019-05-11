@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\PropTransform.cs" />
     <Compile Include="Assets\Scripts\Sensitivity.cs" />
+    <Compile Include="Assets\TagApplication.cs" />
     <Compile Include="Assets\test1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
