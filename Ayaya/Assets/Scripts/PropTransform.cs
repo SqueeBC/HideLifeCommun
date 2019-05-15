@@ -14,7 +14,6 @@ public class PropTransform : MonoBehaviour
     {
         boxShape = true;
         transformer.isStatic = false;
-        transformer.AddComponent<Rigidbody>();
     }
 
     private void LateUpdate()
