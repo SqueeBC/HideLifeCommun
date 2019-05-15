@@ -6,19 +6,16 @@ using UnityEngine;
 
 public class PropTransform : MonoBehaviour
 {
-    bool boxShape;
     public GameObject transformer;
     RaycastHit raytransfo;
 
     private void Start()
     {
-        boxShape = true;
         transformer.isStatic = false;
     }
 
     private void LateUpdate()
     {
-
         if (Input.GetKeyDown(KeyCode.T) && Physics.Raycast(transformer.transform.position, transformer.transform.forward, out raytransfo, 10))
         {
             transfo_v2(raytransfo, ref transformer);
@@ -45,7 +42,6 @@ public class PropTransform : MonoBehaviour
         Destroy(trans.GetComponent<Mesh>());
         Destroy(trans.GetComponent<MeshFilter>());
         trans.AddComponent<MeshFilter>();
-        Destroy(trans.GetComponent(GameObject.FindWithTag("Model").name));
         trans.GetComponent<MeshFilter>().mesh = cible.collider.gameObject.GetComponent<MeshFilter>().mesh;
         trans.transform.position.Set(trans.transform.position.x, cible.collider.gameObject.transform.position.y, trans.transform.position.z);
     }
