@@ -2,41 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+
 public class PropTransform : MonoBehaviour
 {
-    float posx;
-    float posy;
-    float posz;
-    Vector3 pos;
     bool boxShape;
     public GameObject transformer;
     RaycastHit raytransfo;
 
     private void Start()
     {
-        transformer = GameObject.FindGameObjectWithTag("Player");
         boxShape = true;
         transformer.isStatic = false;
         transformer.AddComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-        posx = transformer.GetComponent<Rigidbody>().position.x;
-        posy = transformer.GetComponent<Rigidbody>().position.y;
-        posz = transformer.GetComponent<Rigidbody>().position.z;
-      
-    }
-
     private void LateUpdate()
     {
-        
-        if (Input.GetKeyDown(KeyCode.T)&&Physics.Raycast(transformer.transform.position, transformer.transform.forward, out raytransfo, 10))
+
+        if (Input.GetKeyDown(KeyCode.T) && Physics.Raycast(transformer.transform.position, transformer.transform.forward, out raytransfo, 10))
         {
-             transfo_v2(raytransfo, ref transformer);
+            transfo_v2(raytransfo, ref transformer);
         }
     }
-public void transfo_v2(RaycastHit cible, ref GameObject trans)
+    public void transfo_v2(RaycastHit cible, ref GameObject trans)
     {
         if (trans.GetComponent<BoxCollider>() != null)
             Destroy(trans.GetComponent<BoxCollider>());
