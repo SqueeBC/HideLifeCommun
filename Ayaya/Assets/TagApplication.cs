@@ -13,7 +13,17 @@ public class TagApplication : MonoBehaviour
             transform.GetChild(i).tag = "Ground";
             i++;
         }
-       
+
+        i = 0;
+        GameObject items =  GameObject.Find("Items");
+        while(i<items.transform.childCount)
+        {
+            
+            items.transform.GetChild(i).tag = "Item";
+            i++;
+        }
+        
+
     }
 
     // Update is called once per frame

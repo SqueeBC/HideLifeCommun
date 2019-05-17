@@ -5,7 +5,7 @@ using UnityStandardAssets.Utility;
 
 namespace trucs_perso
 {       
-    public class Player : MonoBehaviour //a remplacer avec NetworkBehaviour pour le multi
+    public class Player : NetworkBehaviour //a remplacer avec NetworkBehaviour pour le multi
     
     //EN CONSTRUCTION
     {

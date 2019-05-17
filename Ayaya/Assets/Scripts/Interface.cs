@@ -29,7 +29,14 @@ public class Interface : MonoBehaviour
 
     public void FindPlayer()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            Debug.Log(gameObject.name);
+            if (gameObject.GetComponent<Player>().isLocalPlayer)
+                player = gameObject.GetComponent<Player>();
+        }
+   
+    
         Localplayershoot = player.GetComponent<PlayerShoot>(); //a modifier pour le multi, avec GetComponent<Newwork.Behaviour>().IsLocalPlayer
         playerControler= (PlayerControler) player.GetComponent("PlayerControler");
     }

@@ -56,7 +56,7 @@ public class PlayerMotor : MonoBehaviour
     void OnCollisionEnter(Collision collision) //est appelée quand le joueur touche le sol
     {
        
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground")||collision.gameObject.CompareTag("Item"))
         {     
             isGrounded = true;
         }
@@ -80,6 +80,8 @@ public class PlayerMotor : MonoBehaviour
             AudioSource.PlayClipAtPoint(taunts[randomtaunt.Next(taunts.Count)].clip,this.transform.position);
             notmovingtime = 20;
         }
+        if(Input.GetKeyDown(KeyCode.T))
+            TransformationTest();    
     }
 
     private void FixedUpdate() //recommandé pour le rigidBody
@@ -179,6 +181,44 @@ public class PlayerMotor : MonoBehaviour
         JumpForce = ForceMode.Impulse;
         rb.AddForce(0,Jump,0,JumpForce); //le type de force
         
+    }
+    
+    public void TransformationTest() //fonction provisoire pour les tests
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 1000)) ;
+        {
+            if (hit.collider != null&&hit.collider.tag=="Item")
+            {
+                Destroy( transform.FindChild("Graphics").gameObject);
+                GameObject gameObject = Instantiate(hit.collider.transform.gameObject);
+                gameObject.name = "Graphics";
+                gameObject.transform.localPosition = transform.localPosition;
+                gameObject.transform.parent = transform;
+                if (hit.collider.GetComponent<MeshRenderer>() != null)
+                {
+                  
+                    MeshRenderer meshRenderer=  hit.collider.GetComponent<MeshRenderer>();
+                 
+                 
+
+                }
+                   
+                int i = 0;
+                Debug.Log(gameObject.transform.localPosition.x);
+                while(i<gameObject.transform.childCount)
+                {
+                    GameObject newChild = new GameObject();
+                    newChild = gameObject.transform.GetChild(i).gameObject;
+                    newChild.transform.parent = gameObject.transform;
+                    newChild.transform.localPosition = gameObject.transform.position;
+                    Debug.Log("geqfsd");
+                    i++;
+                }
+                gameObject.SetActive(true);
+               
+            }
+        }
     }
     
 }
