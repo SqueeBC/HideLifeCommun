@@ -7,6 +7,10 @@ TagManager:
   - Ground
   - Model
   - Taunt
+  - Item
+  - Small Item
+  - Medium Item
+  - Big Item
   layers:
   - Default
   - TransparentFX

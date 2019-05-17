@@ -16,7 +16,7 @@ public class PropTransform : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.T) && Physics.Raycast(transformer.transform.position, transformer.transform.forward, out raytransfo, 10))
+            if (Input.GetKeyDown(KeyCode.T) && Physics.Raycast(transformer.transform.position, transformer.transform.forward, out raytransfo, 10))
         {
             transfo_v2(raytransfo, ref transformer);
         }

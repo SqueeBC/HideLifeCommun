@@ -23,7 +23,9 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
     [SerializeField] private LayerMask mask; //permet de ne pas ce toucher soi-même lors du tir
 
     private void Start()
-    {_interface = GameObject.Find("Interface IG").GetComponent<Interface>();
+    {
+        shotaudio = GameObject.Find("RATATATATATA").GetComponent<AudioSource>();
+        _interface = GameObject.Find("Interface IG").GetComponent<Interface>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         if (cam == null)
         {
