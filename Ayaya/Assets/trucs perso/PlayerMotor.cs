@@ -80,8 +80,7 @@ public class PlayerMotor : MonoBehaviour
             AudioSource.PlayClipAtPoint(taunts[randomtaunt.Next(taunts.Count)].clip,this.transform.position);
             notmovingtime = 20;
         }
-        if(Input.GetKeyDown(KeyCode.Y))
-            TransformationTest();    
+      
     }
 
     private void FixedUpdate() //recommandé pour le rigidBody
@@ -183,46 +182,7 @@ public class PlayerMotor : MonoBehaviour
         
     }
     
-    public void TransformationTest() //fonction provisoire pour les tests
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 1000)) ;
-        {
-            if (hit.collider != null&&(hit.collider.tag=="Small Item"||hit.collider.tag=="Medium Item"||hit.collider.tag=="Big Item"))
-            {
-                Destroy( transform.FindChild("Graphics").gameObject);
-                GameObject gameObject = Instantiate(hit.collider.transform.gameObject);
-                gameObject.name = "Graphics";
-                gameObject.transform.localPosition = transform.localPosition;
-                gameObject.transform.parent = transform;
-               
-                   
-                int i = 0;
-                Debug.Log(gameObject.transform.localPosition.x);
-                while(i<gameObject.transform.childCount)
-                {
-                    GameObject newChild = new GameObject();
-                    newChild = gameObject.transform.GetChild(i).gameObject;
-                    if (gameObject.transform.GetChild(i).gameObject.transform.childCount > 0)
-                    {
-                        int j = 0;
-                        while (j < gameObject.transform.GetChild(i).gameObject.transform.childCount)
-                        {
-                           GameObject newChildForThisChild= new GameObject();
-                           newChildForThisChild.transform.parent = gameObject.transform.GetChild(i).gameObject.transform;
-                           newChildForThisChild.transform.localPosition = gameObject.transform.GetChild(i).gameObject.transform.position;
-                            j++;
-                        }
-                    }
-                    newChild.transform.parent = gameObject.transform;
-                    newChild.transform.localPosition = gameObject.transform.position;
-                 
-                    i++;
-                }
-                gameObject.SetActive(true);
-               
-            }
-        }
-    }
+ 
+    
     
 }

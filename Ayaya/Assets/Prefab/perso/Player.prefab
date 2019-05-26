@@ -1405,6 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcef91f9a4b47cd888122fe0111cea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 1360524291}
   gameManager: {fileID: 0}
   maxHP: 100
   id: 42

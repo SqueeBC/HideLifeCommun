@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using trucs_perso;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,16 +22,26 @@ public class EchapMenu : MonoBehaviour
     void Start()
     {
         réticule = GameObject.Find("Réticule");
-        player = GameObject.Find("Player");
+
+      
+                foreach (GameObject _player in GameObject.FindGameObjectsWithTag("Player"))
+                {
+                    if (_player.GetComponent<Player>().isLocalPlayer)
+                        player = _player;
+                }
+              
+                
+           
+        
     }
 
     void Update()
     {
-        
-        if(player==null)
+      
+        if(player==null||!player.GetComponent<Player>().isLocalPlayer)
             Start();  
         
-        Debug.Log(player);
+        Debug.Log(player.name);
         if (Input.GetButtonDown("Cancel")&&(player!=null||player.active))
         {
             if (GameIsPaused)
