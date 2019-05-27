@@ -20,16 +20,12 @@ public class PlayerMotor : MonoBehaviour
     public Player player;    
     private float Gravitydmg = -15;
     [SerializeField] private float cameraRotationLimit = 85f; //Permet d'empecher le bug de cam 
-    //mathieu 
-    public GameObject transformer; 
     float yRot;
     float xRot;
     private bool IsMoving;
     float lookSensitivity = 3f;
     private float notmovingtime = 20;
     private List<AudioSource> taunts;
-    RaycastHit raytransfo;  
-    //mathieu
    
 
     private void Start()
@@ -40,12 +36,6 @@ public class PlayerMotor : MonoBehaviour
         
         player = GetComponentInParent<Player>();
         rb = GetComponent<Rigidbody>(); //on implémente le rigidbody au début
-        //mathieu
-        if (!transformer)
-            transformer = GameObject.FindGameObjectWithTag("Player");
-        rb = transformer.GetComponent<Rigidbody>(); 
-        transformer.isStatic = false;
-        //mathieu
     }
 
     public void Move(Vector3 velocity)
@@ -95,46 +85,9 @@ public class PlayerMotor : MonoBehaviour
                 player.TakeDamage( Mathf.RoundToInt(Gravitydmg));
             Gravitydmg = -50; //reset des dmg
         }
-
-      
-            
         PerformMovement();
         PerformRotation();
-
-       
-
-
     }
-   
-    private void LateUpdate()//mathieu
-        { 
-            if (Input.GetKeyDown(KeyCode.R)&&Physics.Raycast(transformer.transform.position, camera.transform.forward, out raytransfo, 10))
-                transfo(raytransfo, ref transformer);
-        } 
-   
-    public void transfo(RaycastHit cible, ref GameObject trans)//mathieu 
-        { 
-            if (trans.GetComponent<BoxCollider>()) 
-                Destroy(trans.GetComponent<BoxCollider>()); 
-            if (trans.GetComponent<SphereCollider>()) 
-                Destroy(trans.GetComponent<SphereCollider>()); 
-            if (cible.collider.gameObject.GetComponent<BoxCollider>()) 
-            { 
-                trans.AddComponent<BoxCollider>(); 
-                trans.GetComponent<BoxCollider>().size = cible.collider.gameObject.GetComponent<BoxCollider>().size; 
-                trans.GetComponent<BoxCollider>().center = cible.collider.gameObject.GetComponent<BoxCollider>().center; 
-            } 
-            if (cible.collider.gameObject.GetComponent<SphereCollider>()) 
-            { 
-                trans.AddComponent<SphereCollider>(); 
-                trans.GetComponent<SphereCollider>().radius = cible.collider.gameObject.GetComponent<SphereCollider>().radius; 
-                trans.GetComponent<SphereCollider>().center = cible.collider.gameObject.GetComponent<SphereCollider>().center; 
-            } 
-            Destroy(trans.GetComponent<Mesh>()); 
-            trans.AddComponent<MeshFilter>(); 
-            trans.GetComponent<MeshFilter>().mesh = cible.collider.gameObject.GetComponent<MeshFilter>().mesh; 
-            trans.transform.position.Set(trans.transform.position.x, cible.collider.gameObject.transform.position.y, trans.transform.position.z); 
-        } 
     
     private void PerformMovement()
     {
