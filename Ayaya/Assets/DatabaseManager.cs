@@ -16,6 +16,7 @@ public class DatabaseManager : MonoBehaviour
     MySqlConnection con;
     public InputField IfLogin;
     public InputField IfPassword;
+    public Text TxtLogin;
     
     void ConnectBDD()
     {
@@ -26,16 +27,12 @@ public class DatabaseManager : MonoBehaviour
         {
             con = new MySqlConnection(constr);
             con.Open();
+            TxtState.text = "[Base De Donnée] :  " + con.State.ToString();
         }
         catch (IOException Ex)
         {
             TxtState.text = Ex.ToString();
         }
-    }
-    
-    void Update()
-    {
-        TxtState.text = "[Base De Donnée] :  " + con.State.ToString();
     }
 
     void OnApplicationQuit()
@@ -54,13 +51,13 @@ public class DatabaseManager : MonoBehaviour
     {
         ConnectBDD();
         
-        string command = "INSERT INTO users VALUES (defauft,'" + IfLogin.text + "','" + IfPassword + "')";
+        string command = "INSERT INTO users VALUES (defauft,'" + IfLogin.text + "','" + IfPassword + "','')";
         MySqlCommand cmd = new MySqlCommand(command, con);
 
         try
         {
             cmd.ExecuteReader();
-            TxtState.text = "Register Successful";
+            TxtLogin.text = "Register Successful";
         }
         catch (IOException Ex)
         {
