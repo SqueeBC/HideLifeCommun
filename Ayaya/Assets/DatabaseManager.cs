@@ -42,7 +42,7 @@ public class DatabaseManager : MonoBehaviour
 
         if (con != null && con.State.ToString() != "Closed")
         {
-            
+            con.Close();
         }
     }
 }
