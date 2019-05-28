@@ -33,6 +33,16 @@ public class DatabaseManager : MonoBehaviour
     
     void Update()
     {
-        TxtState.text = "[Base De Donnée] - Etat de la connection:  " + con.State.ToString();
+        TxtState.text = "[Base De Donnée] :  " + con.State.ToString();
+    }
+
+    void OnApplicationQuit()
+    {
+        TxtState.text = ("[Base De Donnée] :  Fermeture de la connexion");
+
+        if (con != null && con.State.ToString() != "Closed")
+        {
+            
+        }
     }
 }
