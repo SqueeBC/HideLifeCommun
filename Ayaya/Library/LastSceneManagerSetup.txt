@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/Sol.unity
+=======
 - path: Assets/LoginDatabase.unity
+>>>>>>> bfac7147c186a66ce670983d3510ff3c09db0eec
   isLoaded: 1
   isActive: 1
