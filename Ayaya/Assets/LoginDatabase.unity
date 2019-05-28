@@ -182,7 +182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &97992611
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -935,9 +935,9 @@ MonoBehaviour:
   username: beth5407_server_admin
   password: HideLifeAdminServer@95
   TxtState: {fileID: 220784804}
-  IfLogin: {fileID: 0}
-  IfPassword: {fileID: 0}
-  TxtLogin: {fileID: 220784804}
+  IfLogin: {fileID: 1856778433}
+  IfPassword: {fileID: 1465667177}
+  TxtLogin: {fileID: 97992610}
 --- !u!1 &948809674
 GameObject:
   m_ObjectHideFlags: 0
