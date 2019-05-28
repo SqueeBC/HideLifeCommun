@@ -98,3 +98,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.log
+Ayaya/Library/shadercompiler-UnityShaderCompiler.exe0.log
