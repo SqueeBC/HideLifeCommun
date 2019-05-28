@@ -24,26 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f54dc8e-e065-43cf-adb2-471cc1a104ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ayaya/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ayaya/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ayaya/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ayaya/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor-firstpass.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DatabaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DatabaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/BuiltinAssemblies.stamp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/32a486-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/32a486-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-firstpass.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-firstpass.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,12 +49,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="79" />
+          <entry key="cs" value="197" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="79" />
+          <entry key="C#" value="197" />
         </counts>
       </usages-collector>
     </session>
@@ -121,15 +107,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/DatabaseManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="35" column="68" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
+            <state relative-caret-position="510">
+              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
               <folding>
-                <marker date="1559054242602" expanded="false" signature="6:161" ph="..." />
-                <marker date="1559054242602" expanded="true" signature="207:914" ph="{...}" />
-                <marker date="1559054242602" expanded="true" signature="390:783" ph="{...}" />
-                <marker date="1559054242602" expanded="true" signature="592:683" ph="{...}" />
-                <marker date="1559054242602" expanded="true" signature="714:777" ph="{...}" />
-                <marker date="1559054242602" expanded="true" signature="806:912" ph="{...}" />
+                <marker date="1559055381545" expanded="false" signature="6:161" ph="..." />
+                <marker date="1559055381545" expanded="true" signature="207:1103" ph="{...}" />
+                <marker date="1559055381545" expanded="true" signature="390:783" ph="{...}" />
+                <marker date="1559055381545" expanded="true" signature="592:683" ph="{...}" />
+                <marker date="1559055381545" expanded="true" signature="714:777" ph="{...}" />
+                <marker date="1559055381545" expanded="true" signature="806:889" ph="{...}" />
+                <marker date="1559055381545" expanded="true" signature="919:1101" ph="{...}" />
+                <marker date="1559055381545" expanded="true" signature="1062:1095" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -304,7 +292,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="442" />
     <option name="y" value="136" />
     <option name="width" value="974" />
@@ -451,12 +439,12 @@
       <workItem from="1558949121145" duration="483000" />
       <workItem from="1559030460003" duration="8146000" />
       <workItem from="1559053791435" duration="56000" />
-      <workItem from="1559053957570" duration="285000" />
+      <workItem from="1559053957570" duration="1423000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212706000" />
+    <option name="totallyTimeSpent" value="213844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -762,15 +750,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/DatabaseManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="35" column="68" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
+        <state relative-caret-position="510">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
           <folding>
-            <marker date="1559054242602" expanded="false" signature="6:161" ph="..." />
-            <marker date="1559054242602" expanded="true" signature="207:914" ph="{...}" />
-            <marker date="1559054242602" expanded="true" signature="390:783" ph="{...}" />
-            <marker date="1559054242602" expanded="true" signature="592:683" ph="{...}" />
-            <marker date="1559054242602" expanded="true" signature="714:777" ph="{...}" />
-            <marker date="1559054242602" expanded="true" signature="806:912" ph="{...}" />
+            <marker date="1559055381545" expanded="false" signature="6:161" ph="..." />
+            <marker date="1559055381545" expanded="true" signature="207:1103" ph="{...}" />
+            <marker date="1559055381545" expanded="true" signature="390:783" ph="{...}" />
+            <marker date="1559055381545" expanded="true" signature="592:683" ph="{...}" />
+            <marker date="1559055381545" expanded="true" signature="714:777" ph="{...}" />
+            <marker date="1559055381545" expanded="true" signature="806:889" ph="{...}" />
+            <marker date="1559055381545" expanded="true" signature="919:1101" ph="{...}" />
+            <marker date="1559055381545" expanded="true" signature="1062:1095" ph="{...}" />
           </folding>
         </state>
       </provider>
