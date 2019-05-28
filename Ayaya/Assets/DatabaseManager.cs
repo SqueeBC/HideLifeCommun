@@ -15,7 +15,7 @@ public class DatabaseManager : MonoBehaviour
     public Text TxtState;
     MySqlConnection con;
     
-    void Awake()
+    void Start()
     {
         string constr = "Server=" + host + ";DATABASE=" + database + ";User ID=" + username + ";Password=" + password +
                         ";Pooling=true;Charset=utf8;";
@@ -24,7 +24,6 @@ public class DatabaseManager : MonoBehaviour
         {
             con = new MySqlConnection(constr);
             con.Open();
-            TxtState.text = con.State.ToString();
         }
         catch (IOException Ex)
         {
@@ -34,6 +33,6 @@ public class DatabaseManager : MonoBehaviour
     
     void Update()
     {
-        
+        TxtState.text = "[Base De Donnée] - Etat de la connection:  " + con.State.ToString();
     }
 }
