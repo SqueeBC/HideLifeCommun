@@ -128,6 +128,11 @@ public class DatabaseManager : MonoBehaviour
                         TxtLogin.text = "Invalid pseudo/password";
                     }
                 }
+
+                if (pass == null)
+                {
+                    TxtLogin.text = "No existing account !";
+                }
                 Myreader.Close();
             }
             catch (IOException Ex)
