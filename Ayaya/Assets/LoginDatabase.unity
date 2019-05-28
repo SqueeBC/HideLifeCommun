@@ -935,6 +935,8 @@ MonoBehaviour:
   username: beth5407_server_admin
   password: HideLifeAdminServer@95
   TxtState: {fileID: 220784804}
+  IfLogin: {fileID: 1856778433}
+  IfPassword: {fileID: 1465667177}
 --- !u!1 &948809674
 GameObject:
   m_ObjectHideFlags: 0
