@@ -2,9 +2,12 @@
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
 using MySql.Data.MySqlClient;
+using Debug = System.Diagnostics.Debug;
 
 public class DatabaseManager : MonoBehaviour
 {
@@ -39,7 +42,7 @@ public class DatabaseManager : MonoBehaviour
     {
         TxtState.text = ("[Base De Donnée] :  Fermeture de la connexion");
         
-        Debug.Log("Fermeture Connection Base de Données");
+        Debug.Write("Fermeture Connection Base de Données");
 
         if (con != null && con.State.ToString() != "Closed")
         {
