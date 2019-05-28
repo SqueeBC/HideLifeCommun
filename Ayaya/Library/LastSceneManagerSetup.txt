@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/Sol.unity
-=======
 - path: Assets/LoginDatabase.unity
->>>>>>> bc0f209eb809dd83e5bbf9907b64a3a98d244262
-=======
-- path: Assets/test2.unity
->>>>>>> parent of 1860f66... fds
   isLoaded: 1
   isActive: 1
