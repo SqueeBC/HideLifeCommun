@@ -1372,7 +1372,6 @@ MonoBehaviour:
   camera: {fileID: 1360524291}
   player: {fileID: 0}
   cameraRotationLimit: 85
-  transformer: {fileID: 1134321311}
 --- !u!114 &1134321313
 MonoBehaviour:
   m_ObjectHideFlags: 0

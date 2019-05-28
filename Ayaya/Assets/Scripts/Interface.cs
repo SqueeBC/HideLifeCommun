@@ -35,8 +35,9 @@ public class Interface : MonoBehaviour
             if (gameObject.GetComponent<Player>().isLocalPlayer)
                 player = gameObject.GetComponent<Player>();
         }
-   
-    
+
+        
+        Debug.Log(player.name);
         Localplayershoot = player.GetComponent<PlayerShoot>(); //a modifier pour le multi, avec GetComponent<Newwork.Behaviour>().IsLocalPlayer
         playerControler= (PlayerControler) player.GetComponent("PlayerControler");
     }

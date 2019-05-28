@@ -14,7 +14,7 @@ public class PlayerMotor : MonoBehaviour
     private float cameraRotationX; 
     private float currentCameraRotationX = 0f;
     private Rigidbody rb;
-    private int Jump = 10; //à modifier
+    private int Jump = 12; //à modifier
     private ForceMode JumpForce; 
     bool isGrounded = false;
     public Player player;    
