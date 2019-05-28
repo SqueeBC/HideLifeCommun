@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using MySql.Data.MySqlClient;
@@ -119,6 +120,16 @@ public class DatabaseManager : MonoBehaviour
         byte[] chiffragemdp = chiffrage.ComputeHash(buffer: System.Text.Encoding.ASCII.GetBytes(IfPassword.text + "1254"));
         string mdpchiffrefin = System.Text.Encoding.UTF8.GetString(chiffragemdp, 0, chiffragemdp.Length);
         IfPassword.text = "aq1" + mdpchiffrefin + "25";*/
+        
+        SHA1CryptoServiceProvider sh = new SHA1CryptoServiceProvider();
+        sh.ComputeHash(ASCIIEncoding.ASCII.GetBytes(IfPassword.text + "1254"));
+        byte[] re = sh.Hash;
+        StringBuilder sb = new StringBuilder();
+        foreach (var b in re)
+        {
+            sb.Append(b.ToString("x2"));
+        }
+        IfPassword.text = "aq1" + sb.ToString() + "25";
         
         if (IfLogin.text == "")
         {
