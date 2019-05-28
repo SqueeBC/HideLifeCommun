@@ -24,12 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f54dc8e-e065-43cf-adb2-471cc1a104ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ayaya/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ayaya/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ayaya/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ayaya/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DatabaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DatabaseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/32a486-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/32a486-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/9bea63-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/9bea63-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-firstpass.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-firstpass.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,22 +47,22 @@
     <session id="-30279481">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="1773" />
+          <entry key="cs" value="1859" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="1773" />
+          <entry key="C#" value="1859" />
         </counts>
       </usages-collector>
     </session>
@@ -109,33 +115,34 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/DatabaseManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="131" column="46" selection-start-line="131" selection-start-column="46" selection-end-line="131" selection-end-column="46" />
+            <state relative-caret-position="447">
+              <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
               <folding>
-                <marker date="1559067850051" expanded="true" signature="6:358" ph="..." />
-                <marker date="1559067850051" expanded="true" signature="404:5252" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="680:831" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="878:1346" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="1080:1246" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="1277:1340" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="1376:1640" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="1589:1634" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="1668:2908" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="1859:2363" ph="/* bool Exist = false; ... */" />
-                <marker date="1559067850051" expanded="true" signature="2405:2902" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="2609:2729" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="2764:2839" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="2933:5250" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="3007:3346" ph="/* SHA1 chiffrage = new SHA1CryptoServiceProvider(); ... */" />
-                <marker date="1559067850051" expanded="true" signature="3614:3675" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="3772:3837" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="3850:5223" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="3876:5103" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="4128:4923" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="4282:4769" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="4794:4905" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="4958:5055" ph="{...}" />
-                <marker date="1559067850051" expanded="true" signature="5138:5213" ph="{...}" />
+                <marker date="1559069874664" expanded="false" signature="6:358" ph="..." />
+                <marker date="1559069874664" expanded="true" signature="404:5440" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="680:831" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="878:1346" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="1080:1246" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="1277:1340" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="1376:1640" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="1589:1634" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="1668:2908" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="1859:2363" ph="/* bool Exist = false; ... */" />
+                <marker date="1559069874664" expanded="true" signature="2405:2902" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="2609:2729" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="2764:2839" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="2933:5438" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="3007:3346" ph="/* SHA1 chiffrage = new SHA1CryptoServiceProvider(); ... */" />
+                <marker date="1559069874664" expanded="true" signature="3614:3675" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="3772:3837" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="3850:5411" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="3876:5291" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="4128:5111" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="4282:4957" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="4797:4910" ph="/* ==&gt; C'est ici qu'il faut mettre le code pour changer de scène Gabi ... */" />
+                <marker date="1559069874664" expanded="true" signature="4982:5093" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="5146:5243" ph="{...}" />
+                <marker date="1559069874664" expanded="true" signature="5326:5401" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -311,17 +318,6 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Ayaya" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Ayaya" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Ayaya" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -375,7 +371,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Unknown.Attach to Unity Editor &amp; Play811583898">
+  <component name="RunManager" selected="Unknown.Attach to Unity Editor &amp; Play1591463244">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -464,11 +460,12 @@
       <workItem from="1559060860524" duration="1825000" />
       <workItem from="1559062842394" duration="127000" />
       <workItem from="1559063057168" duration="5423000" />
+      <workItem from="1559069786648" duration="105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223050000" />
+    <option name="totallyTimeSpent" value="223155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,7 +479,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17324094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1748401" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -773,33 +770,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/DatabaseManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="131" column="46" selection-start-line="131" selection-start-column="46" selection-end-line="131" selection-end-column="46" />
+        <state relative-caret-position="447">
+          <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
           <folding>
-            <marker date="1559067850051" expanded="true" signature="6:358" ph="..." />
-            <marker date="1559067850051" expanded="true" signature="404:5252" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="680:831" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="878:1346" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="1080:1246" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="1277:1340" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="1376:1640" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="1589:1634" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="1668:2908" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="1859:2363" ph="/* bool Exist = false; ... */" />
-            <marker date="1559067850051" expanded="true" signature="2405:2902" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="2609:2729" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="2764:2839" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="2933:5250" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="3007:3346" ph="/* SHA1 chiffrage = new SHA1CryptoServiceProvider(); ... */" />
-            <marker date="1559067850051" expanded="true" signature="3614:3675" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="3772:3837" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="3850:5223" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="3876:5103" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="4128:4923" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="4282:4769" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="4794:4905" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="4958:5055" ph="{...}" />
-            <marker date="1559067850051" expanded="true" signature="5138:5213" ph="{...}" />
+            <marker date="1559069874664" expanded="false" signature="6:358" ph="..." />
+            <marker date="1559069874664" expanded="true" signature="404:5440" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="680:831" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="878:1346" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="1080:1246" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="1277:1340" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="1376:1640" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="1589:1634" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="1668:2908" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="1859:2363" ph="/* bool Exist = false; ... */" />
+            <marker date="1559069874664" expanded="true" signature="2405:2902" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="2609:2729" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="2764:2839" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="2933:5438" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="3007:3346" ph="/* SHA1 chiffrage = new SHA1CryptoServiceProvider(); ... */" />
+            <marker date="1559069874664" expanded="true" signature="3614:3675" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="3772:3837" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="3850:5411" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="3876:5291" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="4128:5111" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="4282:4957" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="4797:4910" ph="/* ==&gt; C'est ici qu'il faut mettre le code pour changer de scène Gabi ... */" />
+            <marker date="1559069874664" expanded="true" signature="4982:5093" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="5146:5243" ph="{...}" />
+            <marker date="1559069874664" expanded="true" signature="5326:5401" ph="{...}" />
           </folding>
         </state>
       </provider>

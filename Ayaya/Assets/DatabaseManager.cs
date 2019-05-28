@@ -154,6 +154,10 @@ public class DatabaseManager : MonoBehaviour
                         Player.Email = Myreader["email"].ToString();
                         Player.Wins = (int)Myreader["wins"];
                         TxtLogin.text = "Welcome " + Player.Pseudo + " You win " + Player.Wins + " Games !";
+                        
+                        /* ==> C'est ici qu'il faut mettre le code pour changer de scène Gabi
+                         PS: Thibault ;) */
+                        
                     }
                     else
                     {
