@@ -50,21 +50,40 @@ public class DatabaseManager : MonoBehaviour
     public void Register()
     {
         ConnectBDD();
-        
-        string command = "INSERT INTO users VALUES (defauft,'" + IfLogin.text + "','" + IfPassword + "','')";
-        MySqlCommand cmd = new MySqlCommand(command, con);
 
-        try
-        {
-            cmd.ExecuteReader();
-            TxtLogin.text = "Register Successful";
-        }
-        catch (IOException Ex)
-        {
-            TxtState.text = Ex.ToString();
-        }
+        bool Exist = false;
         
-        cmd.Dispose();
-        con.Close();
+        //Vérification pseudo existant
+        MySqlCommand commandsql = new MySqlCommand("SELECT pseudo FROM users WHERE pseudo ='" + IfLogin.text + "'", con);
+        MySqlDataReader MyReader = commandsql.ExecuteReader();
+
+        while (MyReader.Read())
+        {
+            if (MyReader["pseudo"].ToString() != "")
+            {
+                TxtLogin.text = "Pseudo Already Exist !";
+                Exist = true;
+            }
+        }
+        MyReader.Close();
+
+        if (!Exist)
+        {
+            string command = "INSERT INTO users VALUES (defauft,'" + IfLogin.text + "','" + IfPassword + "','')";
+            MySqlCommand cmd = new MySqlCommand(command, con);
+
+            try
+            {
+                cmd.ExecuteReader();
+                TxtLogin.text = "Register Successful";
+            }
+            catch (IOException Ex)
+            {
+                TxtState.text = Ex.ToString();
+            }
+        
+            cmd.Dispose();
+            con.Close();
+        }
     }
 }
