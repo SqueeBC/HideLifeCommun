@@ -52,9 +52,16 @@ public class DatabaseManager : MonoBehaviour
 
     public void Register()
     {
+        
+        Process p = new Process();
+        p.StartInfo.FileName = "http://hidelife.fr";
+        p.Start();
+        
         ConnectBDD();
 
-        bool Exist = false;
+
+        bool Exist = true;
+        /*bool Exist = false;
         
         //Vérification pseudo existant
         MySqlCommand commandsql = new MySqlCommand("SELECT pseudo FROM users WHERE pseudo ='" + IfLogin.text + "'", con);
@@ -68,7 +75,8 @@ public class DatabaseManager : MonoBehaviour
                 Exist = true;
             }
         }
-        MyReader.Close();
+        MyReader.Close();*/
+        con.Close();
 
         if (!Exist)
         {
