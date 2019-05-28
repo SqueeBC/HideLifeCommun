@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Mime;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,16 @@ public class DatabaseManager : MonoBehaviour
     public InputField IfLogin;
     public InputField IfPassword;
     public Text TxtLogin;
+    
+    struct _Player
+    {
+        public int ID;
+        public string Pseudo;
+        public string Password;
+        public string Email;
+        public int Wins;
+    }
+    _Player Player;
     
     void ConnectBDD()
     {
@@ -104,6 +115,11 @@ public class DatabaseManager : MonoBehaviour
         ConnectBDD();
         string pass = null;
         
+        /*SHA1 chiffrage = new SHA1CryptoServiceProvider();
+        byte[] chiffragemdp = chiffrage.ComputeHash(buffer: System.Text.Encoding.ASCII.GetBytes(IfPassword.text + "1254"));
+        string mdpchiffrefin = System.Text.Encoding.UTF8.GetString(chiffragemdp, 0, chiffragemdp.Length);
+        IfPassword.text = "aq1" + mdpchiffrefin + "25";*/
+        
         if (IfLogin.text == "")
         {
             TxtLogin.text = "Cases Vides !";
@@ -112,7 +128,7 @@ public class DatabaseManager : MonoBehaviour
         {
             try
             {
-                MySqlCommand commandesql = new MySqlCommand("SELECT * FROM users WHERE pseudo ='" + IfLogin.text + "'", con);
+                MySqlCommand commandesql = new MySqlCommand("SELECT * FROM users WHERE email ='" + IfLogin.text + "'", con);
                 MySqlDataReader Myreader = commandesql.ExecuteReader();
 
                 while (Myreader.Read())
@@ -121,7 +137,12 @@ public class DatabaseManager : MonoBehaviour
 
                     if ((pass == IfPassword.text) && (IfLogin.text != ""))
                     {
-                        TxtLogin.text = "Welcome !";
+                        Player.ID = (int) Myreader["ID"];
+                        Player.Pseudo = Myreader["pseudo"].ToString();
+                        Player.Password = Myreader["password"].ToString();
+                        Player.Email = Myreader["email"].ToString();
+                        Player.Wins = (int)Myreader["wins"];
+                        TxtLogin.text = "Welcome " + Player.Pseudo + " You win " + Player.Wins + " Games !";
                     }
                     else
                     {
