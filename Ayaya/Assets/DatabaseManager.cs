@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Mime;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
 using MySql.Data.MySqlClient;
@@ -92,9 +93,48 @@ public class DatabaseManager : MonoBehaviour
             {
                 TxtState.text = Ex.ToString();
             }
-        
+
             cmd.Dispose();
             con.Close();
         }
+    }
+
+    public void Login()
+    {
+        ConnectBDD();
+        string pass = null;
+        
+        if (IfLogin.text == "")
+        {
+            TxtLogin.text = "Cases Vides !";
+        }
+        else
+        {
+            try
+            {
+                MySqlCommand commandesql = new MySqlCommand("SELECT * FROM users WHERE pseudo ='" + IfLogin.text + "'", con);
+                MySqlDataReader Myreader = commandesql.ExecuteReader();
+
+                while (Myreader.Read())
+                {
+                    pass = Myreader["password"].ToString();
+
+                    if ((pass == IfPassword.text) && (IfLogin.text != ""))
+                    {
+                        TxtLogin.text = "Welcome !";
+                    }
+                    else
+                    {
+                        TxtLogin.text = "Invalid pseudo/password";
+                    }
+                }
+                Myreader.Close();
+            }
+            catch (IOException Ex)
+            {
+                TxtState.text = Ex.ToString();
+            }
+        }
+        con.Close();
     }
 }
