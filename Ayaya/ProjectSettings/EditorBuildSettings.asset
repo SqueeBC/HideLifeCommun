@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: d08ff847054ec2246be3fca96e07f63c
+  - enabled: 1
+    path: Assets/Scenes/zone de tuto.unity
+    guid: 1f3bd68a7ce21f6498406f25b7b04ade
   m_configObjects: {}

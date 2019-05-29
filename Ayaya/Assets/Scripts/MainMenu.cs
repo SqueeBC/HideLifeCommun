@@ -42,6 +42,7 @@ public class MainMenu : MonoBehaviour
     {
         if (tutorialdone == false)
         {
+            tutorialdone = true;
             tutorialwarning.SetActive(true);
             Play.GetComponent<Image>().color = new Color32(255, 1, 1,255);
         }
@@ -57,8 +58,10 @@ public class MainMenu : MonoBehaviour
     }
 
     public void GoToTutorial()
-    {
+    { SceneManager.LoadScene(6); 
+        tutorialdone = true;
         
+
     }   
     public void Leave()
     {

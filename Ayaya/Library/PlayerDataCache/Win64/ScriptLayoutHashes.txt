@@ -1,7 +1,8 @@
 Win64
 PlayerPath?
-C:/Users/etien/OneDrive/Bureau/HideLifeCommun/Ayaya/Exécutable/Ayaya.exe
+C:/Users/$7FT000-QMTCQP3IMGOR/projet/HideLifeCommun/Ayaya/Exécutable/Ayaya.exe
 SceneListBegin?
+Assets/Scenes/LoginDatabase.unity
 Assets/Scenes/Menu.unity
 Assets/Scenes/Sol.unity
 Assets/Scenes/CommandsOption.unity
@@ -26,6 +27,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto_sprint
 d67515fd6babd339b8727dc35ae03966 Assembly-CSharp.dll:UnityStandardAssets.Vehicles.Aeroplane.AeroplaneAudio
 3748fbad2d474a315bda516b8363a0c5 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Effects.ParticleSystemMultiplier
 3748fbad2d474a315bda516b8363a0c5 Assembly-CSharp.dll:UnityStandardAssets.Effects.ParticleSystemMultiplier
@@ -81,6 +83,7 @@ c0e061a135ad81adea53b31e6bf68107 Assembly-CSharp.dll:UnityStandardAssets.Vehicle
 352455aaadb8c98ff36ead557753abfa Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TiltInput
 357dc9516c87a9d2caf5c0f50c455e56 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Water.WaterBase
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.OptionMenu
+d18347cd44253faf6d797bbd92a2c1eb Assembly-CSharp.dll:.DatabaseManager
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 5fc094978ce3e3591a7500ed380d854a UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -118,10 +121,11 @@ f8bd7a92bf9f22d289759689ae7b1fd4 Assembly-CSharp.dll:UnityStandardAssets.Utility
 e80c1450883443c68d6c2dade213536f Assembly-CSharp.dll:TMPro.Examples.TMPro_InstructionOverlay
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Ball.BallUserControl
 1731d95cc8dce262956d345535456351 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Cameras.AutoCam
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TagApplication
 9a40de0f5a84ec02044ccfb05875df71 Assembly-CSharp.dll:UnityStandardAssets.Utility.WaypointCircuit
 8b1fe5dfdcf943fb3b72506b9f19335f Assembly-CSharp.dll:.EnvMapAnimator
 e540a01426f9ad59088593bf72bcd255 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectActivator
-6006ef4e251c812c47b444ea4988b6c8 Assembly-CSharp.dll:.PlayerMotor
+c8cc2bb8f40c6336eeb707ba3d3d78fc Assembly-CSharp.dll:.PlayerMotor
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.Vehicles.Ball.BallUserControl
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -273,6 +277,7 @@ d241b953bd96426b51717342bb95894c TextMeshPro-2017.3-Editor.dll:TMPro.EditorUtili
 fdd7177da17032ba94d98037cc97bb49 Assembly-CSharp.dll:UnityStandardAssets.CrossPlatformInput.AxisTouchButton
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
 7b6e37f22632e0a0d886d9c843e87905 Assembly-CSharp.dll:FantasySkyFree.GE_FantasySkyboxFREE_Demo
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.tuto_saut
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GE_ToggleFullScreenUI
 2294ba4929e515b4b46046eff1f6b057 Assembly-CSharp.dll:UnityStandardAssets.Effects.ExplosionFireAndDebris
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.ObjectResetter
@@ -313,6 +318,7 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+5b2d4b2f1ed4d2260a6f0862e916ecf1 Assembly-CSharp.dll:.MaskPassword
 385666d964b0eabb4136cbb95125e502 Assembly-CSharp.dll:UnityStandardAssets.Cameras.ProtectCameraFromWallClip
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets._2D.Restarter
 6044529815c0850359298e2f87d67d0b Assembly-CSharp.dll:UnityStandardAssets.SceneUtils.SlowMoButton
@@ -393,6 +399,7 @@ bc46e9ea7214351ae0b1fb15adb76de8 Assembly-CSharp.dll:DefaultNamespace.InputManag
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.Vehicles.Car.CarUserControl
 3748fbad2d474a315bda516b8363a0c5 Assembly-CSharp.dll:UnityStandardAssets.Effects.ExtinguishableParticleSystem
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto
 4d16cfbaa8e821a2b370e80844a0e9bc Assembly-CSharp.dll:TMPro.Examples.TextMeshSpawner
 44c2d3bd57c3d764412e06815f612aa3 Assembly-CSharp.dll:UnityStandardAssets.Effects.Explosive
 8a874a8207a7664bdf44e61f28717254 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
@@ -411,4 +418,3 @@ d7bc2b4e85ce46723a80c1bc49f3798b Assembly-CSharp.dll:UnityStandardAssets.Vehicle
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.Utility.ObjectResetter
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.SimpleScript
 47cd05cf11ce8beb2fd9a1522f58f5ec Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TagApplication
