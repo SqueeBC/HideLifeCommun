@@ -23505,6 +23505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cible-simple (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7360520046249800049, guid: 35e4f4a7023c5e742a8296f22998eeae,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7360520046249766225, guid: 35e4f4a7023c5e742a8296f22998eeae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23737,6 +23742,11 @@ PrefabInstance:
     - target: {fileID: 6922258227336087836, guid: 4fee63c293f6a9f4c965c1070fbcfbab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159462677457651404, guid: 4fee63c293f6a9f4c965c1070fbcfbab,
+        type: 3}
+      propertyPath: maxHP
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
