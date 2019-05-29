@@ -127,7 +127,7 @@ namespace DefaultNamespace
                 Event e = Event.current; //cet event est égal a la touche activée 
                 if (e.isKey)
                 {
-                    Debug.Log(e.ToString());
+                 
                     if (!Marquage.ContainsKey(e.keyCode.ToString()) && (e.keyCode!=KeyCode.None)&&e.keyCode!=KeyCode.Escape)
                     {
                       Debug.Log(CurrentKey.name);
@@ -136,7 +136,7 @@ namespace DefaultNamespace
                         Marquage.Add(e.keyCode.ToString(), CurrentKey.name);
 
                         PlayerPrefs.SetString(CurrentKey.name, e.keyCode.ToString());
-                        Debug.Log(CurrentKey);
+                     
                         CurrentKey.transform.GetChild(0).GetComponent<Text>().text = e.keyCode.ToString();
                         CurrentKey.GetComponent<Image>().color = normal;
                         CurrentKey = null;

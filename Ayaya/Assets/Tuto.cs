@@ -27,7 +27,7 @@ public class Tuto : MonoBehaviour
         else
         {            message.fontSize = 40;
 
-            message.text = "In order to move, use the keys"   + _inputManager.forwardtext.text + " " +_inputManager.lefttext.text +" " + _inputManager.backwardtext.text  + " " +_inputManager.righttext.text;
+            message.text = "In order to move, use the keys "   + _inputManager.forwardtext.text + " " +_inputManager.lefttext.text +" " + _inputManager.backwardtext.text  + " " +_inputManager.righttext.text;
         }
     }
 
