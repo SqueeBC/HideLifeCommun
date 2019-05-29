@@ -82,13 +82,12 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
         {
 
             if (hit.collider != null)
-                Debug.Log("Objet touché" + hit.collider.name);
-            else
-            {
+            {     Debug.Log("Objet touché" + hit.collider.name);
+           
 
 
 
-                if (hit.collider.CompareTag("Player"))
+                if (hit.collider.CompareTag("Player")||(hit.collider.CompareTag("Target")))
                 {
                     _interface.ShowHitmarker();
                     GetTarget(hit.collider.GetComponent<Player>().id, weapon.dmg);
@@ -110,6 +109,7 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
         Player Target = GameManager.GetPlayer("Player "+id);
         Debug.Log(Target.currentHP);
         Target.TakeDamage(dmg);
+        Debug.Log(GameManager.GetPlayer("Player "+id).name);
     }
   
 
