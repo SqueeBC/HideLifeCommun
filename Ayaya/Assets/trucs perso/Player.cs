@@ -23,6 +23,7 @@ namespace trucs_perso
 
         private void Start()
         {    
+           
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
 
@@ -45,7 +46,7 @@ namespace trucs_perso
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Y))
+            if (Input.GetKeyDown(KeyCode.T))
                 TransformationTest();
             Death();
         }
@@ -77,8 +78,7 @@ namespace trucs_perso
             if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 1000)) ;
             {
                 Debug.Log(hit.collider.name);
-                if (hit.collider != null && (hit.collider.tag == "Small Item" || hit.collider.tag == "Medium Item" ||
-                                             hit.collider.tag == "Big Item"))
+                if (hit.collider != null)
                 {
                     Destroy(transform.FindChild("Graphics").gameObject);
                     GameObject gameObject = Instantiate(hit.collider.transform.gameObject);

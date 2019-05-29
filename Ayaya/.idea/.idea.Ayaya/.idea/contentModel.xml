@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\etien\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\etien\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Ayaya.1133920373.00" t="ExcludeRecursive" />
-    <e p="C:\Users\etien\OneDrive\Bureau\test\HideLifeCommun\Ayaya" t="IncludeRecursive">
+    <e p="C:\Users\$7FT000-QMTCQP3IMGOR\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\$7FT000-QMTCQP3IMGOR\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Ayaya.-2027664247.00" t="ExcludeRecursive" />
+    <e p="C:\Users\$7FT000-QMTCQP3IMGOR\projet\HideLifeCommun\Ayaya" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -602,7 +602,6 @@
             </e>
           </e>
         </e>
-        <e p="tpback.cs" t="Include" />
         <e p="trucs perso" t="Include">
           <e p="Eject.cs" t="Include" />
           <e p="Player.cs" t="Include" />
@@ -613,6 +612,8 @@
         <e p="Tuto.cs" t="Include" />
         <e p="tuto_saut.cs" t="Include" />
         <e p="Tuto_sprint.cs" t="Include" />
+        <e p="Tuto_Targets.cs" t="Include" />
+        <e p="Tuto_tir.cs" t="Include" />
       </e>
       <e p="Ayaya.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

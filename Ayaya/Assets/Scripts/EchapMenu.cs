@@ -41,7 +41,7 @@ public class EchapMenu : MonoBehaviour
         if(player==null||!player.GetComponent<Player>().isLocalPlayer)
             Start();  
         
-        Debug.Log(player.name);
+        
         if (Input.GetButtonDown("Cancel")&&(player!=null||player.active))
         {
             if (GameIsPaused)

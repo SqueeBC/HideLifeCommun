@@ -19,6 +19,7 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
     private Player Target;
     public  GameManager gameManager;
     private Interface _interface;
+    private Tuto_Targets tutoTargets;
 
     [SerializeField] private LayerMask mask; //permet de ne pas ce toucher soi-même lors du tir
 
@@ -80,20 +81,39 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
         RaycastHit hit; //Raycast = litteralement lanceur de rayon, lance un rayon d'une certaine distance et direction s'arrêtant devant le 1er obstacle touché.
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask)) ;
         {
-          
-            if (hit.collider != null)         
-                Debug.Log("Objet touché" + hit.collider.name);
-            if (hit.collider.CompareTag("Player"))
-            { _interface.ShowHitmarker();
-                GetTarget(hit.collider.GetComponent<Player>().id,weapon.dmg);
-              
+
+            if (hit.collider != null)
+            {   Debug.Log(hit.collider.name);
+           
+                if (hit.collider.CompareTag("Player"))
+                {
+                    _interface.ShowHitmarker();
+                    GetTarget(hit.collider.GetComponent<Player>().id, weapon.dmg);
+
+                }
+                else if (hit.collider.CompareTag("Target") || (hit.collider.transform.parent != null) && hit.collider.transform.parent.CompareTag("Target"))
+                {  Debug.Log("oui");
+                    _interface.ShowHitmarker();
+                    if (hit.collider.CompareTag("Target"))
+                        tutoTargets = hit.collider.GetComponent<Tuto_Targets>();
+                    else
+                    {
+
+                        tutoTargets = hit.collider.transform.parent.GetComponent<Tuto_Targets>();
+                    }
+                        Debug.Log("Objet touché" + tutoTargets.name);
+                    tutoTargets.TakeDamage(weapon.dmg);
+
+                }
+
+
             }
 
-
         }
-      
+
     }
 
+    
     public static void GetTarget(string id, int dmg)
     {
 
