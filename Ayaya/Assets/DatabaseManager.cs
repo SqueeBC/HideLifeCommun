@@ -10,6 +10,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using MySql.Data.MySqlClient;
+using UnityEngine.SceneManagement;
 using Debug = System.Diagnostics.Debug;
 
 public class DatabaseManager : MonoBehaviour
@@ -23,7 +24,11 @@ public class DatabaseManager : MonoBehaviour
     public InputField IfLogin;
     public InputField IfPassword;
     public Text TxtLogin;
-    
+    public Text BtnLoginText;
+    public Text BtnRegisterText;
+    public Text TxtMessageCo;
+    public Dropdown _dropdown;
+    public Text placeholder;
     struct _Player
     {
         public int ID;
@@ -33,7 +38,26 @@ public class DatabaseManager : MonoBehaviour
         public int Wins;
     }
     _Player Player;
-    
+
+    private void Update()
+    {
+        Changelanguage(_dropdown);
+        if (PlayerPrefs.GetString("language", "english") == "français")
+        {
+            BtnRegisterText.text = "s'enregistrer";
+            BtnLoginText.text = "se connecter";
+            TxtMessageCo.text = "Connection";
+            placeholder.text = "mot de passe";
+        }
+        else
+        {
+            BtnRegisterText.text = "register";
+            BtnLoginText.text = "login";
+            TxtMessageCo.text = "Connexion";
+            placeholder.text = "passeword";
+        }
+    }
+
     void ConnectBDD()
     {
         string constr = "Server=" + host + ";DATABASE=" + database + ";User ID=" + username + ";Password=" + password +
@@ -133,7 +157,12 @@ public class DatabaseManager : MonoBehaviour
         
         if (IfLogin.text == "")
         {
-            TxtLogin.text = "Cases Vides !";
+            if(PlayerPrefs.GetString("language","english")=="français")
+                TxtLogin.text = "Cases Vides !";
+            else
+            {
+                TxtLogin.text = "Empty boxes!"; // a vérifier, pas sûr de la traduction
+            }
         }
         else
         {
@@ -153,22 +182,41 @@ public class DatabaseManager : MonoBehaviour
                         Player.Password = Myreader["password"].ToString();
                         Player.Email = Myreader["email"].ToString();
                         Player.Wins = (int)Myreader["wins"];
-                        TxtLogin.text = "Welcome " + Player.Pseudo + " You win " + Player.Wins + " Games !";
-                        
-                        /* ==> C'est ici qu'il faut mettre le code pour changer de scène Gabi
-                         PS: Thibault ;) */
-                        
+                        if(PlayerPrefs.GetString("language","english")=="français")
+                            TxtLogin.text = "Bienvenue, " + Player.Pseudo + "! Vous avez gagné " + Player.Wins + " parties !"; 
+                        else
+                        {
+
+
+                            TxtLogin.text = "Welcome, " + Player.Pseudo + "! You won " + Player.Wins + " games !";
+
+                        }
+
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
                     }
                     else
-                    {
-                        TxtLogin.text = "Invalid pseudo/password";
+                    { if(PlayerPrefs.GetString("language","english")=="français")
+                            TxtLogin.text = "Pseudo/mot de passe invalide";
+                        else
+                        {
+                            TxtLogin.text = "Invalid pseudo/password";
+                        }
                     }
                 }
 
                 if (pass == null)
                 {
-                    TxtLogin.text = "No existing account !";
+                    if (PlayerPrefs.GetString("language", "english") == "français")
+                        TxtLogin.text = "Ce compte n'existe pas !";
+                    else
+                    {
+
+
+                        TxtLogin.text = "No existing account !";
+                    }
                 }
+
                 Myreader.Close();
             }
             catch (IOException Ex)
@@ -177,5 +225,15 @@ public class DatabaseManager : MonoBehaviour
             }
         }
         con.Close();
+    }
+    public void Changelanguage(Dropdown dropdown)
+    { 
+           
+        if (dropdown.value==0)
+            PlayerPrefs.SetString("language", "english");
+
+        else if (dropdown.value == 1)    
+            PlayerPrefs.SetString("language", "français");
+        
     }
 }
