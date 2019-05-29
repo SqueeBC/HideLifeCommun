@@ -203,6 +203,7 @@
     <Compile Include="Assets\Textures-import\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Textures-import\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Textures-import\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
+    <Compile Include="Assets\tpback.cs" />
     <Compile Include="Assets\trucs perso\Eject.cs" />
     <Compile Include="Assets\trucs perso\Player.cs" />
     <Compile Include="Assets\trucs perso\PlayerControler.cs" />
