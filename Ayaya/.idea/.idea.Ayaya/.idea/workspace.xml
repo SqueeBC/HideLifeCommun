@@ -607,11 +607,25 @@
       <facet id="riderModule/invalid/Default Android Facet" />
     </ignored-facets>
   </component>
+<<<<<<< HEAD
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="441" />
+    <option name="y" value="135" />
+    <option name="width" value="975" />
+    <option name="height" value="1048" />
+=======
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="442" />
     <option name="y" value="136" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
+>>>>>>> 01145c14fbbc24ad116dc71846ca220381290da6
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
