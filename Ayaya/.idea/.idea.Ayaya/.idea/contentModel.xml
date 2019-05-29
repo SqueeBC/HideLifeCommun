@@ -602,6 +602,7 @@
             </e>
           </e>
         </e>
+        <e p="tpback.cs" t="Include" />
         <e p="trucs perso" t="Include">
           <e p="Eject.cs" t="Include" />
           <e p="Player.cs" t="Include" />
@@ -610,9 +611,9 @@
           <e p="PlayerShoot.cs" t="Include" />
         </e>
         <e p="Tuto.cs" t="Include" />
+        <e p="Tuto_retour.cs" t="Include" />
         <e p="tuto_saut.cs" t="Include" />
         <e p="Tuto_sprint.cs" t="Include" />
-        <e p="Tuto_Targets.cs" t="Include" />
         <e p="Tuto_tir.cs" t="Include" />
       </e>
       <e p="Ayaya.sln" t="IncludeFlat" />

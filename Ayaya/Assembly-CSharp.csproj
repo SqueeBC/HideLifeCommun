@@ -216,6 +216,7 @@
     <Compile Include="Assets\trucs perso\PlayerMotor.cs" />
     <Compile Include="Assets\trucs perso\PlayerShoot.cs" />
     <Compile Include="Assets\Tuto.cs" />
+    <Compile Include="Assets\Tuto_retour.cs" />
     <Compile Include="Assets\tuto_saut.cs" />
     <Compile Include="Assets\Tuto_sprint.cs" />
     <Compile Include="Assets\Tuto_tir.cs" />
