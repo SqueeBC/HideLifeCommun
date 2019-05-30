@@ -12,7 +12,8 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
     public PlayerWeapon weapon;
     [SerializeField]
     private Camera cam;
-    private GameObject _player;
+    [SerializeField]
+    private Player _player;
     private float AudioTimer = 0.5f; //pour que l'audio s'arrête au bout d'un certain temps
     public float ReloadTime;
     public AudioSource shotaudio;
@@ -24,7 +25,7 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
     private void Start()
     {
-        _player = GameObject.FindWithTag("Player");
+      
         
         shotaudio = GameObject.Find("RATATATATATA").GetComponent<AudioSource>();
         _interface = GameObject.Find("Interface IG").GetComponent<Interface>();
@@ -68,15 +69,14 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
     private void Shoot()
     {
+        
       
-      
+     
         if (!shotaudio.isPlaying)
         {
             shotaudio.Play();
             AudioTimer = 0.5f;
         }
-     
-      
 
         weapon.ammo -= 1;    
         RaycastHit hit; //Raycast = litteralement lanceur de rayon, lance un rayon d'une certaine distance et direction s'arrêtant devant le 1er obstacle touché.
@@ -85,19 +85,13 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
             if (hit.collider != null)
             {     Debug.Log("Objet touché" + hit.collider.name);
-           
-
-
-
+                
                 if (hit.collider.CompareTag("Player")||(hit.collider.CompareTag("Target")))
-                
                     GetTarget(hit.collider.GetComponent<Player>().id, weapon.dmg);
-
-                
-              
-
-
-
+                else
+                {
+                    _player.TakeDamage(2);
+                }
             }
         }
 
@@ -122,13 +116,11 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
     private void Reload()
     {
-        if (weapon.totalammo != 0)
-        {
+     
           
             ReloadTime = 2f;
-            int possibleammo = weapon.chargercapacity - weapon.ammo % weapon.totalammo;
-            weapon.totalammo -= possibleammo;
+            int possibleammo = weapon.chargercapacity - weapon.ammo;
             weapon.ammo +=possibleammo;
-        }
+        
     }
 }

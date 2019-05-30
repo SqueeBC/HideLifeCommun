@@ -12,7 +12,6 @@ public class PlayerWeapon : MonoBehaviour
     public int dmg = 10;//à modifier
      public float range = 100f;//à modifier
      public int ammo = 40;
-     public int totalammo = 200;
      public int chargercapacity = 40;
      public float WeaponCooldown = 0.1f;
      public float WeaponActualCooldown = 0.3f;
