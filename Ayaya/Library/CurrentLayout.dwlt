@@ -336,19 +336,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - "Assets/Prefab/Int\xE9rieur"
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - "Assets/Prefab/Int\xE9rieur"
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\etien\OneDrive\Bureau\test\HideLifeCommun\Ayaya
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: d6130000
-    m_LastClickedID: 5078
+    scrollPos: {x: 0, y: 139}
+    m_SelectedIDs: b86a0000
+    m_LastClickedID: 27320
     m_ExpandedIDs: 00000000ce0d0000881500002a1700001c660000aa670000e4680000c0690000fc690000166c0000c26c00000e6f0000ea6f000022730000d07400002a7a0000fe7c00005a7e0000b47f00008411010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 395}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 240
 --- !u!114 &14
@@ -496,9 +496,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 12630000
       m_LastClickedID: 0
-      m_ExpandedIDs: ea120100
+      m_ExpandedIDs: 723ff6ff5aedf8ff0a5efbff66a4fdffd2fbfffff0980000262d0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -549,14 +549,14 @@ MonoBehaviour:
     height: 437
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 0504b6a4cc354e7499a75fc76985a6c4
-  m_SceneLighting: 0
+  m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.78360605, y: 4.0076323, z: -32.38672}
+    m_Target: {x: -13.563656, y: 6.929455, z: 7.790949}
     speed: 2
-    m_Value: {x: 0.78360605, y: 4.0076323, z: -32.38672}
+    m_Value: {x: -13.563656, y: 6.929455, z: 7.790949}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -584,13 +584,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.008914254, y: -0.29093635, z: 0.0027115028, w: -0.95669705}
+    m_Target: {x: -0.06010995, y: 0.71021825, z: -0.06109754, w: -0.69874454}
     speed: 2
-    m_Value: {x: -0.008914254, y: -0.29093635, z: 0.0027115028, w: -0.95669705}
+    m_Value: {x: -0.06010995, y: 0.71021825, z: -0.06109754, w: -0.69874454}
   m_Size:
-    m_Target: 7.0439377
+    m_Target: 7.3065176
     speed: 2
-    m_Value: 7.0439377
+    m_Value: 7.3065176
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 510.4
+    y: 671.2
     width: 1257
-    height: 274
+    height: 113
   m_PersistentViewDataDictionary: {fileID: 0}
