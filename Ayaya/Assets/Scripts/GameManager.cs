@@ -113,10 +113,10 @@ public class GameManager : MonoBehaviour
                if (_player.GetComponent<Hunter>() != null)
                    nbrhuntertot++;                  
            }
-            Debug.Log(nbrhunter);
+          
            if (nbrhuntertot < nbrhunter)
            {
-               Debug.Log(player.gameObject.name);
+               
                player.gameObject.AddComponent<Hunter>();
                player.gameObject.GetComponent<Hunter>().id = player.id;
               
