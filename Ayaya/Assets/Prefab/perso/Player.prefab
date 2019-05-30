@@ -1372,6 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 1941125023}
   cam: {fileID: 1360524291}
+  _player: {fileID: 5616035560146236240}
   ReloadTime: 0
   shotaudio: {fileID: 0}
   gameManager: {fileID: 0}
@@ -3084,7 +3085,6 @@ MonoBehaviour:
   dmg: 10
   range: 100
   ammo: 40
-  totalammo: 200
   chargercapacity: 40
   WeaponCooldown: 0.1
   WeaponActualCooldown: 0.3
