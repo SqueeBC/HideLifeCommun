@@ -64,7 +64,7 @@ namespace DefaultNamespace
             Marquage.Add(reloadtext.text,"ReloadKey");
             
             
-            Debug.Log(dropdown.value);
+          
             if (PlayerPrefs.GetString("language") == "english")           
                 dropdown.value = 0;
                 

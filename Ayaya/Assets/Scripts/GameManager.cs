@@ -11,17 +11,17 @@ using UnityEngine;
         public void RegisterPlayer(string netID , Player player)//l'id du joueur selon le serv     
         {
             string playerID = "Player " + netID;
-            players.Add(playerID, player);
-          
-
+            players.Add(playerID, player);          
         }
-
-
 
         public void Victory()
         {
             
-            
+          
+                foreach (Prop prop in players.Values)
+                {
+                    prop.victory++;
+                }
         }
         
 
@@ -55,15 +55,56 @@ using UnityEngine;
         {
             foreach (var player in FindObjectsOfType<Player>())
             {
-
+               
                 if (!players.ContainsKey("Player " + player.id) && player != null)
+                {Debug.Log(player.name);
                     RegisterPlayer(player.id, player);
+                    if(player.gameObject.GetComponent<Hunter>()==null&&player.gameObject.GetComponent<Prop>()==null)
+                    
+                    AssignRole(player);}
+                
+                
             }
+            if(time<=0)
+                Victory();
 
 
 
             time -= Time.deltaTime;
 
+        }
+
+        private void AssignRole(Player player)
+        {
+
+            UnRegisterPlayer("Player "+player.id);
+            Destroy(player);    
+            
+            
+            int nbrhuntertot = 0;
+           int nbrhunter=  Mathf.RoundToInt(players.Count * 3 / 10+1);
+           foreach (Player _player in players.Values)
+           {
+               if (_player.GetComponent<Hunter>() != null)
+                   nbrhuntertot++;                  
+           }
+            Debug.Log(nbrhunter);
+           if (nbrhuntertot < nbrhunter)
+           {
+               Debug.Log(player.gameObject.name);
+               player.gameObject.AddComponent<Hunter>();
+               player.gameObject.GetComponent<Hunter>().id = player.id;
+              
+           }
+           else
+           {
+               player.gameObject.AddComponent<Prop>();
+               player.gameObject.GetComponent<Prop>().id = player.id;
+              
+
+           }
+         
+            
         }
     }
     

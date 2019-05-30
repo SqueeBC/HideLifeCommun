@@ -8,6 +8,14 @@ using UnityEngine;
             private Camera camera;
             
             private string propSize;
+            private void Start()
+            {    
+           
+                gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+                maxHP = 100;
+                currentHP = maxHP;
+            }
+
             public void TransformationTest() //fonction provisoire pour les tests
             {
                 RaycastHit hit;

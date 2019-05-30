@@ -8,14 +8,14 @@ namespace trucs_perso
     public class Player : NetworkBehaviour //a remplacer avec NetworkBehaviour pour le multi
 
         //EN CONSTRUCTION
-    {   [SerializeField]
-        
-     
+    {   [SerializeField]             
         public GameManager gameManager;
+
         [SerializeField] public int maxHP;
 
         [SerializeField] public string id;
 
+        public int victory;
         //mettre pour le multi[SyncVar] //syncronise avec le serveur
         public int currentHP;
 

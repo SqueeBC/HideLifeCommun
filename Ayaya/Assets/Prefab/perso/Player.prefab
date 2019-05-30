@@ -1280,12 +1280,12 @@ GameObject:
   - component: {fileID: 1134321315}
   - component: {fileID: 1134321314}
   - component: {fileID: 1134321313}
-  - component: {fileID: 1134321312}
   - component: {fileID: 6690167079609255810}
   - component: {fileID: 1134321319}
   - component: {fileID: 6495420405606905721}
   - component: {fileID: 4929833612145571127}
   - component: {fileID: 9176523200759704266}
+  - component: {fileID: 5616035560146236240}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1378,22 +1378,6 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1335
---- !u!114 &1134321312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134321311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fcef91f9a4b47cd888122fe0111cea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  maxHP: 100
-  id: 42
-  currentHP: 100
 --- !u!114 &6690167079609255810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1409,7 +1393,7 @@ MonoBehaviour:
   compoToDisable:
   - {fileID: 1134321315}
   - {fileID: 1134321314}
-  - {fileID: 1134321312}
+  - {fileID: 0}
   - {fileID: 1360524291}
   - {fileID: 1360524292}
 --- !u!114 &1134321319
@@ -1500,6 +1484,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1375203, y: 1.6310294, z: 0.31499228}
   m_Center: {x: -0.006993532, y: 0.8157078, z: -0.013927475}
+--- !u!114 &5616035560146236240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134321311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d95327bc1f32f488e26331fe0b0531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  maxHP: 100
+  id: 42
+  victory: 0
+  currentHP: 100
 --- !u!1 &1138855194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,7 +1941,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360524290}
   m_LocalRotation: {x: -0, y: -0.004952396, z: -0, w: 0.9999877}
-  m_LocalPosition: {x: 0.007, y: 1.5799999, z: 0.038}
+  m_LocalPosition: {x: 0.007, y: 1.842, z: 0.038}
   m_LocalScale: {x: 1, y: 0.8990742, z: 1}
   m_Children:
   - {fileID: 1941125022}

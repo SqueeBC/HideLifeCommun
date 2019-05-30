@@ -90,11 +90,10 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
 
                 if (hit.collider.CompareTag("Player")||(hit.collider.CompareTag("Target")))
-                {
-                    _interface.ShowHitmarker();
+                
                     GetTarget(hit.collider.GetComponent<Player>().id, weapon.dmg);
 
-                }
+                
               
 
 
@@ -105,12 +104,16 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
     }
 
     
-    public static void GetTarget(string id, int dmg)
+    public  void GetTarget(string id, int dmg)
     {
 
         Player Target = GameManager.GetPlayer("Player "+id);
         Debug.Log(Target.currentHP);
-        Target.TakeDamage(dmg);
+        if (Target.gameObject.GetComponent<Hunter>() == null)
+        {
+            _interface.ShowHitmarker();
+            Target.TakeDamage(dmg);
+        }
         Debug.Log(GameManager.GetPlayer("Player "+id).name);
     }
   

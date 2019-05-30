@@ -31,7 +31,7 @@ public class Interface : MonoBehaviour
     {
         foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Player"))
         {
-            Debug.Log(gameObject.name);
+           
             if (gameObject.GetComponent<Player>().isLocalPlayer)
                 player = gameObject.GetComponent<Player>();
         }
