@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using trucs_perso;
 using UnityEngine;
+using UnityEngine.UI;
 
 
-    public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour
     {
+        [SerializeField]
+        private Text WinText;
         private float time = 600;
         private static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
@@ -14,16 +17,34 @@ using UnityEngine;
             players.Add(playerID, player);          
         }
 
-        public void Victory()
+        public void VictoryForProps()
         {
-            
+            if (PlayerPrefs.GetString("language", "english") == "english")
+                WinText.text = "Props have won !";
+            else
+            {
+                WinText.text = "Les Props ont gagné !";
+            }
           
                 foreach (Prop prop in players.Values)
                 {
                     prop.victory++;
                 }
         }
-        
+        public void VictoryForHunters()
+        {
+            if (PlayerPrefs.GetString("language", "english") == "english")
+                WinText.text = "Hunters have won !";
+            else
+            {
+                WinText.text = "Les Chasseurs ont gagné !";
+            }
+          
+            foreach (Hunter hunter in players.Values)
+            {
+                hunter.victory++;
+            }
+        }
 
         public void UnRegisterPlayer(string  playerID)
         {
@@ -66,10 +87,14 @@ using UnityEngine;
                 
             }
             if(time<=0)
-                Victory();
-
-
-
+                VictoryForProps();
+            bool Mybool = true;
+            foreach (Player player in players.Values)
+            {
+                Mybool = Mybool && player.gameObject.GetComponent<Prop>() == null;
+            }
+                if(Mybool)
+                    VictoryForHunters();
             time -= Time.deltaTime;
 
         }
