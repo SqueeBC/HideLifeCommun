@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
     public PlayerWeapon weapon;
     [SerializeField]
     private Camera cam;
-
+    private GameObject _player;
     private float AudioTimer = 0.5f; //pour que l'audio s'arrête au bout d'un certain temps
     public float ReloadTime;
     public AudioSource shotaudio;
@@ -24,6 +24,8 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
     private void Start()
     {
+        _player = GameObject.FindWithTag("Player");
+        
         shotaudio = GameObject.Find("RATATATATATA").GetComponent<AudioSource>();
         _interface = GameObject.Find("Interface IG").GetComponent<Interface>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();

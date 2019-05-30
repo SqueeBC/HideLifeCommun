@@ -5,6 +5,7 @@ using UnityEngine;
 
     public class GameManager : MonoBehaviour
     {
+        private float time = 600;
         private static Dictionary<string, Player> players = new Dictionary<string, Player>();
 
         public void RegisterPlayer(string netID , Player player)//l'id du joueur selon le serv     
@@ -14,7 +15,15 @@ using UnityEngine;
           
 
         }
-      
+
+
+
+        public void Victory()
+        {
+            
+            
+        }
+        
 
         public void UnRegisterPlayer(string  playerID)
         {
@@ -28,13 +37,17 @@ using UnityEngine;
 
         private void OnGUI() //permet d'afficher les joueurs
         {
+            int Min;
             GUILayout.BeginArea(new Rect(200, 200, 200, 200));
                 GUILayout.BeginVertical();
                 foreach (string playerID in players.Keys)
                 {
                        GUILayout.Label(playerID + "-"+players[playerID].transform.name);
                 }
-                GUILayout.EndVertical();
+
+                Min = Mathf.RoundToInt((time / 60 - 0.5f));
+                GUILayout.Label("-Time :" + Mathf.RoundToInt((Min )) +  "min "+Mathf.RoundToInt(time-Min*60)+" s");
+              GUILayout.EndVertical();
                 GUILayout.EndArea();
         }
 
@@ -43,12 +56,14 @@ using UnityEngine;
             foreach (var player in FindObjectsOfType<Player>())
             {
 
-                if (!players.ContainsKey("Player "+player.id) && player != null)
-                 RegisterPlayer(player.id, player);
-                }
-        
+                if (!players.ContainsKey("Player " + player.id) && player != null)
+                    RegisterPlayer(player.id, player);
             }
-     
-        
+
+
+
+            time -= Time.deltaTime;
+
         }
+    }
     
