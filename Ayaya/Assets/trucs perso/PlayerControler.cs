@@ -108,10 +108,11 @@ public class PlayerControler : MonoBehaviour
        IsMoving = IsRunning && velocity != Vector3.zero;
        if (IsMoving) //si le joueur utilise sa touche de sprint mais ne fait aucun mouvement alors il ne perds pas de stamina
        {   
-           stamina -= 0.1f;
+           stamina -= 0.15f;
        }
        if(stamina<100&&!IsMoving)
-           stamina += 0.07f;
+           stamina += 0.1f;
+       
                
        //explication simple = théorème de Pythagore pour calculer le mouvement/vélocité du joueur.
 
@@ -128,8 +129,5 @@ public class PlayerControler : MonoBehaviour
        motor.RotateCamera(camerarotationX);        
    }
 
-   public void ModifyLookSensibility(float sliderInput) //modifie la sensibilité
-   {
-       LookSensibility = LookSensibility;
-   }
+
 }

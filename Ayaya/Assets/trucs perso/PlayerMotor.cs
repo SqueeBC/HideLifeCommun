@@ -13,7 +13,7 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 rotation; //la rotation de la camera
     private float cameraRotationX; 
     private float currentCameraRotationX = 0f;
-    private Rigidbody rb;
+    public Rigidbody rb;
     private int Jump = 12; //à modifier
     private ForceMode JumpForce; 
     bool isGrounded = false;
@@ -25,6 +25,7 @@ public class PlayerMotor : MonoBehaviour
     private bool IsMoving;
     float lookSensitivity = 3f;
     private float notmovingtime = 20;
+    public bool hasJumped = false;
     private List<AudioSource> taunts;
    
 
@@ -134,7 +135,7 @@ public class PlayerMotor : MonoBehaviour
 
     private void PlayerJump()
     {
-        
+        hasJumped = true;
         JumpForce = ForceMode.Impulse;
         rb.AddForce(0,Jump,0,JumpForce); //le type de force
         
