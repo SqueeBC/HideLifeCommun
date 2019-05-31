@@ -17,10 +17,6 @@ public class GameManager : MonoBehaviour
             string playerID = "Player " + netID;
             players.Add(playerID, player);          
         }
-        public void UnRegisterPlayer(string playerID)
-        {
-            players.Remove(playerID);
-        }
 
         public void VictoryForProps()
         {
@@ -51,6 +47,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        public void UnRegisterPlayer(string  playerID)
+        {
+            players.Remove(playerID);
+        }
+
         public static Player GetPlayer(string playerID)
         {
             return players[playerID];
@@ -76,13 +77,14 @@ public class GameManager : MonoBehaviour
         {
             foreach (var player in FindObjectsOfType<Player>())
             {
-                if (player != null && !players.ContainsKey("Player " + player.id))
-                {
-                    Debug.Log(player.name);
+               
+                if (!players.ContainsKey("Player " + player.id) && player != null)
+                {Debug.Log(player.name);
                     RegisterPlayer(player.id, player);
-                    if(player.gameObject.GetComponent<Hunter>()==null && player.gameObject.GetComponent<Prop>()==null && SceneManager.GetActiveScene().buildIndex != 6)                   
-                        AssignRole(player);
-                }
+                    if(player.gameObject.GetComponent<Hunter>()==null&&player.gameObject.GetComponent<Prop>()==null&& SceneManager.GetActiveScene().buildIndex != 6)                   
+                    AssignRole(player);}
+                
+                
             }
             if(time<=0)
                 VictoryForProps();
@@ -91,34 +93,43 @@ public class GameManager : MonoBehaviour
             {
                 Mybool = Mybool && player.gameObject.GetComponent<Prop>() == null;
             }
-            if(Mybool)
-                VictoryForHunters();
+                if(Mybool)
+                    VictoryForHunters();
             time -= Time.deltaTime;
+
         }
 
         private void AssignRole(Player player)
         {
 
             UnRegisterPlayer("Player "+player.id);
-            Destroy(player);
-        
+            Destroy(player);    
+            
+            
             int nbrhuntertot = 0;
-            int nbrhunter = Mathf.RoundToInt(players.Count * 3 / 10+1);
-            foreach (Player _player in players.Values)
-            {
-                if (_player.GetComponent<Hunter>() != null)
-                    nbrhuntertot++;                  
-            }
-            if (nbrhuntertot < nbrhunter)
-            {
-                player.gameObject.AddComponent<Hunter>();
-                player.gameObject.GetComponent<Hunter>().id = player.id;
-            }
-            else
-            {
-                player.gameObject.AddComponent<Prop>();
-                player.gameObject.GetComponent<Prop>().id = player.id;
-            }
+           int nbrhunter=  Mathf.RoundToInt(players.Count * 3 / 10+1);
+           foreach (Player _player in players.Values)
+           {
+               if (_player.GetComponent<Hunter>() != null)
+                   nbrhuntertot++;                  
+           }
+          
+           if (nbrhuntertot < nbrhunter)
+           {
+               
+               player.gameObject.AddComponent<Hunter>();
+               player.gameObject.GetComponent<Hunter>().id = player.id;
+              
+           }
+           else
+           {
+               player.gameObject.AddComponent<Prop>();
+               player.gameObject.GetComponent<Prop>().id = player.id;
+              
+
+           }
+         
+            
         }
     }
     
