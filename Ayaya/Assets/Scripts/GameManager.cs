@@ -18,10 +18,7 @@ public class GameManager : MonoBehaviour
             players.Add(playerID, player);          
         }
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 570c2388... azert
         public void UnRegisterPlayer(string playerID)
         {
             players.Remove(playerID);
@@ -35,9 +32,6 @@ public class GameManager : MonoBehaviour
             {
                 WinText.text = "Les Props ont gagné !";
             }
-<<<<<<< HEAD
->>>>>>> parent of 570c2388... azert
-=======
 >>>>>>> parent of 570c2388... azert
           
                 foreach (Prop prop in players.Values)
@@ -48,21 +42,15 @@ public class GameManager : MonoBehaviour
         public void VictoryForHunters()
         {
 <<<<<<< HEAD
-<<<<<<< HEAD
             WinText.text = "Les Chasseurs ont gagné !";
         }
 =======
-=======
->>>>>>> parent of 570c2388... azert
             if (PlayerPrefs.GetString("language", "english") == "english")
                 WinText.text = "Hunters have won !";
             else
             {
                 WinText.text = "Les Chasseurs ont gagné !";
             }
-<<<<<<< HEAD
->>>>>>> parent of 570c2388... azert
-=======
 >>>>>>> parent of 570c2388... azert
           
             foreach (Hunter hunter in players.Values)
@@ -71,7 +59,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-<<<<<<< HEAD
 <<<<<<< HEAD
     public void UnRegisterPlayer(string  playerID)
     {
@@ -89,9 +76,6 @@ public class GameManager : MonoBehaviour
         GUILayout.BeginArea(new Rect(200, 200, 200, 200));
         GUILayout.BeginVertical();
         foreach (string playerID in players.Keys)
-=======
-        public static Player GetPlayer(string playerID)
->>>>>>> parent of 570c2388... azert
 =======
         public static Player GetPlayer(string playerID)
 >>>>>>> parent of 570c2388... azert
@@ -118,11 +102,8 @@ public class GameManager : MonoBehaviour
         private void Update()
         {
 <<<<<<< HEAD
-<<<<<<< HEAD
             if (time <= 0)
 =======
-=======
->>>>>>> parent of 570c2388... azert
             foreach (var player in FindObjectsOfType<Player>())
             {
                 if (player != null && !players.ContainsKey("Player " + player.id))
@@ -134,9 +115,6 @@ public class GameManager : MonoBehaviour
                 }
             }
             if(time<=0)
-<<<<<<< HEAD
->>>>>>> parent of 570c2388... azert
-=======
 >>>>>>> parent of 570c2388... azert
                 VictoryForProps();
             bool Mybool = true;
@@ -145,12 +123,8 @@ public class GameManager : MonoBehaviour
                 Mybool = Mybool && player.gameObject.GetComponent<Prop>() == null;
             }
 <<<<<<< HEAD
-<<<<<<< HEAD
 
             if (Mybool)
-=======
-            if(Mybool)
->>>>>>> parent of 570c2388... azert
 =======
             if(Mybool)
 >>>>>>> parent of 570c2388... azert
@@ -162,7 +136,6 @@ public class GameManager : MonoBehaviour
         private void AssignRole(Player player)
         {
 
-<<<<<<< HEAD
 <<<<<<< HEAD
         UnRegisterPlayer("Player "+player.id);
         Destroy(player);    
@@ -193,8 +166,6 @@ public class GameManager : MonoBehaviour
          
             
 =======
-=======
->>>>>>> parent of 570c2388... azert
             UnRegisterPlayer("Player "+player.id);
             Destroy(player);
         
@@ -216,9 +187,6 @@ public class GameManager : MonoBehaviour
                 player.gameObject.GetComponent<Prop>().id = player.id;
             }
         }
-<<<<<<< HEAD
->>>>>>> parent of 570c2388... azert
-=======
 >>>>>>> parent of 570c2388... azert
     }
     
