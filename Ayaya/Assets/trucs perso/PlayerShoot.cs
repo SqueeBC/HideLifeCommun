@@ -51,11 +51,8 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
       
         if(ReloadTime>0)
             ReloadTime -= Time.deltaTime;
-
-
-        if (_player == null)
-            _player = GetComponent<Player>();
-        
+     
+      
         if(weapon.ammo==0&&Input.GetButton("Fire1")||Input.GetKey( (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("ReloadKey", "R"))))
             Reload();
             
