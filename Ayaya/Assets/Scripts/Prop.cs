@@ -5,15 +5,22 @@ using UnityEngine;
 
    public class Prop : Player
         {  
+            [SerializeField]
             private Camera camera;
             
             private string propSize;
             private void Start()
-            {    
-           
+            {
+                camera = GetComponentInChildren<Camera>();
                 gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
                 maxHP = 100;
                 currentHP = maxHP;
+            }
+
+            private void Update()
+            {
+                if(Input.GetKeyDown(KeyCode.P))
+                    TransformationTest();
             }
 
             public void TransformationTest() //fonction provisoire pour les tests
@@ -26,36 +33,18 @@ using UnityEngine;
                     {
                        
                         Destroy(transform.FindChild("Graphics").gameObject);
+                        
                         GameObject gameObject = Instantiate(hit.collider.transform.gameObject);
+                        if(gameObject.GetComponent<Rigidbody>()!=null)
+                        Destroy(gameObject.GetComponent<Rigidbody>());
                         gameObject.name = "Graphics";
                         gameObject.transform.localPosition = transform.localPosition;
                         gameObject.transform.parent = transform;
-
-
-                        int i = 0;
-                        Debug.Log(gameObject.transform.localPosition.x);
-                        while (i < gameObject.transform.childCount)
+                        if (gameObject.GetComponent<Collider>() != null)
                         {
-                            GameObject newChild = new GameObject();
-                            newChild = gameObject.transform.GetChild(i).gameObject;
-                            if (gameObject.transform.GetChild(i).gameObject.transform.childCount > 0)
-                            {
-                                int j = 0;
-                                while (j < gameObject.transform.GetChild(i).gameObject.transform.childCount)
-                                {
-                                    GameObject newChildForThisChild = new GameObject();
-                                    newChildForThisChild.transform.parent =
-                                        gameObject.transform.GetChild(i).gameObject.transform;
-                                    newChildForThisChild.transform.localPosition =
-                                        gameObject.transform.GetChild(i).gameObject.transform.position;
-                                    j++;
-                                }
-                            }
-
-                            newChild.transform.parent = gameObject.transform;
-                            newChild.transform.localPosition = gameObject.transform.position;
-
-                            i++;
+                            Destroy(this.gameObject.GetComponent<Collider>());
+                        
+                            
                         }
 
                         gameObject.SetActive(true);
