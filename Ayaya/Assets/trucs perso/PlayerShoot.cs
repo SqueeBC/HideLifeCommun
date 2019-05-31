@@ -25,8 +25,6 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
     private void Start()
     {
-      
-        
         shotaudio = GameObject.Find("RATATATATATA").GetComponent<AudioSource>();
         _interface = GameObject.Find("Interface IG").GetComponent<Interface>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();

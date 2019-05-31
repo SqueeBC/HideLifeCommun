@@ -1,5 +1,7 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
+=======
 --- !u!54 &6559654888868846190
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -112,6 +114,7 @@ MonoBehaviour:
   LookSensibility: 6
   IsRunning: 0
   IsAiming: 0
+>>>>>>> d1d1d6e0a56d2aac8622d231cd12d3dbcae288db
 --- !u!1001 &8315989633976175169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,11 +182,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.020000001
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 847f6aaf1752b6d4eac1d52107176388, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 847f6aaf1752b6d4eac1d52107176388, type: 3}
---- !u!1 &8315989633976143073 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 847f6aaf1752b6d4eac1d52107176388,
-    type: 3}
-  m_PrefabInstance: {fileID: 8315989633976175169}
-  m_PrefabAsset: {fileID: 0}
