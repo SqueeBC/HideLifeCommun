@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Sol.unity
+- path: Assets/Scenes/zone de tuto.unity
   isLoaded: 1
   isActive: 1
