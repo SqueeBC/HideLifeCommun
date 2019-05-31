@@ -47,9 +47,9 @@ namespace trucs_perso
                     gameManager.UnRegisterPlayer("Player " + id);
                 }
                 else
-                {
+                {Debug.Log("x"+gameObject.transform.position.x+",y"+gameObject.transform.position.y+"z"+gameObject.transform.position.z);
                     currentHP = maxHP;
-                    gameObject.transform.position = new Vector3(-152.33f, 15.6286f,-64);
+                    gameObject.transform.position = new Vector3(-152.33f,15.7629f,-64);
                 }
             }
             
