@@ -53,7 +53,10 @@ public class PlayerMotor : MonoBehaviour
     }
 
     private void Update()
-    {float test = (Mathf.RoundToInt(rb.velocity.y));
+    {if(player ==null)
+        player = GetComponentInParent<Player>();
+        
+        float test = (Mathf.RoundToInt(rb.velocity.y));
       Debug.Log(test);
     
         if(notmovingtime>0&&!IsMoving)
