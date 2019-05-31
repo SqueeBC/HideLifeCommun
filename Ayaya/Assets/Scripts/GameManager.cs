@@ -28,9 +28,6 @@ public class GameManager : MonoBehaviour
             WinText.text = "Les Props ont gagné !";
         }
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a8c1e43e7a3c51b15fcb86a02f066054d1038e10
           
         foreach (Prop prop in players.Values)
         {
@@ -51,7 +48,6 @@ public class GameManager : MonoBehaviour
         }
           
 <<<<<<< HEAD
-<<<<<<< HEAD
         foreach (Hunter hunter in players.Values)
 =======
             foreach (Hunter hunter in players.Values)
@@ -67,9 +63,6 @@ public class GameManager : MonoBehaviour
 
         public static Player GetPlayer(string playerID)
 >>>>>>> parent of ff9e8c8b... multi + player
-=======
-        foreach (Hunter hunter in players.Values)
->>>>>>> a8c1e43e7a3c51b15fcb86a02f066054d1038e10
         {
             hunter.victory++;
         }
@@ -161,9 +154,6 @@ public class GameManager : MonoBehaviour
                 Mybool = Mybool && player.gameObject.GetComponent<Prop>() == null;
             }
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a8c1e43e7a3c51b15fcb86a02f066054d1038e10
 
             if (Mybool)
                 VictoryForHunters();
