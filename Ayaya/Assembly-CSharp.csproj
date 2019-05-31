@@ -217,6 +217,7 @@
     <Compile Include="Assets\trucs perso\PlayerControler.cs" />
     <Compile Include="Assets\trucs perso\PlayerMotor.cs" />
     <Compile Include="Assets\trucs perso\PlayerShoot.cs" />
+    <Compile Include="Assets\Tuto_caméléon.cs" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Textures-import\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
