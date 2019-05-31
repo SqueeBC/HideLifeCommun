@@ -41,7 +41,7 @@ namespace trucs_perso
         {
             if (currentHP <= 0)
             {
-                if (SceneManager.GetActiveScene().buildIndex != 6)
+                if (SceneManager.GetActiveScene().buildIndex != 6||!GetComponent< NetworkIdentity>().isLocalPlayer)
                 {
                     Destroy(gameObject);
                     gameManager.UnRegisterPlayer("Player " + id);
