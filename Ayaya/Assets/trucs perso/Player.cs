@@ -31,7 +31,7 @@ namespace trucs_perso
         public void TakeDamage(int dmg)
         {
             currentHP -= dmg;
-            Debug.Log(transform.name + "has" + currentHP + "HP");
+           
             Death();
         }
 

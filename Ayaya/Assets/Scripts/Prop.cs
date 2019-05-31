@@ -10,13 +10,15 @@ using UnityEngine;
             
             private string propSize;
             private void Start()
-            {
+            {gameObject.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false); 
+                gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false); 
+             gameObject.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true); 
                 camera = GetComponentInChildren<Camera>();
                 gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
                 maxHP = 100;
                 currentHP = maxHP;
             }
-
+    
             private void Update()
             {
                 if(Input.GetKeyDown(KeyCode.P))
@@ -25,6 +27,7 @@ using UnityEngine;
 
             public void TransformationTest() //fonction provisoire pour les tests
             {
+                
                 RaycastHit hit;
                 if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 1000)) ;
                 {
@@ -48,6 +51,7 @@ using UnityEngine;
                         }
 
                         gameObject.SetActive(true);
+                       
                         propSize = hit.collider.tag;
                     }
                 }
