@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using trucs_perso;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -80,8 +81,7 @@ public class GameManager : MonoBehaviour
                 if (!players.ContainsKey("Player " + player.id) && player != null)
                 {Debug.Log(player.name);
                     RegisterPlayer(player.id, player);
-                    if(player.gameObject.GetComponent<Hunter>()==null&&player.gameObject.GetComponent<Prop>()==null)
-                    
+                    if(player.gameObject.GetComponent<Hunter>()==null&&player.gameObject.GetComponent<Prop>()==null&& SceneManager.GetActiveScene().buildIndex != 6)                   
                     AssignRole(player);}
                 
                 
