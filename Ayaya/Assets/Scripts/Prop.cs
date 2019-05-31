@@ -14,10 +14,12 @@ public class Prop : Player
     {   gameObject.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false); 
         gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false); 
         gameObject.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true); 
+        Destroy(gameObject.GetComponent<PlayerShoot>());
         camera = GetComponentInChildren<Camera>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxHP = 100;
         currentHP = maxHP;
+        
        
     }
     

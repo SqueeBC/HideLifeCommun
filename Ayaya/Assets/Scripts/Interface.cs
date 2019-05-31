@@ -89,7 +89,7 @@ public class Interface : MonoBehaviour
 
     public void Reloading()
     {
-        if(Localplayershoot.ReloadTime>0)
+        if((Localplayershoot!=null)&&Localplayershoot.ReloadTime>0)
             ReloadingText.SetActive(true);
         else
         {
@@ -100,7 +100,7 @@ public class Interface : MonoBehaviour
     }
     public void AmmoUpdate()
     {
-        
+        if(Localplayershoot!=null)
         AmmoText.text = "AMMO:" +Localplayershoot.weapon.ammo+"/"+Localplayershoot.weapon.chargercapacity;
     }
 
