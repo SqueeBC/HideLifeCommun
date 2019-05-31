@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         {
             WinText.text = "Les Props ont gagné !";
         }
+<<<<<<< HEAD
           
         foreach (Prop prop in players.Values)
         {
@@ -38,11 +39,30 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetString("language", "english") == "english")
             WinText.text = "Hunters have won !";
         else
+=======
+
+        public void VictoryForProps()
+>>>>>>> parent of ff9e8c8b... multi + player
         {
             WinText.text = "Les Chasseurs ont gagné !";
         }
           
+<<<<<<< HEAD
         foreach (Hunter hunter in players.Values)
+=======
+            foreach (Hunter hunter in players.Values)
+            {
+                hunter.victory++;
+            }
+        }
+
+        public void UnRegisterPlayer(string  playerID)
+        {
+            players.Remove(playerID);
+        }
+
+        public static Player GetPlayer(string playerID)
+>>>>>>> parent of ff9e8c8b... multi + player
         {
             hunter.victory++;
         }
@@ -81,6 +101,7 @@ public class GameManager : MonoBehaviour
 
             if (!players.ContainsKey("Player " + player.id) && player != null)
             {
+<<<<<<< HEAD
 
                 RegisterPlayer(player.id, player);
 
@@ -108,6 +129,16 @@ public class GameManager : MonoBehaviour
 
 
                 }
+=======
+               
+                if (!players.ContainsKey("Player " + player.id) && player != null)
+                {Debug.Log(player.name);
+                    RegisterPlayer(player.id, player);
+                    if(player.gameObject.GetComponent<Hunter>()==null&&player.gameObject.GetComponent<Prop>()==null&& SceneManager.GetActiveScene().buildIndex != 6)                   
+                    AssignRole(player);}
+                
+                
+>>>>>>> parent of ff9e8c8b... multi + player
             }
 
 
@@ -122,9 +153,14 @@ public class GameManager : MonoBehaviour
             {
                 Mybool = Mybool && player.gameObject.GetComponent<Prop>() == null;
             }
+<<<<<<< HEAD
 
             if (Mybool)
                 VictoryForHunters();
+=======
+                if(Mybool)
+                    VictoryForHunters();
+>>>>>>> parent of ff9e8c8b... multi + player
             time -= Time.deltaTime;
 
         }
@@ -158,6 +194,37 @@ public class GameManager : MonoBehaviour
             player.gameObject.GetComponent<Prop>().id = player.id;
               
 
+<<<<<<< HEAD
+=======
+            UnRegisterPlayer("Player "+player.id);
+            Destroy(player);    
+            
+            
+            int nbrhuntertot = 0;
+           int nbrhunter=  Mathf.RoundToInt(players.Count * 3 / 10+1);
+           foreach (Player _player in players.Values)
+           {
+               if (_player.GetComponent<Hunter>() != null)
+                   nbrhuntertot++;                  
+           }
+          
+           if (nbrhuntertot < nbrhunter)
+           {
+               
+               player.gameObject.AddComponent<Hunter>();
+               player.gameObject.GetComponent<Hunter>().id = player.id;
+              
+           }
+           else
+           {
+               player.gameObject.AddComponent<Prop>();
+               player.gameObject.GetComponent<Prop>().id = player.id;
+              
+
+           }
+         
+            
+>>>>>>> parent of ff9e8c8b... multi + player
         }
          
             
