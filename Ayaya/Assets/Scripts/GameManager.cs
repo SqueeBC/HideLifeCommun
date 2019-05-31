@@ -27,22 +27,6 @@ public class GameManager : MonoBehaviour
         {
             WinText.text = "Les Props ont gagné !";
         }
-<<<<<<< HEAD
-        public void UnRegisterPlayer(string playerID)
-        {
-            players.Remove(playerID);
-        }
-
-        public void VictoryForProps()
-        {
-            if (PlayerPrefs.GetString("language", "english") == "english")
-                WinText.text = "Props have won !";
-            else
-            {
-                WinText.text = "Les Props ont gagné !";
-            }
-=======
->>>>>>> d1d1d6e0a56d2aac8622d231cd12d3dbcae288db
           
         foreach (Prop prop in players.Values)
         {
@@ -57,10 +41,6 @@ public class GameManager : MonoBehaviour
         {
             WinText.text = "Les Chasseurs ont gagné !";
         }
-<<<<<<< HEAD
-
-        public static Player GetPlayer(string playerID)
-=======
           
         foreach (Hunter hunter in players.Values)
         {
@@ -84,7 +64,6 @@ public class GameManager : MonoBehaviour
         GUILayout.BeginArea(new Rect(200, 200, 200, 200));
         GUILayout.BeginVertical();
         foreach (string playerID in players.Keys)
->>>>>>> d1d1d6e0a56d2aac8622d231cd12d3dbcae288db
         {
             GUILayout.Label(playerID + "-"+players[playerID].transform.name);
         }
@@ -136,64 +115,24 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex != 6)
         {
-<<<<<<< HEAD
-            foreach (var player in FindObjectsOfType<Player>())
-            {
-                if (player != null && !players.ContainsKey("Player " + player.id))
-                {
-                    Debug.Log(player.name);
-                    RegisterPlayer(player.id, player);
-                    if(player.gameObject.GetComponent<Hunter>()==null && player.gameObject.GetComponent<Prop>()==null && SceneManager.GetActiveScene().buildIndex != 6)                   
-                        AssignRole(player);
-                }
-            }
-            if(time<=0)
-=======
             if (time <= 0)
->>>>>>> d1d1d6e0a56d2aac8622d231cd12d3dbcae288db
                 VictoryForProps();
             bool Mybool = true;
             foreach (Player player in players.Values)
             {
                 Mybool = Mybool && player.gameObject.GetComponent<Prop>() == null;
             }
-<<<<<<< HEAD
-            if(Mybool)
-=======
 
             if (Mybool)
->>>>>>> d1d1d6e0a56d2aac8622d231cd12d3dbcae288db
                 VictoryForHunters();
             time -= Time.deltaTime;
+
         }
     }
 
     private void AssignRole(Player player)
     {
 
-<<<<<<< HEAD
-            UnRegisterPlayer("Player "+player.id);
-            Destroy(player);
-        
-            int nbrhuntertot = 0;
-            int nbrhunter = Mathf.RoundToInt(players.Count * 3 / 10+1);
-            foreach (Player _player in players.Values)
-            {
-                if (_player.GetComponent<Hunter>() != null)
-                    nbrhuntertot++;                  
-            }
-            if (nbrhuntertot < nbrhunter)
-            {
-                player.gameObject.AddComponent<Hunter>();
-                player.gameObject.GetComponent<Hunter>().id = player.id;
-            }
-            else
-            {
-                player.gameObject.AddComponent<Prop>();
-                player.gameObject.GetComponent<Prop>().id = player.id;
-            }
-        }
-=======
         UnRegisterPlayer("Player "+player.id);
         Destroy(player);    
             
@@ -222,6 +161,5 @@ public class GameManager : MonoBehaviour
         }
          
             
->>>>>>> d1d1d6e0a56d2aac8622d231cd12d3dbcae288db
     }
 }
