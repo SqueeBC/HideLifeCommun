@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-Base path: D:/Prog/Editor/Data
-=======
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
+<<<<<<< HEAD
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
@@ -148,3 +146,5 @@ Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
+=======
+>>>>>>> parent of 570c2388... azert

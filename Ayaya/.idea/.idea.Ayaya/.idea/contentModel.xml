@@ -618,9 +618,6 @@
           <e p="PlayerMotor.cs" t="Include" />
           <e p="PlayerShoot.cs" t="Include" />
         </e>
-        <e p="Tuto_caméléon.cs" t="Include" />
-        <e p="Tuto_menu.cs" t="Include" />
-        <e p="Tuto_transfo.cs" t="Include" />
       </e>
       <e p="Ayaya.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

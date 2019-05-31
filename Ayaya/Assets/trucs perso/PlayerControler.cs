@@ -34,7 +34,7 @@ public class PlayerControler : MonoBehaviour
    }
    public void Aim()
    {
-    Camera camera= GetComponentInChildren<Camera>();
+    Camera camera= motor.player.GetComponentInChildren<Camera>();
       
       
        if (Input.GetButtonDown("Fire2") && !IsAiming)
