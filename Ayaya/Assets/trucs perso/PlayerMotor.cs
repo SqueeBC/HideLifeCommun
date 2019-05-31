@@ -57,7 +57,7 @@ public class PlayerMotor : MonoBehaviour
         player = GetComponentInParent<Player>();
         
         float test = (Mathf.RoundToInt(rb.velocity.y));
-      Debug.Log(test);
+      
     
         if(notmovingtime>0&&!IsMoving)
         notmovingtime -= Time.deltaTime;
