@@ -39,20 +39,12 @@ public class PlayerControler : MonoBehaviour
       
        if (Input.GetButtonDown("Fire2") && !IsAiming)
        {
-         
            camera.fieldOfView -=25;
-           
            LookSensibility =(PlayerPrefs.GetFloat("sensibilité")*10+3)/5;
-           
            IsAiming = true;
-           
-
        }
-
        else
        {
-
-
            if (Input.GetButtonDown("Fire2") && IsAiming)
            {
                

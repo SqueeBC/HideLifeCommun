@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.Utility;
 
 namespace trucs_perso
@@ -14,7 +15,7 @@ namespace trucs_perso
         [SerializeField] public int maxHP;
 
         [SerializeField] public string id;
-
+        
         public int victory;
         //mettre pour le multi[SyncVar] //syncronise avec le serveur
         public int currentHP;
@@ -22,8 +23,9 @@ namespace trucs_perso
         
 
         private void Start()
-        {    
+        {
            
+
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
 
@@ -31,7 +33,7 @@ namespace trucs_perso
         public void TakeDamage(int dmg)
         {
             currentHP -= dmg;
-           
+                    
             Death();
         }
 
@@ -39,8 +41,16 @@ namespace trucs_perso
         {
             if (currentHP <= 0)
             {
-                Destroy(gameObject);
-                gameManager.UnRegisterPlayer("Player " + id);
+                if (SceneManager.GetActiveScene().buildIndex != 6)
+                {
+                    Destroy(gameObject);
+                    gameManager.UnRegisterPlayer("Player " + id);
+                }
+                else
+                {Debug.Log("x"+gameObject.transform.position.x+",y"+gameObject.transform.position.y+"z"+gameObject.transform.position.z);
+                    currentHP = maxHP;
+                    gameObject.transform.position = new Vector3(-152.33f,15.7629f,-64);
+                }
             }
             
 
