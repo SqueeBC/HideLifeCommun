@@ -61,9 +61,9 @@ public class PlayerMotor : MonoBehaviour
     
         if(notmovingtime>0&&!IsMoving)
         notmovingtime -= Time.deltaTime;
-        if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && isGrounded) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
+        if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && (rb.velocity.y<=0.65f&&rb.velocity.y>=0)) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
         {    
-            Debug.Log(PlayerPrefs.GetString("JumpKey"));
+           
             PlayerJump();
             isGrounded = false;
         }
