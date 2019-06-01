@@ -9,9 +9,8 @@ using UnityStandardAssets.Utility;
 
 public class PlayerControler : MonoBehaviour
 {
-   [SerializeField]
-   private float speed = 4f;//à modifier
-
+   
+   public float speed = 4f;
    public float SprintCooldown;
    public float stamina = 100;
    private float actualspeed;
@@ -60,8 +59,8 @@ public class PlayerControler : MonoBehaviour
        bool IsMoving = false; 
        if(!IsAiming)
            LookSensibility = PlayerPrefs.GetFloat("sensibilité")*10+3;
-       
-       
+
+      
      
        Vector3 moveVertical = Vector3.zero;
        Vector3 moveHorizontal = Vector3.zero; //Modification du script pour fonctionner avec l'input manager
@@ -108,10 +107,11 @@ public class PlayerControler : MonoBehaviour
        IsMoving = IsRunning && velocity != Vector3.zero;
        if (IsMoving) //si le joueur utilise sa touche de sprint mais ne fait aucun mouvement alors il ne perds pas de stamina
        {   
-           stamina -= 0.1f;
+           stamina -= 0.15f;
        }
        if(stamina<100&&!IsMoving)
-           stamina += 0.07f;
+           stamina += 0.1f;
+       
                
        //explication simple = théorème de Pythagore pour calculer le mouvement/vélocité du joueur.
 
@@ -128,8 +128,5 @@ public class PlayerControler : MonoBehaviour
        motor.RotateCamera(camerarotationX);        
    }
 
-   public void ModifyLookSensibility(float sliderInput) //modifie la sensibilité
-   {
-       LookSensibility = LookSensibility;
-   }
+
 }

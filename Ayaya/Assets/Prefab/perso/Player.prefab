@@ -1357,8 +1357,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1360524291}
+  rb: {fileID: 0}
   player: {fileID: 0}
   cameraRotationLimit: 85
+  hasJumped: 0
 --- !u!114 &1134321313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,6 +1399,7 @@ MonoBehaviour:
   id: 
   victory: 0
   currentHP: 0
+  _time: 3
 --- !u!114 &6690167079609255810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,49 +2193,6 @@ Transform:
   m_Father: {fileID: 501631019}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1440500705
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1440500706}
-  - component: {fileID: 1440500707}
-  m_Layer: 9
-  m_Name: Tir
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1440500706
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440500705}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.538, y: 0.298, z: 0.023}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1941125022}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1440500707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440500705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb25050760e9a9548af892c7f0cb1c93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1470316419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,7 +3027,6 @@ Transform:
   - {fileID: 1658978657}
   - {fileID: 1182984144}
   - {fileID: 1820862538}
-  - {fileID: 1440500706}
   m_Father: {fileID: 1360524293}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -92.41701, z: 0}

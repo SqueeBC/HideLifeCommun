@@ -22,6 +22,8 @@ public class Interface : MonoBehaviour
     public Player player;
     public GameObject hitmarker;
     private float time;
+    [SerializeField] 
+    private Text spect;
     private void Start()
     {FindPlayer();
         
@@ -53,7 +55,8 @@ public class Interface : MonoBehaviour
             time -= Time.deltaTime;
         if(hitmarker.active&&time<0)
             hitmarker.SetActive(false);
-        HPbar.fillAmount =1-(float)player.currentHP/100;
+        
+        HPbar.fillAmount =1-(float)player.currentHP/player.maxHP;
        
         Staminabar.fillAmount =1-  playerControler.stamina/100;        
         StaminaText();
@@ -61,68 +64,91 @@ public class Interface : MonoBehaviour
         AmmoUpdate();
         Reloading();
         HPText();
+        if (player.CompareTag("Spectator"))
+            Spect();
     }
 
     public void StaminaText()
     {
         if (PlayerPrefs.GetString("language") == "français")
             Staminatext.text = "ENDURANCE:" + Mathf.Round(playerControler.stamina) + "%";
-            else
+        else
         {
 
 
             Staminatext.text = "STAMINA:" + Mathf.Round(playerControler.stamina) + "%";
         }
     }
-
-    public void HPText()
-    {   
-        if (PlayerPrefs.GetString("language") == "français")
-            HPtext.text = "PV:"+Mathf.Round(player.currentHP)  + "%";
-        else
-        {
-
-            HPtext.text = "HP:"+Mathf.Round(player.currentHP)  + "%";
-        }
     
-    }
-
-    public void Reloading()
+    public void HPText()
     {
-        if(Localplayershoot.ReloadTime>0)
-            ReloadingText.SetActive(true);
+        if (PlayerPrefs.GetString("language") == "français")
+            HPtext.text = "PV:" + Mathf.Round(player.currentHP*((float) 100/player.maxHP)) + "%";
         else
         {
-            ReloadingText.SetActive(false);
+
+            HPtext.text = "HP:" + Mathf.Round(player.currentHP*((float)100/player.maxHP)) + "%";
         }
-            
-            
     }
-    public void AmmoUpdate()
-    {
+
+
+
+    private void Spect()
+    {      
+        if (PlayerPrefs.GetString("language") == "français")
+            spect.text = "Utilisez ctrl pour descendre";
+        else
+        {
+            spect.GetComponent<Text>().text = "Use ctrl in order to go down";
+        }
+
+        ReloadingText.SetActive(true);
+    }
+
+
+public void Reloading()
+{
+       
         
-        AmmoText.text = "AMMO:" +Localplayershoot.weapon.ammo+"/"+Localplayershoot.weapon.chargercapacity;
-    }
-
-    public void CoolDownText()
-    {
-        if (playerControler.SprintCooldown > 0)
-        {
-            CooldownReminder.SetActive(true);
-            Cooldownleft.text = Math.Round(playerControler.SprintCooldown, 1) + "S";
-        }
-        else
-        {CooldownReminder.SetActive(false);
+if((Localplayershoot!=null)&&Localplayershoot.ReloadTime>0)
+ReloadingText.SetActive(true);
+else
+{
+ReloadingText.SetActive(false);
+}
             
-        }
+            
+}
+public void AmmoUpdate()
+{
+if(Localplayershoot!=null)
+AmmoText.text = "AMMO:" +Localplayershoot.weapon.ammo+"/"+Localplayershoot.weapon.chargercapacity;
+else
 
-    }
+{
+AmmoText.text = "";
+}
+}
 
-    public void ShowHitmarker()
-    {
-        time = 1;
-        hitmarker.SetActive(true);
-    }
+public void CoolDownText()
+{
+if (playerControler.SprintCooldown > 0)
+{
+CooldownReminder.SetActive(true);
+Cooldownleft.text = Math.Round(playerControler.SprintCooldown, 1) + "S";
+}
+else
+{CooldownReminder.SetActive(false);
+            
+}
+
+}
+
+public void ShowHitmarker()
+{
+time = 1;
+hitmarker.SetActive(true);
+}
 
 
 }

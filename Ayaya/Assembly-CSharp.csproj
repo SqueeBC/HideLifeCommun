@@ -75,6 +75,10 @@
     <Compile Include="Assets\Scripts\MaskPassword.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\OptionMenuIG.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerControler.cs" />
+    <Compile Include="Assets\Scripts\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\Prop.cs" />
     <Compile Include="Assets\Scripts\PropTransform.cs" />
@@ -212,11 +216,6 @@
     <Compile Include="Assets\Textures-import\Standard Assets\Vehicles\Car\Scripts\SkidTrail.cs" />
     <Compile Include="Assets\Textures-import\Standard Assets\Vehicles\Car\Scripts\Suspension.cs" />
     <Compile Include="Assets\Textures-import\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
-    <Compile Include="Assets\trucs perso\Eject.cs" />
-    <Compile Include="Assets\trucs perso\Player.cs" />
-    <Compile Include="Assets\trucs perso\PlayerControler.cs" />
-    <Compile Include="Assets\trucs perso\PlayerMotor.cs" />
-    <Compile Include="Assets\trucs perso\PlayerShoot.cs" />
     <Compile Include="Assets\Tuto_caméléon.cs" />
     <Compile Include="Assets\Tuto_menu.cs" />
     <Compile Include="Assets\Tuto_transfo.cs" />
