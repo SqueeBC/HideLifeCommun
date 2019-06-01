@@ -22,6 +22,8 @@ public class Interface : MonoBehaviour
     public Player player;
     public GameObject hitmarker;
     private float time;
+    [SerializeField] 
+    private Text spect;
     private void Start()
     {FindPlayer();
         
@@ -61,13 +63,15 @@ public class Interface : MonoBehaviour
         AmmoUpdate();
         Reloading();
         HPText();
+        if (player.CompareTag("Spectator"))
+            Spect();
     }
 
     public void StaminaText()
     {
         if (PlayerPrefs.GetString("language") == "français")
             Staminatext.text = "ENDURANCE:" + Mathf.Round(playerControler.stamina) + "%";
-            else
+        else
         {
 
 
@@ -76,58 +80,74 @@ public class Interface : MonoBehaviour
     }
 
     public void HPText()
-    {   
+    {
         if (PlayerPrefs.GetString("language") == "français")
-            HPtext.text = "PV:"+Mathf.Round(player.currentHP)  + "%";
+            HPtext.text = "PV:" + Mathf.Round(player.currentHP) + "%";
         else
         {
 
-            HPtext.text = "HP:"+Mathf.Round(player.currentHP)  + "%";
+            HPtext.text = "HP:" + Mathf.Round(player.currentHP) + "%";
         }
-    
     }
 
-    public void Reloading()
-    {
-        if((Localplayershoot!=null)&&Localplayershoot.ReloadTime>0)
-            ReloadingText.SetActive(true);
+
+
+    private void Spect()
+    {      
+        if (PlayerPrefs.GetString("language") == "français")
+            spect.text = "Utilisez ctrl pour descendre";
         else
         {
-            ReloadingText.SetActive(false);
+            spect.GetComponent<Text>().text = "Use ctrl in order to go down";
         }
+
+        ReloadingText.SetActive(true);
+    }
+
+
+public void Reloading()
+{
+       
+        
+if((Localplayershoot!=null)&&Localplayershoot.ReloadTime>0)
+ReloadingText.SetActive(true);
+else
+{
+ReloadingText.SetActive(false);
+}
             
             
-    }
-    public void AmmoUpdate()
-    {
-        if(Localplayershoot!=null)
-        AmmoText.text = "AMMO:" +Localplayershoot.weapon.ammo+"/"+Localplayershoot.weapon.chargercapacity;
-        else
+}
+public void AmmoUpdate()
+{
+if(Localplayershoot!=null)
+AmmoText.text = "AMMO:" +Localplayershoot.weapon.ammo+"/"+Localplayershoot.weapon.chargercapacity;
+else
 
-        {
-            AmmoText.text = "";
-        }
-    }
+{
+AmmoText.text = "";
+}
+}
 
-    public void CoolDownText()
-    {
-        if (playerControler.SprintCooldown > 0)
-        {
-            CooldownReminder.SetActive(true);
-            Cooldownleft.text = Math.Round(playerControler.SprintCooldown, 1) + "S";
-        }
-        else
-        {CooldownReminder.SetActive(false);
+public void CoolDownText()
+{
+if (playerControler.SprintCooldown > 0)
+{
+CooldownReminder.SetActive(true);
+Cooldownleft.text = Math.Round(playerControler.SprintCooldown, 1) + "S";
+}
+else
+{CooldownReminder.SetActive(false);
             
-        }
+}
 
-    }
+}
 
-    public void ShowHitmarker()
-    {
-        time = 1;
-        hitmarker.SetActive(true);
-    }
+public void ShowHitmarker()
+{
+time = 1;
+hitmarker.SetActive(true);
+}
 
 
 }

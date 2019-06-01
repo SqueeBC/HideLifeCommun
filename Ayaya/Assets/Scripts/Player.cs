@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using UnityEditor.Experimental.UIElements;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -19,16 +21,20 @@ namespace trucs_perso
         public int victory;
         //mettre pour le multi[SyncVar] //syncronise avec le serveur
         public int currentHP;
-
+        public float _time = 2;
         
 
         private void Start()
         {
-           
+            StopCoroutine(waiter());
 
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
 
+        IEnumerator waiter()
+        {
+            yield return new WaitForSeconds(4);
+        }
 
         public void TakeDamage(int dmg)
         {
@@ -43,8 +49,9 @@ namespace trucs_perso
             {
                 if (SceneManager.GetActiveScene().buildIndex != 6||!GetComponent< NetworkIdentity>().isLocalPlayer)
                 {
-                    Destroy(gameObject);
                     gameManager.UnRegisterPlayer("Player " + id);
+                    Spectate();
+
                 }
                 else
                 {
@@ -56,10 +63,32 @@ namespace trucs_perso
 
         }
 
-    
+        public void Spectate()
+        {
+            if(gameObject.GetComponent<PlayerShoot>()!=null)
+                Destroy(gameObject.GetComponent<PlayerShoot>());
+            Destroy(gameObject.transform.GetChild(1).gameObject);
+            gameObject.GetComponent<Rigidbody>().useGravity = false;
+            gameObject.tag = "Spectator"; 
+        }
 
+        private void Update() 
+        {
 
-       
-     
+            if (_time > -1 && gameObject.GetComponent<Collider>() != null)
+            { 
+                if (CompareTag("Spectator"))
+                {
+                    
+                    _time -= Time.deltaTime;
+
+                }
+
+                if (_time <= 0)
+                    Destroy(gameObject.GetComponent<Collider>());
+         
+
+            }
+        }
     }
 }

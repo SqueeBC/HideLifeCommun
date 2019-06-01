@@ -23,9 +23,23 @@ public class Prop : Player
        
     }
     
-    private void Update()
+    private  void Update()
     {
-        if  (Input.GetKey((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("TransfoKey", "T"))))
+        if (_time > -1 && gameObject.GetComponent<Collider>() != null)
+        {
+            if (CompareTag("Spectator"))
+            {
+                Debug.Log(true);
+                _time -= Time.deltaTime;
+
+            }
+
+            if (_time <= 0)
+                Destroy(gameObject.GetComponent<Collider>());
+           ;
+
+        }
+        if  (Input.GetKey((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("TransfoKey", "T")))&&!CompareTag("Spectator"))
             TransformationTest();
     }
 

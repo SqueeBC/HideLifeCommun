@@ -60,18 +60,62 @@ public class GameManager : MonoBehaviour
 
     private void OnGUI() //permet d'afficher les joueurs
     {
+        string spect = "dead";
+        GUIStyle style = new GUIStyle();//pour changer la police du texte
         int Min;
         GUILayout.BeginArea(new Rect(200, 200, 200, 200));
         GUILayout.BeginVertical();
         foreach (string playerID in players.Keys)
         {
-            GUILayout.Label(playerID + "-"+players[playerID].transform.name);
+            GUILayout.Label(playerID + "-"+players[playerID].transform.name,style);
         }
-
+        style.fontSize = 24;
         Min = Mathf.RoundToInt((time / 60 - 0.5f));
-        GUILayout.Label("-Time :" + Mathf.RoundToInt((Min )) +  "min "+Mathf.RoundToInt(time-Min*60)+" s");
+        GUILayout.Label("-Time :" + Mathf.RoundToInt((Min )) +  "min "+Mathf.RoundToInt(time-Min*60)+" s",style);
         GUILayout.EndVertical();
         GUILayout.EndArea();
+     
+        style.fontSize = 14;
+        GUILayout.BeginArea(new Rect(950, 200, 200, 200));
+        GUILayout.BeginVertical();
+        GUILayout.Label("Prop :",style);
+        style.fontSize = 20;
+        foreach (Player prop in players.Values)
+        {
+            if (prop.GetComponent<Prop>() != null)
+            {
+                if (prop.CompareTag("Spectator"))
+                {
+                
+                    GUILayout.Label("-DEAD " + prop.transform.name, style);}
+                else
+                {
+                    GUILayout.Label("-" + prop.transform.name, style);
+                }
+            }
+        }
+        GUILayout.EndVertical();
+        GUILayout.EndArea();
+        GUILayout.BeginArea(new Rect(750, 200, 200, 200));
+        GUILayout.BeginVertical();
+        style.fontSize = 14;
+        GUILayout.Label("Hunter :",style);
+        style.fontSize = 20;
+        foreach (Player hunter in players.Values)
+        {
+            if (hunter.GetComponent<Hunter>() != null)    
+            {
+                if (hunter.CompareTag("Spectator"))
+                    GUILayout.Label("-DEAD " + hunter.transform.name, style);
+                else
+                {
+                    GUILayout.Label("-" + hunter.transform.name, style);
+                }
+            }
+        }
+        GUILayout.EndVertical();
+        GUILayout.EndArea();
+    
     }
 
     private void Update()
@@ -89,15 +133,16 @@ public class GameManager : MonoBehaviour
                     if (SceneManager.GetActiveScene().buildIndex != 6)
                     {
                         AssignRole(player);
-                        Debug.Log("non");
+                        
+                       
                     }
                    
                     else
-                    { Debug.Log("oui");
+                    { 
                         if (player.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer) //pour le tuto
                         {
                             
-                            Debug.Log(player.name);
+                            
                             UnRegisterPlayer("Player " + player.id);
                             Destroy(player);
                             player.gameObject.AddComponent<Hunter>();
@@ -128,6 +173,7 @@ public class GameManager : MonoBehaviour
             time -= Time.deltaTime;
 
         }
+   
     }
 
     private void AssignRole(Player player)

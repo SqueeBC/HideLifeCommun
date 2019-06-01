@@ -54,33 +54,44 @@ public class PlayerMotor : MonoBehaviour
     }
 
     private void Update()
-    {if(player ==null)
-        player = GetComponentInParent<Player>();
-        
-        float test = (Mathf.RoundToInt(rb.velocity.y));
-      
-    
-        if(notmovingtime>0&&!IsMoving)
-        notmovingtime -= Time.deltaTime;
-        if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && (rb.velocity.y<=0.65f&&rb.velocity.y>=0)) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
-        {    
-           
-            PlayerJump();
-            isGrounded = false;
-        }
-
-        if (notmovingtime<=0&&taunts.Count>0)
+    {
+        if (player == null)
+            player = GetComponentInParent<Player>();
+        if (!gameObject.CompareTag("Spectator"))
         {
-            System.Random randomtaunt = new System.Random();
-            AudioSource.PlayClipAtPoint(taunts[randomtaunt.Next(taunts.Count)].clip,this.transform.position);
-            notmovingtime = 20;
+            if (notmovingtime > 0 && !IsMoving)
+                notmovingtime -= Time.deltaTime;
+            if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),   PlayerPrefs.GetString("JumpKey", "Space"))) &&((rb.velocity.y <= 0.65f && rb.velocity.y >= -0.1))) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
+            {
+
+                PlayerJump();
+                isGrounded = false;
+            }
+
+            if (notmovingtime <= 0 && taunts.Count > 0)
+            {
+                System.Random randomtaunt = new System.Random();
+                AudioSource.PlayClipAtPoint(taunts[randomtaunt.Next(taunts.Count)].clip, this.transform.position);
+                notmovingtime = 20;
+            }
+
         }
-      
+        else
+        {
+            if (Input.GetKey((KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpKey", "Space"))))
+                PlayerJump();
+            rb.velocity = new Vector3(0,0,0); 
+            if(Input.GetKey(KeyCode.LeftControl))
+                SpectatorFall();
+            rb.velocity = new Vector3(0,0,0); 
+                
+        }
     }
 
     private void FixedUpdate() //recommandé pour le rigidBody
     {
-        int test = Mathf.RoundToInt(rb.velocity.y);
+        if(!gameObject.CompareTag("Spectator"))
+        { int test = Mathf.RoundToInt(rb.velocity.y);
 
         if (test < 0)
             Gravitydmg += -test ;
@@ -89,6 +100,7 @@ public class PlayerMotor : MonoBehaviour
                 player.TakeDamage( Mathf.RoundToInt(Gravitydmg));
            
             Gravitydmg = -7; //reset des dmg
+                             }
         
         PerformMovement();
         PerformRotation();
@@ -133,6 +145,13 @@ public class PlayerMotor : MonoBehaviour
 
     }
 
+    private void SpectatorFall()
+    {
+       
+        JumpForce = ForceMode.Impulse;
+        rb.AddForce(0,-Jump,0,JumpForce); 
+        
+    }
     private void PlayerJump()
     {
         hasJumped = true;
