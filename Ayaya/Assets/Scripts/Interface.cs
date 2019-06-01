@@ -82,7 +82,7 @@ public class Interface : MonoBehaviour
     
     public void HPText()
     {
-        Debug.Log(player.name);
+            Debug.Log(player.name);
         if (PlayerPrefs.GetString("language") == "français")
             HPtext.text = "PV:" + Mathf.Round(player.currentHP*((float) 100/player.maxHP)) + "%";
         else
