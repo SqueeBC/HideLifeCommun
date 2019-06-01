@@ -12,6 +12,7 @@ TagManager:
   - Medium Item
   - Big Item
   - Target
+  - Spectator
   layers:
   - Default
   - TransparentFX

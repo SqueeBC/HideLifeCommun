@@ -24,7 +24,7 @@ public class Prop : Player
     }
     
     private  void Update()
-    {
+    { Debug.Log(camera.transform.localPosition);
         if (_time > -1 && gameObject.GetComponent<Collider>() != null)
         {
             if (CompareTag("Spectator"))
@@ -83,6 +83,7 @@ public class Prop : Player
                 currentHP = currentHP * 50 / maxHP;
                 maxHP = 50;
                 GetComponent<PlayerControler>().speed = 6;
+             
                 break;
                     
             case "Medium Item":
