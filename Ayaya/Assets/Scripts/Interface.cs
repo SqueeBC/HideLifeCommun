@@ -55,7 +55,8 @@ public class Interface : MonoBehaviour
             time -= Time.deltaTime;
         if(hitmarker.active&&time<0)
             hitmarker.SetActive(false);
-        HPbar.fillAmount =1-(float)player.currentHP/100;
+        
+        HPbar.fillAmount =1-(float)player.currentHP/player.maxHP;
        
         Staminabar.fillAmount =1-  playerControler.stamina/100;        
         StaminaText();
@@ -78,15 +79,15 @@ public class Interface : MonoBehaviour
             Staminatext.text = "STAMINA:" + Mathf.Round(playerControler.stamina) + "%";
         }
     }
-
+    
     public void HPText()
     {
         if (PlayerPrefs.GetString("language") == "français")
-            HPtext.text = "PV:" + Mathf.Round(player.currentHP) + "%";
+            HPtext.text = "PV:" + Mathf.Round(player.currentHP*((float) 100/player.maxHP)) + "%";
         else
         {
 
-            HPtext.text = "HP:" + Mathf.Round(player.currentHP) + "%";
+            HPtext.text = "HP:" + Mathf.Round(player.currentHP*((float)100/player.maxHP)) + "%";
         }
     }
 

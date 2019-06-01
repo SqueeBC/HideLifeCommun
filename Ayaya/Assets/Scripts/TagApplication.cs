@@ -8,24 +8,7 @@ public class TagApplication : MonoBehaviour
     void Start()
     {
         int i = 0;
-        while(i<transform.childCount)
-        {
-            transform.GetChild(i).tag = "Ground";
-            i++;
-        }
-
-        i = 0;
-        GameObject items =  GameObject.Find("Items");
-        while(i<items.transform.childCount)
-        {
-          
-            items.transform.GetChild(i).tag = "Item";
-            
-            i++;
-            
-        }
-        i = 0;
-        GameObject Small =  GameObject.Find("Small Items");
+      GameObject Small =  GameObject.Find("PETITS OBJETS");
         while(i<Small.transform.childCount)
         {
           
@@ -35,7 +18,7 @@ public class TagApplication : MonoBehaviour
             
         }
         i = 0;
-        GameObject Medium =  GameObject.Find("Small Items");
+        GameObject Medium =  GameObject.Find("OBJETS MOYEN");
         while(i<Medium.transform.childCount)
         {
           
@@ -45,7 +28,7 @@ public class TagApplication : MonoBehaviour
             
         }
         i = 0;
-        GameObject Big =  GameObject.Find("Big Items");
+        GameObject Big =  GameObject.Find("GRAND OBJETS");
         while(i<Big.transform.childCount)
         {
           
@@ -54,13 +37,8 @@ public class TagApplication : MonoBehaviour
             i++;
             
         }
-        
-
-        
-        
 
     }
 
-    // Update is called once per frame
    
 }

@@ -9,9 +9,8 @@ using UnityStandardAssets.Utility;
 
 public class PlayerControler : MonoBehaviour
 {
-   [SerializeField]
-   private float speed = 4f;//à modifier
-
+   
+   public float speed = 4f;
    public float SprintCooldown;
    public float stamina = 100;
    private float actualspeed;
@@ -60,8 +59,8 @@ public class PlayerControler : MonoBehaviour
        bool IsMoving = false; 
        if(!IsAiming)
            LookSensibility = PlayerPrefs.GetFloat("sensibilité")*10+3;
-       
-       
+
+      
      
        Vector3 moveVertical = Vector3.zero;
        Vector3 moveHorizontal = Vector3.zero; //Modification du script pour fonctionner avec l'input manager

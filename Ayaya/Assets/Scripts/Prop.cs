@@ -9,7 +9,7 @@ public class Prop : Player
     private Camera camera;
 
     private LayerMask _layerMask = 9;
-    private string propSize;
+    public string propSize;
     private void Start()
     {   gameObject.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false); 
         gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false); 
@@ -50,7 +50,7 @@ public class Prop : Player
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 100,_layerMask)) ;
         {
             Debug.Log(hit.collider.name);
-            if (hit.collider != null)
+            if (hit.collider != null&&(hit.collider.CompareTag("Big Item")||hit.collider.CompareTag("Medium Item")||hit.collider.CompareTag("Small Item")))
             {
                        
                 Destroy(transform.FindChild("Graphics").gameObject);
@@ -71,6 +71,7 @@ public class Prop : Player
                 gameObject.SetActive(true);
                        
                 propSize = hit.collider.tag;
+                ChangeHP();
             }
         }
     }
@@ -81,14 +82,17 @@ public class Prop : Player
             case "Small Item":
                 currentHP = currentHP * 50 / maxHP;
                 maxHP = 50;
+                GetComponent<PlayerControler>().speed = 6;
                 break;
                     
             case "Medium Item":
                 currentHP = currentHP * 100 / maxHP;
+                GetComponent<PlayerControler>().speed = 4;
                 maxHP = 100;
                 break;
             case "Big Item":
                 currentHP = currentHP * 200 / maxHP;
+                GetComponent<PlayerControler>().speed = 3.5f;
                 maxHP = 200;
                 break;
         }
