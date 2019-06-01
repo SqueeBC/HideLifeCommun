@@ -102,6 +102,11 @@ public class Interface : MonoBehaviour
     {
         if(Localplayershoot!=null)
         AmmoText.text = "AMMO:" +Localplayershoot.weapon.ammo+"/"+Localplayershoot.weapon.chargercapacity;
+        else
+
+        {
+            AmmoText.text = "";
+        }
     }
 
     public void CoolDownText()

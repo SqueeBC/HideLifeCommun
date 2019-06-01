@@ -69,6 +69,7 @@ public class EchapMenu : MonoBehaviour
         GameIsPaused = false; 
         réticule.SetActive(true);
         player.GetComponent<PlayerControler>().enabled = true;
+        if(player.GetComponent<PlayerShoot>()!=null)
         player.GetComponent<PlayerShoot>().enabled = true;
         player.GetComponent<PlayerMotor>().enabled = true;
     }
@@ -80,6 +81,7 @@ public class EchapMenu : MonoBehaviour
         réticule.SetActive(false);
         player.GetComponent<PlayerControler>().enabled = false;
         player.GetComponent<PlayerMotor>().enabled = false;
+        if(player.GetComponent<PlayerShoot>()!=null)
         player.GetComponent<PlayerShoot>().enabled = false;
         player.GetComponent<PlayerShoot>().shotaudio.Pause(); 
         //empêche le joueur de bouger et tirer la camera pendant la pause
