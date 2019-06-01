@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class GameManager : NetworkBehaviour
+public class GameManager : NetworkManager
 {
     [SerializeField] private Text WinText;
     private float time = 600;
