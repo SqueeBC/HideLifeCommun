@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\MaskPassword.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\OptionMenuIG.cs" />
+    <Compile Include="Assets\Scripts\PLACEMENTOBJ.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerControler.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
