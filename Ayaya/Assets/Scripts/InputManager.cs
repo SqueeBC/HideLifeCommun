@@ -24,8 +24,9 @@ namespace DefaultNamespace
         public KeyCode PauseKey { get; set; }
         
         public KeyCode ReloadKey { get; set; }
+        public KeyCode TransfoKey { get; set; }
 
-        public Text forwardtext, backwardtext, lefttext, righttext, jumptext, runtext, Pause1text, reloadtext;
+        public Text forwardtext, backwardtext, lefttext, righttext, jumptext, runtext, Pause1text, reloadtext, transfotext;
         
 
         void Awake() //Awake est appelée avant Start
@@ -40,7 +41,7 @@ namespace DefaultNamespace
             PauseKey = (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("PauseKey", "A"));           
             RunKey = (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("RunKey", "E"));
             ReloadKey = (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("ReloadKey", "R"));
-           
+            TransfoKey  = (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("TransfoKey", "T"));
           
             ApplyChangeLanguage();
 
@@ -55,6 +56,7 @@ namespace DefaultNamespace
             jumptext.text = PlayerPrefs.GetString("JumpKey", "Space");
             runtext.text = PlayerPrefs.GetString("RunKey", "E");
             reloadtext.text = PlayerPrefs.GetString("ReloadKey", "R");
+            transfotext.text = PlayerPrefs.GetString("TransfoKey", "T");
             Marquage.Add(forwardtext.text,"ForwardKey");
             Marquage.Add( backwardtext.text, "BackwardKey");
             Marquage.Add(lefttext.text,"LeftKey");
@@ -62,9 +64,10 @@ namespace DefaultNamespace
             Marquage.Add( jumptext.text,"JumpKey");
             Marquage.Add(  runtext.text,"RunKey");
             Marquage.Add(reloadtext.text,"ReloadKey");
+            Marquage.Add(transfotext.text, "TransfoKey");
             
             
-            Debug.Log(dropdown.value);
+          
             if (PlayerPrefs.GetString("language") == "english")           
                 dropdown.value = 0;
                 
@@ -101,6 +104,7 @@ namespace DefaultNamespace
                 jumptext.transform.parent.GetChild(1).GetComponent<Text>().text = "Sauter";
                 runtext.transform.parent.GetChild(1).GetComponent<Text>().text = "Courir";
                 reloadtext.transform.parent.GetChild(1).GetComponent<Text>().text = "Recharger";
+                transfotext.transform.parent.GetChild(1).GetComponent<Text>().text = "transformation";
             }
             else
             {
@@ -111,6 +115,7 @@ namespace DefaultNamespace
                 jumptext.transform.parent.GetChild(1).GetComponent<Text>().text = "jump";
                 runtext.transform.parent.GetChild(1).GetComponent<Text>().text = "run";
                 reloadtext.transform.parent.GetChild(1).GetComponent<Text>().text = "reload";
+                transfotext.transform.parent.GetChild(1).GetComponent<Text>().text = "transformation";
             }
            
 
@@ -127,7 +132,7 @@ namespace DefaultNamespace
                 Event e = Event.current; //cet event est égal a la touche activée 
                 if (e.isKey)
                 {
-                    Debug.Log(e.ToString());
+                 
                     if (!Marquage.ContainsKey(e.keyCode.ToString()) && (e.keyCode!=KeyCode.None)&&e.keyCode!=KeyCode.Escape)
                     {
                       Debug.Log(CurrentKey.name);
@@ -136,7 +141,7 @@ namespace DefaultNamespace
                         Marquage.Add(e.keyCode.ToString(), CurrentKey.name);
 
                         PlayerPrefs.SetString(CurrentKey.name, e.keyCode.ToString());
-                        Debug.Log(CurrentKey);
+                     
                         CurrentKey.transform.GetChild(0).GetComponent<Text>().text = e.keyCode.ToString();
                         CurrentKey.GetComponent<Image>().color = normal;
                         CurrentKey = null;

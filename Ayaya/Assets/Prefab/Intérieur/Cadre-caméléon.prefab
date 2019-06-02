@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3554460667708542419, guid: b02d80e74c2348c45bd1f61898ad832d,
         type: 3}
       propertyPath: m_Name
-      value: cadre (2) Variant
+      value: "Cadre-cam\xE9l\xE9on"
       objectReference: {fileID: 0}
     - target: {fileID: 3554460667708314099, guid: b02d80e74c2348c45bd1f61898ad832d,
         type: 3}

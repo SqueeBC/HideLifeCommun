@@ -1,12 +1,18 @@
 Win64
 PlayerPath?
+<<<<<<< HEAD
 C:/Users/SpartiateT/Desktop/HideLifeLeJeu3/HideLifeCommun/Ayaya/ExeTest/Ayaya.exe
+=======
+C:/Users/SpartiateT/Desktop/Hidelifelejeu53/HideLifeCommun/Ayaya/TempExe6/Ayaya.exe
+>>>>>>> de717f62e7798f2ea41788a328ac06f8f93602fb
 SceneListBegin?
+Assets/Scenes/LoginDatabase.unity
 Assets/Scenes/Menu.unity
 Assets/Scenes/Sol.unity
 Assets/Scenes/CommandsOption.unity
 Assets/Test.unity
 Assets/Scenes/Game.unity
+Assets/Scenes/zone de tuto.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.LevelReset
 e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexZoom
@@ -310,7 +316,7 @@ c88c4199b288356ec3eb2f0d85abc619 Assembly-CSharp.dll:UnityStandardAssets.CrossPl
 e540a01426f9ad59088593bf72bcd255 Assembly-CSharp.dll:UnityStandardAssets.Utility.TimedObjectActivator
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl
 b294ba655397a2a6c58cddd17cea876c Assembly-CSharp.dll:UnityStandardAssets.Vehicles.Aeroplane.AeroplanePropellerAnimator
-86616d11bee190ff14d3cb07295644a4 Assembly-CSharp.dll:.PlayerShoot
+3bf10bd4cbb2c6cb933ab0eed197f59c Assembly-CSharp.dll:.PlayerShoot
 5e8a01a14cef8c5fb6866e39e13545df Assembly-CSharp.dll:UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter
 bd3f0ca738703903e759f77536ed74fd Assembly-CSharp.dll:TMPro.Examples.TMP_FrameRateCounter
 8216ca00094987954bcf22fd5ccf9bfd Assembly-CSharp-firstpass.dll:UnityStandardAssets.Cameras.FreeLookCam
@@ -338,7 +344,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 97a580c59cad3623a01bbf5fb2d7fa93 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Water.SpecularLighting
 9a40de0f5a84ec02044ccfb05875df71 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.WaypointCircuit
 bc6aaf002a4761441b87b86f1467da2a Assembly-CSharp-firstpass.dll:UnityStandardAssets.Cameras.TargetFieldOfView
-12d371f398d06911c935e5b020f1ea43 Assembly-CSharp.dll:.PlayerWeapon
+b2611f20bb0a1a16f73f854038cd00fa Assembly-CSharp.dll:.PlayerWeapon
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.Effects.FireLight
 c239250f2f7641ce897064c7bd4173b0 Assembly-CSharp.dll:UnityStandardAssets.Water.Water
 c239250f2f7641ce897064c7bd4173b0 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Water.Water
@@ -393,7 +399,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ForcedReset
 74fdef42e5d1b91d250d09f9fc6f54da Assembly-CSharp-firstpass.dll:UnityStandardAssets._2D.Camera2DFollow
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.TextConsoleSimulator
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameManager
+bae8097e0b673550f0b7b5cf21806de9 Assembly-CSharp.dll:.GameManager
 4f631fd718256a8c69483c396671a274 Assembly-CSharp.dll:UnityStandardAssets.Utility.PlatformSpecificContent
 219ec6059796d8951d2adcd8505d0dc2 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
 61faedcd907718913efd3ec146822d0e Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Ball.Ball
@@ -408,7 +414,7 @@ e63944317d2f5958e31963668bb29158 Assembly-CSharp.dll:TMPro.Examples.VertexShakeB
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.VertexColorCycler
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets._2D.Restarter
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.Utility.DragRigidbody
-bc46e9ea7214351ae0b1fb15adb76de8 Assembly-CSharp.dll:DefaultNamespace.InputManager
+a0d93be038fa6ec7af3b983b7188779e Assembly-CSharp.dll:DefaultNamespace.InputManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.Vehicles.Car.CarUserControl
 3748fbad2d474a315bda516b8363a0c5 Assembly-CSharp.dll:UnityStandardAssets.Effects.ExtinguishableParticleSystem
@@ -417,7 +423,7 @@ bc46e9ea7214351ae0b1fb15adb76de8 Assembly-CSharp.dll:DefaultNamespace.InputManag
 44c2d3bd57c3d764412e06815f612aa3 Assembly-CSharp.dll:UnityStandardAssets.Effects.Explosive
 8a874a8207a7664bdf44e61f28717254 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
 52b190b8281f5b286a6d8b7d44d1dc2f Assembly-CSharp.dll:.EchapMenu
-938aeb779fda8de26fb6a8c4f5283505 Assembly-CSharp.dll:trucs_perso.Player
+60968bdee85ed9adda882681c5718c1a Assembly-CSharp.dll:trucs_perso.Player
 450caa5ae12ca5999d58ff2e25ddc256 Assembly-CSharp.dll:.PropTransform
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
 dc0c855440d59a516315a62ef55d7fd8 Assembly-CSharp.dll:UnityStandardAssets._2D.CameraFollow
@@ -431,3 +437,21 @@ d7bc2b4e85ce46723a80c1bc49f3798b Assembly-CSharp.dll:UnityStandardAssets.Vehicle
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:UnityStandardAssets.Utility.ObjectResetter
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.SimpleScript
 47cd05cf11ce8beb2fd9a1522f58f5ec Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
+<<<<<<< HEAD
+=======
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto_sprint
+d18347cd44253faf6d797bbd92a2c1eb Assembly-CSharp.dll:.DatabaseManager
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TagApplication
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.tpHuntProp
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto_retour
+24b6d8bef90a2d60c43bb0217b7813f4 Assembly-CSharp.dll:.Prop
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto_menu
+60968bdee85ed9adda882681c5718c1a Assembly-CSharp.dll:.Hunter
+b5c2cdc13731aec10422f4ea394982b7 Assembly-CSharp.dll:.tpback
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.tuto_saut
+5b2d4b2f1ed4d2260a6f0862e916ecf1 Assembly-CSharp.dll:.MaskPassword
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto_caméléon
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto_transfo
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Tuto_tir
+>>>>>>> de717f62e7798f2ea41788a328ac06f8f93602fb

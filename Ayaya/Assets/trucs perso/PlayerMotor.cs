@@ -53,13 +53,17 @@ public class PlayerMotor : MonoBehaviour
     }
 
     private void Update()
-    {
+    {if(player ==null)
+        player = GetComponentInParent<Player>();
+        
+        float test = (Mathf.RoundToInt(rb.velocity.y));
       
+    
         if(notmovingtime>0&&!IsMoving)
         notmovingtime -= Time.deltaTime;
-        if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && isGrounded) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
+        if (Input.GetKeyUp((KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("JumpKey", "Space"))) && (rb.velocity.y<=0.65f&&rb.velocity.y>=0)) // si le joueur n'est pas sur le sol, il ne peut pas sauter.
         {    
-            Debug.Log(PlayerPrefs.GetString("JumpKey"));
+           
             PlayerJump();
             isGrounded = false;
         }
@@ -75,16 +79,16 @@ public class PlayerMotor : MonoBehaviour
 
     private void FixedUpdate() //recommandé pour le rigidBody
     {
-       
-        if(!isGrounded)
-            Gravitydmg += (Time.deltaTime)*30;
-        else
-        {
+        int test = Mathf.RoundToInt(rb.velocity.y);
 
+        if (test < 0)
+            Gravitydmg += -test ;
+         
             if (Gravitydmg > 0)
                 player.TakeDamage( Mathf.RoundToInt(Gravitydmg));
-            Gravitydmg = -50; //reset des dmg
-        }
+           
+            Gravitydmg = -7; //reset des dmg
+        
         PerformMovement();
         PerformRotation();
     }
@@ -130,6 +134,7 @@ public class PlayerMotor : MonoBehaviour
 
     private void PlayerJump()
     {
+        
         JumpForce = ForceMode.Impulse;
         rb.AddForce(0,Jump,0,JumpForce); //le type de force
         

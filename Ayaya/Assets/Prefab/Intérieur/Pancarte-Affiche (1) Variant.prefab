@@ -102,10 +102,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pancarte-Affiche (1) Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 1b1a5172afc971d4a8bbe9747ddacdc1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1b1a5172afc971d4a8bbe9747ddacdc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.84
@@ -162,6 +158,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1b1a5172afc971d4a8bbe9747ddacdc1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: 1b1a5172afc971d4a8bbe9747ddacdc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 64514fd4b1651bf49b73f9dea2cc1c1a, type: 2}
     - target: {fileID: 2300000, guid: 1b1a5172afc971d4a8bbe9747ddacdc1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -175,10 +179,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 64514fd4b1651bf49b73f9dea2cc1c1a, type: 2}
     - target: {fileID: 2300006, guid: 1b1a5172afc971d4a8bbe9747ddacdc1, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 64514fd4b1651bf49b73f9dea2cc1c1a, type: 2}
-    - target: {fileID: 2300008, guid: 1b1a5172afc971d4a8bbe9747ddacdc1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 64514fd4b1651bf49b73f9dea2cc1c1a, type: 2}

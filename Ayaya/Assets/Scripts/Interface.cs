@@ -31,13 +31,12 @@ public class Interface : MonoBehaviour
     {
         foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Player"))
         {
-            Debug.Log(gameObject.name);
+           
             if (gameObject.GetComponent<Player>().isLocalPlayer)
                 player = gameObject.GetComponent<Player>();
         }
 
         
-        Debug.Log(player.name);
         Localplayershoot = player.GetComponent<PlayerShoot>(); //a modifier pour le multi, avec GetComponent<Newwork.Behaviour>().IsLocalPlayer
         playerControler= (PlayerControler) player.GetComponent("PlayerControler");
     }
@@ -77,7 +76,8 @@ public class Interface : MonoBehaviour
     }
 
     public void HPText()
-    {    if (PlayerPrefs.GetString("language") == "français")
+    {   
+        if (PlayerPrefs.GetString("language") == "français")
             HPtext.text = "PV:"+Mathf.Round(player.currentHP)  + "%";
         else
         {

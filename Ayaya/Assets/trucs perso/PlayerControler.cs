@@ -34,25 +34,17 @@ public class PlayerControler : MonoBehaviour
    }
    public void Aim()
    {
-    Camera camera= motor.player.GetComponentInChildren<Camera>();
+    Camera camera= GetComponentInChildren<Camera>();
       
       
        if (Input.GetButtonDown("Fire2") && !IsAiming)
        {
-         
            camera.fieldOfView -=25;
-           
            LookSensibility =(PlayerPrefs.GetFloat("sensibilité")*10+3)/5;
-           
            IsAiming = true;
-           
-
        }
-
        else
        {
-
-
            if (Input.GetButtonDown("Fire2") && IsAiming)
            {
                

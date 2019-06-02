@@ -12,7 +12,8 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
     public PlayerWeapon weapon;
     [SerializeField]
     private Camera cam;
-
+    [SerializeField]
+    private Player _player;
     private float AudioTimer = 0.5f; //pour que l'audio s'arrête au bout d'un certain temps
     public float ReloadTime;
     public AudioSource shotaudio;
@@ -24,6 +25,8 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
     private void Start()
     {
+      
+        
         shotaudio = GameObject.Find("RATATATATATA").GetComponent<AudioSource>();
         _interface = GameObject.Find("Interface IG").GetComponent<Interface>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -50,8 +53,11 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
       
         if(ReloadTime>0)
             ReloadTime -= Time.deltaTime;
-     
-      
+
+
+        if (_player == null)
+            _player = GetComponent<Player>();
+        
         if(weapon.ammo==0&&Input.GetButton("Fire1")||Input.GetKey( (KeyCode) System.Enum.Parse(typeof(KeyCode),PlayerPrefs.GetString("ReloadKey", "R"))))
             Reload();
             
@@ -66,40 +72,46 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
     private void Shoot()
     {
+        
       
-      
+     
         if (!shotaudio.isPlaying)
         {
             shotaudio.Play();
             AudioTimer = 0.5f;
         }
-     
-      
 
         weapon.ammo -= 1;    
         RaycastHit hit; //Raycast = litteralement lanceur de rayon, lance un rayon d'une certaine distance et direction s'arrêtant devant le 1er obstacle touché.
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, weapon.range, mask)) ;
         {
-          
-            if (hit.collider != null)         
-                Debug.Log("Objet touché" + hit.collider.name);
-            if (hit.collider.CompareTag("Player"))
-            { _interface.ShowHitmarker();
-                GetTarget(hit.collider.GetComponent<Player>().id,weapon.dmg);
-              
+
+            if (hit.collider != null)
+            {     Debug.Log("Objet touché" + hit.collider.name);
+                
+                if (hit.collider.CompareTag("Player")||(hit.collider.CompareTag("Target")))
+                    GetTarget(hit.collider.GetComponent<Player>().id, weapon.dmg);
+                else
+                {
+                    _player.TakeDamage(2);
+                }
             }
-
-
         }
-      
+
     }
 
-    public static void GetTarget(string id, int dmg)
+    
+    public  void GetTarget(string id, int dmg)
     {
 
         Player Target = GameManager.GetPlayer("Player "+id);
         Debug.Log(Target.currentHP);
-        Target.TakeDamage(dmg);
+        if (Target.gameObject.GetComponent<Hunter>() == null)
+        {
+            _interface.ShowHitmarker();
+            Target.TakeDamage(dmg);
+        }
+        Debug.Log(GameManager.GetPlayer("Player "+id).name);
     }
   
 
@@ -107,13 +119,11 @@ public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
     private void Reload()
     {
-        if (weapon.totalammo != 0)
-        {
+     
           
             ReloadTime = 2f;
-            int possibleammo = weapon.chargercapacity - weapon.ammo % weapon.totalammo;
-            weapon.totalammo -= possibleammo;
+            int possibleammo = weapon.chargercapacity - weapon.ammo;
             weapon.ammo +=possibleammo;
-        }
+        
     }
 }
