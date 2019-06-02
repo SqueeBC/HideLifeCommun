@@ -2,6 +2,7 @@
 using System.Linq;
 using trucs_perso;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -54,10 +55,7 @@ public class PlayerMotor : MonoBehaviour
     }
 
     private void Update()
-    {
-       
-
-        
+    {     
         if (player == null)
             player = GetComponentInParent<Player>();
         if (!gameObject.CompareTag("Spectator"))
@@ -73,8 +71,9 @@ public class PlayerMotor : MonoBehaviour
 
             if (notmovingtime <= 0 && taunts.Count > 0)
             {
+                
                 System.Random randomtaunt = new System.Random();
-                AudioSource.PlayClipAtPoint(taunts[randomtaunt.Next(taunts.Count)].clip, this.transform.position);
+                AudioSource.PlayClipAtPoint(taunts[randomtaunt.Next(taunts.Count)].clip, this.transform.position,1+PlayerPrefs.GetFloat("Volume")/ 80);
                 notmovingtime = 20;
             }
 

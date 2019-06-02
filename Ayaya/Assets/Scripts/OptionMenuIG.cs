@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -20,6 +21,8 @@ public class OptionMenuIG : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Volume", volume);
         audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("Volume", volume));
+       
+      
     }
 
     public void FullScreen(bool isFullScreen)
