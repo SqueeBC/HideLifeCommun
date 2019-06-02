@@ -19,7 +19,6 @@ public class multipj1 : MonoBehaviour
             GameObject joueur = (GameObject) Instantiate(j1, spawnPoint10.transform.position, Quaternion.Euler(0.0f,0.0f,0.0f));
             joueur.GetComponent<SetUpPJ>().manualSpawn = true;
             NetworkServer.Spawn(joueur);
-            Debug.Log("azerty tu existeeeee");
             cam = Camera.main;
             if (cam != null)
                 cam.gameObject.SetActive(false);

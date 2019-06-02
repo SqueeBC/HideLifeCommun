@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using Random = System.Random;
 
 //gère les cam et mouvement en réseau
 
@@ -39,21 +40,41 @@ public class SetUpPJ : NetworkBehaviour
 
     public void Spawn()
     {
-        if (gameObject.transform.GetComponent<Hunter>() != null)
+        Random rng = new Random();
+        //if (rng.Next(1)==1)
+        if (gameObject.transform.GetComponent<Hunter>())
         {
+            /*if (!gameObject.transform.GetComponent<Hunter>())
+                gameObject.AddComponent<Hunter>();
+            else
+                gameObject.transform.GetComponent<Hunter>().enabled = true;
+            if (gameObject.transform.GetComponent<Prop>())
+                gameObject.transform.GetComponent<Prop>().enabled = false;*/
             gameObject.transform.GetChild(1).GetComponent<PlayerMotor>().enabled = true;
             gameObject.transform.GetChild(1).GetComponent<PlayerControler>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(0).GetComponent<Camera>().enabled = true;
-            gameObject.transform.GetChild(1).GetChild(0).GetComponent<AudioListener>().enabled = true;
-            Debug.Log("coucou t'es un hunter et tu existe");
+            gameObject.transform.GetChild(1).GetChild(0).GetComponent<AudioListener>().enabled = true;/*
+            gameObject.transform.GetChild(0).GetComponent<PlayerMotor>().enabled = false;
+            gameObject.transform.GetChild(0).GetComponent<PlayerControler>().enabled = false;
+            gameObject.transform.GetChild(0).GetChild(0).GetComponent<Camera>().enabled = false;
+            gameObject.transform.GetChild(0).GetChild(0).GetComponent<AudioListener>().enabled = false;*/
         }
         else
         {
+            /*if (gameObject.transform.GetComponent<Hunter>())
+                gameObject.transform.GetComponent<Hunter>().enabled = false;
+            if (!gameObject.transform.GetComponent<Prop>())
+                gameObject.AddComponent<Prop>();
+            else
+                gameObject.transform.GetComponent<Prop>().enabled = true;
+            gameObject.transform.GetChild(1).GetComponent<PlayerMotor>().enabled = false;
+            gameObject.transform.GetChild(1).GetComponent<PlayerControler>().enabled = false;
+            gameObject.transform.GetChild(1).GetChild(0).GetComponent<Camera>().enabled = false;
+            gameObject.transform.GetChild(1).GetChild(0).GetComponent<AudioListener>().enabled = false;*/
             gameObject.transform.GetChild(0).GetComponent<PlayerMotor>().enabled = true;
             gameObject.transform.GetChild(0).GetComponent<PlayerControler>().enabled = true;
             gameObject.transform.GetChild(0).GetChild(0).GetComponent<Camera>().enabled = true;
             gameObject.transform.GetChild(0).GetChild(0).GetComponent<AudioListener>().enabled = true;
-            Debug.Log("coucou t'es un prop et tu existe");
         }
     }
 
