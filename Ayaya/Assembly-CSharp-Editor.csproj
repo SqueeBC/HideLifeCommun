@@ -303,11 +303,14 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:/Prog/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="I18N">
+      <HintPath>C:/Users/etien/OneDrive/Bureau/test/HideLifeCommun/Ayaya/Assets/Plugins/I18N.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.West">
+      <HintPath>C:/Users/etien/OneDrive/Bureau/test/HideLifeCommun/Ayaya/Assets/Plugins/I18N.West.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>C:/Users/etien/OneDrive/Bureau/test/HideLifeCommun/Ayaya/Assets/Plugins/MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SqlClient">
-      <HintPath>C:/Users/etien/OneDrive/Bureau/test/HideLifeCommun/Ayaya/Assets/Plugins/System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
       <HintPath>C:/Users/etien/OneDrive/Bureau/test/HideLifeCommun/Ayaya/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
