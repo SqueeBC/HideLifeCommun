@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\Prop.cs" />
     <Compile Include="Assets\Scripts\PropTransform.cs" />
+    <Compile Include="Assets\Scripts\Quit.cs" />
     <Compile Include="Assets\Scripts\Sensitivity.cs" />
     <Compile Include="Assets\Scripts\SetUpPJ.cs" />
     <Compile Include="Assets\Scripts\TagApplication.cs" />
@@ -293,13 +294,13 @@
     <None Include="Assets\Textures-import\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -503,28 +504,28 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="I18N">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Assets/Plugins/I18N.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Assets/Plugins/I18N.dll</HintPath>
     </Reference>
     <Reference Include="I18N.West">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Assets/Plugins/I18N.West.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Assets/Plugins/I18N.West.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Assets/Plugins/MySql.Data.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Assets/Plugins/MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="TextMeshPro-2017.3-Editor">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Editor.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Editor.dll</HintPath>
     </Reference>
     <Reference Include="TextMeshPro-2017.3-Runtime">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Runtime.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/SpartiateT/Desktop/projet HideLife fin/HideLifeCommun/Ayaya/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/SpartiateT/Desktop/Hide Clone encore/HideLifeCommun/Ayaya/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
