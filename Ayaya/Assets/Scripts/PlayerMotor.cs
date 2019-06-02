@@ -55,6 +55,9 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
+       
+
+        
         if (player == null)
             player = GetComponentInParent<Player>();
         if (!gameObject.CompareTag("Spectator"))
@@ -131,6 +134,7 @@ public class PlayerMotor : MonoBehaviour
     {
         
         //récuperation de la rotation
+
             rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation)); //fonction d'Unity qui fait une rotation au rigidbody
             //les Quaternions représentent des rotations.
             currentCameraRotationX -= cameraRotationX; //mettre un + pour caméra invers&e
