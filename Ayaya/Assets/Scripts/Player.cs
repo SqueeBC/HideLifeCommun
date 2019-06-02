@@ -7,7 +7,7 @@ using UnityStandardAssets.Utility;
 
 namespace trucs_perso
 {
-    public class Player : NetworkBehaviour //a remplacer avec NetworkBehaviour pour le multi
+    public class Player : NetworkBehaviour 
 
         //EN CONSTRUCTION
     {   [SerializeField]             
@@ -16,9 +16,10 @@ namespace trucs_perso
         [SerializeField] public int maxHP;
 
         public string id;
-        
+        [SyncVar]
         public int victory;
         //mettre pour le multi[SyncVar] //syncronise avec le serveur
+        [SyncVar]
         public int currentHP;
         public float _time = 2;
         
@@ -27,15 +28,12 @@ namespace trucs_perso
         {
             maxHP = 100;
             currentHP = 100;
-            StopCoroutine(waiter());
             id = GetComponent<NetworkIdentity>().netId.ToString();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            
         }
 
-        IEnumerator waiter()
-        {
-            yield return new WaitForSeconds(4);
-        }
+        
 
         public void TakeDamage(int dmg)
         {

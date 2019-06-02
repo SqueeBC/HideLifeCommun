@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 
 //Le système de tir
 
-public class PlayerShoot : MonoBehaviour //NETWORKBEHAVIOUR A REMPLACER
+public class PlayerShoot : NetworkBehaviour //NETWORKBEHAVIOUR A REMPLACER
 {
     public PlayerWeapon weapon;
     [SerializeField]

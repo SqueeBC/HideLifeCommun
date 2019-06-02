@@ -13,6 +13,7 @@ public class GameManager : NetworkBehaviour
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
     private bool start;
     private bool end;
+  
 
     public void RegisterPlayer(string netID, Player player) //l'id du joueur selon le serv     
     {
@@ -132,7 +133,16 @@ public class GameManager : NetworkBehaviour
     [Server]
     private void Update()
     { 
-        
+        int nbrhuntertot = 0;
+     
+        foreach (Player _player in players.Values)
+        {
+            if (_player.GetComponent<Hunter>() != null)
+                nbrhuntertot++;                  
+        }
+             
+        Debug.Log("nbrhuntertot "+nbrhuntertot);
+      
         
         if(start)
         foreach (var player in FindObjectsOfType<Player>())
@@ -195,33 +205,39 @@ public class GameManager : NetworkBehaviour
     private void AssignRole(Player player)
     {
         
-            
+           
         int nbrhuntertot = 0;
         int nbrhunter=  Mathf.RoundToInt(players.Count * 3 / 10+1);
-        foreach (Player _player in players.Values)
-        {
-            if (_player.GetComponent<Hunter>() != null)
-                nbrhuntertot++;                  
-        }
-          
+            foreach (Player _player in players.Values)
+            {
+                if (_player.GetComponent<Hunter>() != null)
+                    nbrhuntertot++;                  
+            }
+        Debug.Log(nbrhunter);
+        Debug.Log(nbrhuntertot);
+        Debug.Log(nbrhuntertot < nbrhunter);
         if (nbrhuntertot < nbrhunter)
         {
                
             player.gameObject.AddComponent<Hunter>();
             player.gameObject.GetComponent<Hunter>().id = player.id;
-              
+            UnRegisterPlayer("Player "+player.id);       
+            Destroy(player);
+            RegisterPlayer(player.gameObject.GetComponent<Hunter>().id,player.gameObject.GetComponent<Hunter>());
         }
         else
         {
             player.gameObject.AddComponent<Prop>();
             player.gameObject.GetComponent<Prop>().id = player.id;
-              
+            UnRegisterPlayer("Player "+player.id);       
+            Destroy(player);
+            RegisterPlayer(player.gameObject.GetComponent<Prop>().id,player.gameObject.GetComponent<Prop>());
 
         }
          
             
-        UnRegisterPlayer("Player "+player.id);
-        Destroy(player);    
+      
+        
 
     }
 }
