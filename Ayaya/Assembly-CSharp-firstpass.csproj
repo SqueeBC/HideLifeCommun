@@ -400,8 +400,18 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="I18N">
+      <HintPath>C:/Users/etien/OneDrive/Bureau/test/HideLifeCommun/Ayaya/Assets/Plugins/I18N.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.West">
+      <HintPath>C:/Users/etien/OneDrive/Bureau/test/HideLifeCommun/Ayaya/Assets/Plugins/I18N.West.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
+<<<<<<< HEAD
       <HintPath>C:/Users/SpartiateT/Desktop/Hidelifelejeu53/HideLifeCommun/Ayaya/Assets/Plugins/MySql.Data.dll</HintPath>
+=======
+      <HintPath>C:/Users/etien/OneDrive/Bureau/test/HideLifeCommun/Ayaya/Assets/Plugins/MySql.Data.dll</HintPath>
+>>>>>>> 6d63477cd67e57dc972bc27763cc87ccc4f52013
     </Reference>
     <Reference Include="TextMeshPro-2017.3-Editor">
       <HintPath>C:/Users/SpartiateT/Desktop/Hidelifelejeu53/HideLifeCommun/Ayaya/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Editor.dll</HintPath>
