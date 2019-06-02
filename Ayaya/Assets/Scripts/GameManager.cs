@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class GameManager : NetworkBehaviour 
+public class GameManager : NetworkManager 
 {
     [SerializeField] private Text WinText;
     private float time = 600;
@@ -127,7 +127,10 @@ public class GameManager : NetworkBehaviour
     }
     [Server]
     private void Update()
-    {    if(start)
+    { 
+        
+        
+        if(start)
         foreach (var player in FindObjectsOfType<Player>())
         {
 
