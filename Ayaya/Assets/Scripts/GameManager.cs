@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class GameManager : NetworkBehaviour
+public class GameManager : NetworkManager 
 {
     [SerializeField] private Text WinText;
     private float time = 600;
@@ -18,7 +18,7 @@ public class GameManager : NetworkBehaviour
         string playerID = "Player " + netID;
         players.Add(playerID, player);
     }
-
+    
     public void VictoryForProps()
     {
         if (PlayerPrefs.GetString("language", "english") == "english")
@@ -124,7 +124,7 @@ public class GameManager : NetworkBehaviour
         GUILayout.EndArea();
 
     }
-
+    [Server]
     private void Update()
     {    if(start)
         foreach (var player in FindObjectsOfType<Player>())
