@@ -66,6 +66,7 @@ public class GameManager : NetworkBehaviour
         int Min;
         GUILayout.BeginArea(new Rect(200, 200, 200, 200));
         GUILayout.BeginVertical();
+        if(!start)
         start = GUILayout.Button("Ready");
         foreach (string playerID in players.Keys)
         {
@@ -162,19 +163,14 @@ public class GameManager : NetworkBehaviour
 
             }
         }
-
-
-    
-
-
-if (SceneManager.GetActiveScene().buildIndex != 6)
+        if (SceneManager.GetActiveScene().buildIndex != 6&&start)
         {
             if (time <= 0)
                 VictoryForProps();
             bool Mybool = true;
             foreach (Player player in players.Values)
             {
-                Mybool = Mybool && player.gameObject.GetComponent<Prop>() == null;
+                Mybool = Mybool && (player.gameObject.GetComponent<Prop>() == null || player.gameObject.CompareTag("Spectator"));
             }
 
             if (Mybool)
@@ -182,12 +178,15 @@ if (SceneManager.GetActiveScene().buildIndex != 6)
             time -= Time.deltaTime;
 
         }
-   
+
+        Debug.Log(start);
+
+
     }
 
     private void AssignRole(Player player)
     {
-
+        
             
         int nbrhuntertot = 0;
         int nbrhunter=  Mathf.RoundToInt(players.Count * 3 / 10+1);

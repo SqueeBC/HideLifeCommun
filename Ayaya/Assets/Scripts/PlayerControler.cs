@@ -1,4 +1,5 @@
 ﻿using DefaultNamespace;
+using trucs_perso;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -120,7 +121,8 @@ public class PlayerControler : MonoBehaviour
        float yRot = Input.GetAxisRaw("Mouse X");
        
        
-       Vector3 rotation = new Vector3(0,yRot, 0)*LookSensibility;      
+       Vector3 rotation = new Vector3(0,yRot, 0)*LookSensibility;     
+       
        motor.Rotate(rotation);
        
        float xRot = Input.GetAxisRaw("Mouse Y");

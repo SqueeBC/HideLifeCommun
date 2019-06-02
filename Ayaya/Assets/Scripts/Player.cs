@@ -16,7 +16,7 @@ namespace trucs_perso
 
         [SerializeField] public int maxHP;
 
-        [SerializeField] public string id;
+        public string id;
         
         public int victory;
         //mettre pour le multi[SyncVar] //syncronise avec le serveur
@@ -27,7 +27,7 @@ namespace trucs_perso
         private void Start()
         {
             StopCoroutine(waiter());
-
+            id = GetComponent<NetworkIdentity>().netId.ToString();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
 

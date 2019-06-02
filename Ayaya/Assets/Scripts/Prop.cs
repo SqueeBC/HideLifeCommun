@@ -7,8 +7,10 @@ public class Prop : Player
 {  
     [SerializeField]
     private Camera camera;
+    [SerializeField]
+    private LayerMask _layerMask;
 
-    private LayerMask _layerMask = 9;
+    private LayerMask layer;
     public string propSize;
     private void Start()
     {   gameObject.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false); 
@@ -19,12 +21,15 @@ public class Prop : Player
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxHP = 100;
         currentHP = maxHP;
-        
-       
+        camera.transform.localPosition = new Vector3(0,2,0);
+     
+
     }
     
+  
+    
     private  void Update()
-    { Debug.Log(camera.transform.localPosition);
+    { Debug.Log(_layerMask.value);
         if (_time > -1 && gameObject.GetComponent<Collider>() != null)
         {
             if (CompareTag("Spectator"))
@@ -47,7 +52,7 @@ public class Prop : Player
     {
                 
         RaycastHit hit;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 100,_layerMask)) ;
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 100)) ;
         {
             Debug.Log(hit.collider.name);
             if (hit.collider != null&&(hit.collider.CompareTag("Big Item")||hit.collider.CompareTag("Medium Item")||hit.collider.CompareTag("Small Item")))
