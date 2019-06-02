@@ -22,7 +22,7 @@ public class Prop : Player
         maxHP = 100;
         currentHP = maxHP;
         camera.transform.localPosition = new Vector3(0,2,0);
-        _layerMask = 1 << 7 | 1 << 6 | 1 << 5 | 1 << 4 | 1 << 3 | 1 << 2;
+     
 
     }
     
