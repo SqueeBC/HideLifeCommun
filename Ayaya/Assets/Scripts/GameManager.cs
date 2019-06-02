@@ -12,6 +12,7 @@ public class GameManager : NetworkBehaviour
     private float time = 600;
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
     private bool start;
+    private bool end;
 
     public void RegisterPlayer(string netID, Player player) //l'id du joueur selon le serv     
     {
@@ -32,6 +33,7 @@ public class GameManager : NetworkBehaviour
         {
             prop.victory++;
         }
+        end = true;
     }
 
     public void VictoryForHunters()
@@ -47,6 +49,8 @@ public class GameManager : NetworkBehaviour
         {
             hunter.victory++;
         }
+
+        end = true;
     }
 
     public void UnRegisterPlayer(string playerID)
@@ -167,7 +171,7 @@ public class GameManager : NetworkBehaviour
 
             }
         }
-        if (SceneManager.GetActiveScene().buildIndex != 6&&start)
+        if (SceneManager.GetActiveScene().buildIndex != 6&&start&&!end)
         {
             if (time <= 0)
                 VictoryForProps();
