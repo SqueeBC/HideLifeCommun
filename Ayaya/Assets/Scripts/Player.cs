@@ -26,6 +26,8 @@ namespace trucs_perso
 
         private void Start()
         {
+            maxHP = 100;
+            currentHP = 100;
             StopCoroutine(waiter());
             id = GetComponent<NetworkIdentity>().netId.ToString();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();

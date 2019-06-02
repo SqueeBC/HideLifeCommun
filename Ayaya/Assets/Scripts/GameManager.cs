@@ -126,7 +126,7 @@ public class GameManager : NetworkBehaviour
     }
 
     private void Update()
-    {
+    {    if(start)
         foreach (var player in FindObjectsOfType<Player>())
         {
 
