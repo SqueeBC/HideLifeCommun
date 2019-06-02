@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\etien\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\etien\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Ayaya.1133920373.00" t="ExcludeRecursive" />
-    <e p="C:\Users\etien\OneDrive\Bureau\test\HideLifeCommun\Ayaya" t="IncludeRecursive">
+    <e p="C:\Users\SpartiateT\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\SpartiateT\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Ayaya.-591824264.00" t="ExcludeRecursive" />
+    <e p="C:\Users\SpartiateT\Desktop\Hide Clone encore\HideLifeCommun\Ayaya" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="multipj1.cs" t="Include" />
+        <e p="Quit.cs" t="Include" />
         <e p="SampleScenes" t="Include">
           <e p="Menu" t="Include">
             <e p="Scripts" t="Include">
@@ -625,12 +626,9 @@
         <e p="Tuto_transfo.cs" t="Include" />
       </e>
       <e p="Ayaya.sln" t="IncludeFlat" />
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
