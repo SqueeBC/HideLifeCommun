@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 398}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 348}
   m_MaxSize: {x: 12008, y: 8048}
   vertical: 0
-  controlID: 72
+  controlID: 105
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -93,8 +93,8 @@ MonoBehaviour:
     y: 0
     width: 259
     height: 650
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -119,8 +119,8 @@ MonoBehaviour:
     y: 650
     width: 1567
     height: 297
-  m_MinSize: {x: 102, y: 124}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 14}
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 348}
   m_MaxSize: {x: 8006, y: 8048}
   vertical: 1
-  controlID: 73
+  controlID: 28
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 74
+  controlID: 29
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -371,20 +371,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Plugins
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Plugins
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\SpartiateT\Desktop\projet HIDELIFE\HideLifeCommun\Ayaya
+  m_LastProjectPath: C:\Users\SpartiateT\Desktop\projet HideLife fin\HideLifeCommun\Ayaya
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 9a500000
-    m_LastClickedID: 20634
-    m_ExpandedIDs: 00000000b22a0000c050000000ca9a3b
+    m_SelectedIDs: 14550000
+    m_LastClickedID: 21780
+    m_ExpandedIDs: 0000000014550000f678000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -412,7 +412,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b22a0000c0500000
+    m_ExpandedIDs: 0000000014550000f6780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -437,8 +437,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 98630000
-    m_LastClickedInstanceID: 25496
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -496,9 +496,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 98630000
-      m_LastClickedID: 25496
-      m_ExpandedIDs: aefbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6edbffff46890000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -584,9 +584,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.022807855, y: 0.00059657695, z: -0.00001366463, w: -0.9997397}
+    m_Target: {x: -0.022807853, y: 0.00059657695, z: -0.0000136646295, w: -0.9997397}
     speed: 2
-    m_Value: {x: -0.022807855, y: 0.00059657695, z: -0.00001366463, w: -0.9997397}
+    m_Value: {x: -0.022807853, y: 0.00059657695, z: -0.0000136646295, w: -0.9997397}
   m_Size:
     m_Target: 956.3463
     speed: 2
