@@ -76,6 +76,9 @@ MonoBehaviour:
   - {fileID: 7234425009746297665}
   - {fileID: 2245295940911569639}
   - {fileID: 318543844120150571}
+  spawnPoint9: {fileID: 0}
+  j1: {fileID: 4622891943026284374, guid: 33ed6f3b7b7951c46a3413fdeb2084fc, type: 3}
+  actu: {fileID: 0}
 --- !u!114 &3168830460867186822
 MonoBehaviour:
   m_ObjectHideFlags: 0
