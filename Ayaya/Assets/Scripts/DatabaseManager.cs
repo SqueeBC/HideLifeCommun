@@ -54,7 +54,7 @@ public class DatabaseManager : MonoBehaviour
             BtnRegisterText.text = "register";
             BtnLoginText.text = "login";
             TxtMessageCo.text = "Connexion";
-            placeholder.text = "passeword";
+            placeholder.text = "password";
         }
     }
 
