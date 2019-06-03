@@ -389,7 +389,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ForcedReset
 74fdef42e5d1b91d250d09f9fc6f54da Assembly-CSharp-firstpass.dll:UnityStandardAssets._2D.Camera2DFollow
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.TextConsoleSimulator
-bae8097e0b673550f0b7b5cf21806de9 Assembly-CSharp.dll:.GameManager
+4ebe1d56c8af159afab2ef901feb8202 Assembly-CSharp.dll:.GameManager
 4f631fd718256a8c69483c396671a274 Assembly-CSharp.dll:UnityStandardAssets.Utility.PlatformSpecificContent
 219ec6059796d8951d2adcd8505d0dc2 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
 61faedcd907718913efd3ec146822d0e Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Ball.Ball
