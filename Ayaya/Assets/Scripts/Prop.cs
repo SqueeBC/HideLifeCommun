@@ -16,18 +16,15 @@ public class Prop : Player
     private void Start()
     {   
         id = GetComponent<NetworkIdentity>().netId.ToString();
-        gameObject.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false); 
-        gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false); 
-        gameObject.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true); 
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true); 
+        gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); 
+        gameObject.transform.GetChild(1).gameObject.SetActive(false); 
         Destroy(gameObject.GetComponent<PlayerShoot>());
-        camera = GetComponentInChildren<Camera>();
+        camera = gameObject.transform.GetChild(0).GetComponentInChildren<Camera>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxHP = 100;
         currentHP = maxHP;
-        
-        camera.transform.localPosition = new Vector3(0,2,0);
-     
-
     }
     
   
