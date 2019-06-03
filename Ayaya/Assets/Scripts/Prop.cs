@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using trucs_perso;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class Prop : Player
 {  
@@ -13,7 +14,9 @@ public class Prop : Player
     private LayerMask layer;
     public string propSize;
     private void Start()
-    {   gameObject.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false); 
+    {   
+        id = GetComponent<NetworkIdentity>().netId.ToString();
+        gameObject.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false); 
         gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false); 
         gameObject.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true); 
         Destroy(gameObject.GetComponent<PlayerShoot>());
@@ -21,6 +24,7 @@ public class Prop : Player
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxHP = 100;
         currentHP = maxHP;
+        
         camera.transform.localPosition = new Vector3(0,2,0);
      
 

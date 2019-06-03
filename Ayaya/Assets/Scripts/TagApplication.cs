@@ -9,7 +9,7 @@ public class TagApplication : MonoBehaviour
     {
         int i = 0;
       GameObject Small =  GameObject.Find("PETITS OBJETS");
-        while(i<Small.transform.childCount)
+            while(i<Small.transform.childCount)
         {
           
             Small.transform.GetChild(i).tag = "Small Item";

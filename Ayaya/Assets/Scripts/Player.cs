@@ -49,7 +49,12 @@ namespace trucs_perso
                 if (SceneManager.GetActiveScene().buildIndex != 6||!GetComponent< NetworkIdentity>().isLocalPlayer)
                 {
                     gameManager.UnRegisterPlayer("Player " + id);
+                    if(!CompareTag("Target"))
                     Spectate();
+                    else
+                    {
+                        Destroy(gameObject);
+                    }
 
                 }
                 else

@@ -54,10 +54,13 @@
           <e p="tpback.cs" t="Include" />
           <e p="tpHuntProp.cs" t="Include" />
           <e p="Tuto.cs" t="Include" />
+          <e p="Tuto_caméléon.cs" t="Include" />
+          <e p="Tuto_menu.cs" t="Include" />
           <e p="Tuto_retour.cs" t="Include" />
           <e p="tuto_saut.cs" t="Include" />
           <e p="Tuto_sprint.cs" t="Include" />
           <e p="Tuto_tir.cs" t="Include" />
+          <e p="Tuto_transfo.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="2D" t="Include">
@@ -617,9 +620,6 @@
             </e>
           </e>
         </e>
-        <e p="Tuto_caméléon.cs" t="Include" />
-        <e p="Tuto_menu.cs" t="Include" />
-        <e p="Tuto_transfo.cs" t="Include" />
       </e>
       <e p="Ayaya.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

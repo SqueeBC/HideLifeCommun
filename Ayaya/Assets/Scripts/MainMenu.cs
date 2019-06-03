@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    private bool tutorialdone = false;
+    
     public GameObject tutorialwarning;
     private Button Play; 
     private Text SettingsText;
@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     private Text TutorialText;
    
     private void Start()
-    {
+    {    
         Play = GameObject.Find("Play").GetComponent<Button>();
         PlayText = Play.GetComponentInChildren<Text>();
         SettingsText = GameObject.Find("Settings").GetComponent<Button>().GetComponentInChildren<Text>();
@@ -40,9 +40,9 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        if (tutorialdone == false)
+        if (PlayerPrefs.GetString("tuto","no") == "no")
         {
-            tutorialdone = true;
+            PlayerPrefs.SetString("tuto", "yes");
             tutorialwarning.SetActive(true);
             Play.GetComponent<Image>().color = new Color32(255, 1, 1,255);
         }
@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToTutorial()
     { SceneManager.LoadScene(6); 
-        tutorialdone = true;
+        PlayerPrefs.SetString("tuto", "yes");
         
 
     }   

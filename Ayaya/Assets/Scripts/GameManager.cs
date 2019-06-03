@@ -63,88 +63,91 @@ public class GameManager : NetworkBehaviour
     {
         return players[playerID];
     }
-    
+
 
     private void OnGUI() //permet d'afficher les joueurs
     {
-        string spect = "dead";
-        GUIStyle style = new GUIStyle(); //pour changer la police du texte
-        int Min;
-        GUILayout.BeginArea(new Rect(200, 200, 200, 200));
-        GUILayout.BeginVertical();
-        if(!start)
-        start = GUILayout.Button("Ready");
-        foreach (string playerID in players.Keys)
-        {
-            GUILayout.Label(playerID + "-" + players[playerID].transform.name, style);
-        }
 
-        style.fontSize = 24;
-        Min = Mathf.RoundToInt((time / 60 - 0.5f));
-        GUILayout.Label("-Time :" + Mathf.RoundToInt((Min)) + "min " + Mathf.RoundToInt(time - Min * 60) + " s", style);
-        GUILayout.EndVertical();
-        GUILayout.EndArea();
-
-        style.fontSize = 14;
-        GUILayout.BeginArea(new Rect(950, 200, 200, 200));
-        GUILayout.BeginVertical();
-        GUILayout.Label("Prop :", style);
-        style.fontSize = 20;
-        foreach (Player prop in players.Values)
+        if (SceneManager.GetActiveScene().buildIndex != 6)
         {
-            if (prop.GetComponent<Prop>() != null)
+
+
+            string spect = "dead";
+
+            GUIStyle style = new GUIStyle(); //pour changer la police du texte
+            int Min;
+            GUILayout.BeginArea(new Rect(200, 200, 200, 200));
+            GUILayout.BeginVertical();
+
+            if (!start)
+                start = GUILayout.Button("Ready");
+            foreach (string playerID in players.Keys)
             {
-                if (prop.CompareTag("Spectator"))
-                {
+                GUILayout.Label(playerID + "-" + players[playerID].transform.name, style);
+            }
 
-                    GUILayout.Label("-DEAD " + prop.transform.name, style);
-                }
-                else
+            style.fontSize = 24;
+            Min = Mathf.RoundToInt((time / 60 - 0.5f));
+            GUILayout.Label("-Time :" + Mathf.RoundToInt((Min)) + "min " + Mathf.RoundToInt(time - Min * 60) + " s",
+                style);
+            GUILayout.EndVertical();
+            GUILayout.EndArea();
+
+            style.fontSize = 14;
+            GUILayout.BeginArea(new Rect(950, 200, 200, 200));
+            GUILayout.BeginVertical();
+            GUILayout.Label("Prop :", style);
+            style.fontSize = 20;
+            foreach (Player prop in players.Values)
+            {
+                if (prop.GetComponent<Prop>() != null)
                 {
-                    GUILayout.Label("-" + prop.transform.name, style);
+                    if (prop.CompareTag("Spectator"))
+                    {
+
+                        GUILayout.Label("-DEAD " + prop.transform.name, style);
+                    }
+                    else
+                    {
+                        GUILayout.Label("-" + prop.transform.name, style);
+                    }
                 }
             }
-        }
 
-        GUILayout.EndVertical();
-        GUILayout.EndArea();
-        GUILayout.BeginArea(new Rect(750, 200, 200, 200));
-        GUILayout.BeginVertical();
-        style.fontSize = 14;
-        GUILayout.Label("Hunter :", style);
-        style.fontSize = 20;
-        foreach (Player hunter in players.Values)
-        {
-            if (hunter.GetComponent<Hunter>() != null)
+
+            GUILayout.EndVertical();
+            GUILayout.EndArea();
+            GUILayout.BeginArea(new Rect(750, 200, 200, 200));
+            GUILayout.BeginVertical();
+            style.fontSize = 14;
+            GUILayout.Label("Hunter :", style);
+            style.fontSize = 20;
+            foreach (Player hunter in players.Values)
             {
-                if (hunter.CompareTag("Spectator"))
-                    GUILayout.Label("-DEAD " + hunter.transform.name, style);
-                else
+                if (hunter.GetComponent<Hunter>() != null)
                 {
-                    GUILayout.Label("-" + hunter.transform.name, style);
+                    if (hunter.CompareTag("Spectator"))
+                        GUILayout.Label("-DEAD " + hunter.transform.name, style);
+                    else
+                    {
+                        GUILayout.Label("-" + hunter.transform.name, style);
+                    }
                 }
             }
+
+            GUILayout.EndVertical();
+            GUILayout.EndArea();
+
+
         }
-
-        GUILayout.EndVertical();
-        GUILayout.EndArea();
-
     }
+
     [Server]
     private void Update()
     { 
-        int nbrhuntertot = 0;
-     
-        foreach (Player _player in players.Values)
-        {
-            if (_player.GetComponent<Hunter>() != null)
-                nbrhuntertot++;                  
-        }
-             
-        Debug.Log("nbrhuntertot "+nbrhuntertot);
       
         
-        if(start)
+        if(start||(SceneManager.GetActiveScene().buildIndex == 6))
         foreach (var player in FindObjectsOfType<Player>())
         {
 
@@ -156,20 +159,12 @@ public class GameManager : NetworkBehaviour
 
             if (player.gameObject.GetComponent<Hunter>() == null && player.gameObject.GetComponent<Prop>() == null)
             {
-                if (SceneManager.GetActiveScene().buildIndex != 6)
-                {
-                   
+                if (SceneManager.GetActiveScene().buildIndex != 6)               
                         AssignRole(player);
-
-
-                }
-
                 else
                 {
-                    if (player.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer) //pour le tuto
+                    if (player.gameObject.GetComponent<Player>().isLocalPlayer) //pour le tuto
                     {
-
-
                         UnRegisterPlayer("Player " + player.id);
                         Destroy(player);
                         player.gameObject.AddComponent<Hunter>();

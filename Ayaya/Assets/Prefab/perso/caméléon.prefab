@@ -29,21 +29,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 51.34849, y: 15.602206, z: 14.266585}
   m_Center: {x: 4.81739, y: 1.0965823, z: -0.25577542}
---- !u!114 &564828591161297002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8315989633976143073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d60c03cf859a942a854529a33308aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
-  player: {fileID: 0}
-  cameraRotationLimit: 85
 --- !u!114 &1877668328499101274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,41 +62,6 @@ MonoBehaviour:
     i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &6700579193269331161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8315989633976143073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad121cd0498bab94d9e963426feaa27e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compoToDisable:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &6842343605750695432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8315989633976143073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98605a38d5954dd4597c3b45ba6a598a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  SprintCooldown: 0
-  stamina: 100
-  LookSensibility: 6
-  IsRunning: 0
-  IsAiming: 0
 --- !u!1001 &8315989633976175169
 PrefabInstance:
   m_ObjectHideFlags: 0
