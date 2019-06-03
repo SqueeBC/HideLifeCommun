@@ -3201,6 +3201,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ballon (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7592879835626436866, guid: a4c3747c769ac364a9af2d579288a4fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Small Item
+      objectReference: {fileID: 0}
     - target: {fileID: 7592879835626267938, guid: a4c3747c769ac364a9af2d579288a4fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3346,6 +3351,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canette (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6223066390795636150, guid: c6e7e11383bf83144bc8fccd47d91c68,
+        type: 3}
+      propertyPath: m_TagString
+      value: Small Item
+      objectReference: {fileID: 0}
     - target: {fileID: 6223066390795669910, guid: c6e7e11383bf83144bc8fccd47d91c68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3414,6 +3424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "pot\xE0crayon 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593403333858578469, guid: d37a5c4383c28b94d9c089cf19662384,
+        type: 3}
+      propertyPath: m_TagString
+      value: Medium Item
       objectReference: {fileID: 0}
     - target: {fileID: 8593403333858544645, guid: d37a5c4383c28b94d9c089cf19662384,
         type: 3}
@@ -5981,6 +5996,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: four (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5900001477983003609, guid: be00e75dd7e2c8543a93f732b9dc9508,
+        type: 3}
+      propertyPath: m_TagString
+      value: Big Item
+      objectReference: {fileID: 0}
     - target: {fileID: 5900001477982912505, guid: be00e75dd7e2c8543a93f732b9dc9508,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6214,6 +6234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "meuble-t\xE9l\xE9 (1) Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 631701165719454008, guid: 01001a8415f6ca549ad3d692fa77e8fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Medium Item
       objectReference: {fileID: 0}
     - target: {fileID: 631701165719887128, guid: 01001a8415f6ca549ad3d692fa77e8fc,
         type: 3}
@@ -7836,6 +7861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: chaise-roulante (1) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175050584985216326, guid: 161a4b5cf3890cb42b20b02bd28a9af2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Medium Item
       objectReference: {fileID: 0}
     - target: {fileID: 1175050584985647462, guid: 161a4b5cf3890cb42b20b02bd28a9af2,
         type: 3}
@@ -9737,7 +9767,7 @@ PrefabInstance:
     - target: {fileID: 8244736672940863662, guid: 2d558921de7c9c84b80138568d95b64b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.58
+      value: 55.57
       objectReference: {fileID: 0}
     - target: {fileID: 8244736672940863662, guid: 2d558921de7c9c84b80138568d95b64b,
         type: 3}
@@ -9747,7 +9777,7 @@ PrefabInstance:
     - target: {fileID: 8244736672940863662, guid: 2d558921de7c9c84b80138568d95b64b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.97
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 8244736672940863662, guid: 2d558921de7c9c84b80138568d95b64b,
         type: 3}

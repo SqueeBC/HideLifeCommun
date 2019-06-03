@@ -11,12 +11,17 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private Text WinText;
     private float time = 600;
     private static Dictionary<string, Player> players = new Dictionary<string, Player>();
+    [SyncVar]
     private bool start;
+    [SyncVar]
     private bool end;
-  
+    [SerializeField]
+    private NetworkManager _networkManager;
 
+    
     public void RegisterPlayer(string netID, Player player) //l'id du joueur selon le serv     
-    {
+    {       
+        _networkManager.OnServerAddPlayer(player.connectionToServer, player.playerControllerId);
         string playerID = "Player " + netID;
         players.Add(playerID, player);
     }
@@ -67,13 +72,9 @@ public class GameManager : NetworkBehaviour
 
     private void OnGUI() //permet d'afficher les joueurs
     {
-
         if (SceneManager.GetActiveScene().buildIndex != 6)
         {
-
-
             string spect = "dead";
-
             GUIStyle style = new GUIStyle(); //pour changer la police du texte
             int Min;
             GUILayout.BeginArea(new Rect(200, 200, 200, 200));
@@ -142,7 +143,7 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-    [Server]
+  
     private void Update()
     { 
       
@@ -150,10 +151,10 @@ public class GameManager : NetworkBehaviour
         if(start||(SceneManager.GetActiveScene().buildIndex == 6))
         foreach (var player in FindObjectsOfType<Player>())
         {
+            
 
             if (!players.ContainsKey("Player " + player.id) && player != null)
             {
-
                 RegisterPlayer(player.id, player);
             }
 
@@ -227,12 +228,6 @@ public class GameManager : NetworkBehaviour
             UnRegisterPlayer("Player "+player.id);       
             Destroy(player);
             RegisterPlayer(player.gameObject.GetComponent<Prop>().id,player.gameObject.GetComponent<Prop>());
-
         }
-         
-            
-      
-        
-
     }
 }
