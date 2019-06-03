@@ -853,6 +853,7 @@ GameObject:
   - component: {fileID: 2947337845274168908}
   - component: {fileID: 8178295941405434289}
   - component: {fileID: 3501764080764080528}
+  - component: {fileID: 2127799412978693712}
   m_Layer: 9
   m_Name: hunter
   m_TagString: Model
@@ -977,6 +978,27 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &2127799412978693712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900918824358221135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7689643d982fc1441ac84528eb5783c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextPrefab: {fileID: 0}
+  TextPrefabInstance: {fileID: 0}
+  TextActive: 0
+  CrosshairPrefab: {fileID: 0}
+  CrosshairPrefabInstance: {fileID: 0}
+  Reach: 4
+  InReach: 0
+  Character: e
+  DebugRayColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6900918824362820437
 GameObject:
   m_ObjectHideFlags: 0

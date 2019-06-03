@@ -76,6 +76,9 @@ MonoBehaviour:
   - {fileID: 7234425009746297665}
   - {fileID: 2245295940911569639}
   - {fileID: 318543844120150571}
+  - {fileID: 4306556769267304338}
+  - {fileID: 2845618982470374993}
+  manualSpawn: 0
 --- !u!114 &3168830460867186822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +251,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1942580560511836011}
+    - target: {fileID: 2014127212098274743, guid: 1bbdee1227f6688418e9d65b91317736,
+        type: 3}
+      propertyPath: TextPrefab
+      value: 
+      objectReference: {fileID: 1049750157392572, guid: 84e16f7aabbdd724384bf2ed7a1c98b4,
+        type: 3}
+    - target: {fileID: 2014127212098274743, guid: 1bbdee1227f6688418e9d65b91317736,
+        type: 3}
+      propertyPath: CrosshairPrefab
+      value: 
+      objectReference: {fileID: 1158607670254264, guid: 627c94075e60e1e48bc00de324b197eb,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bbdee1227f6688418e9d65b91317736, type: 3}
 --- !u!4 &4062061225150015421 stripped
@@ -280,6 +295,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98605a38d5954dd4597c3b45ba6a598a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4306556769267304338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2014127212098274743, guid: 1bbdee1227f6688418e9d65b91317736,
+    type: 3}
+  m_PrefabInstance: {fileID: 2319468808876294693}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7689643d982fc1441ac84528eb5783c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5559061542897952864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7860375171597347397, guid: 1bbdee1227f6688418e9d65b91317736,
@@ -305,16 +332,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3000989306194829119}
     m_Modifications:
-    - target: {fileID: 2947337845274168908, guid: 4fbb5ad86c641f747a828eb9bf526d59,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1942580560511836011}
     - target: {fileID: 6900918824358221135, guid: 4fbb5ad86c641f747a828eb9bf526d59,
         type: 3}
       propertyPath: m_Name
       value: hunter
       objectReference: {fileID: 0}
+    - target: {fileID: 2947337845274168908, guid: 4fbb5ad86c641f747a828eb9bf526d59,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1942580560511836011}
     - target: {fileID: 6900918824358221134, guid: 4fbb5ad86c641f747a828eb9bf526d59,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -370,6 +397,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2127799412978693712, guid: 4fbb5ad86c641f747a828eb9bf526d59,
+        type: 3}
+      propertyPath: TextPrefab
+      value: 
+      objectReference: {fileID: 1049750157392572, guid: 84e16f7aabbdd724384bf2ed7a1c98b4,
+        type: 3}
+    - target: {fileID: 2127799412978693712, guid: 4fbb5ad86c641f747a828eb9bf526d59,
+        type: 3}
+      propertyPath: CrosshairPrefab
+      value: 
+      objectReference: {fileID: 1158607670254264, guid: 627c94075e60e1e48bc00de324b197eb,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fbb5ad86c641f747a828eb9bf526d59, type: 3}
 --- !u!4 &7295303845608813903 stripped
@@ -400,6 +439,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76d60c03cf859a942a854529a33308aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2845618982470374993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2127799412978693712, guid: 4fbb5ad86c641f747a828eb9bf526d59,
+    type: 3}
+  m_PrefabInstance: {fileID: 4249952369420296193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7689643d982fc1441ac84528eb5783c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &7295303847245535735 stripped

@@ -9,7 +9,33 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Ameye" t="Include">
+          <e p="Alex's Door System Lite" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ChangeLog.cs" t="Include" />
+              <e p="ConditionalHidePropertyDrawer.cs" t="Include" />
+              <e p="DoorDetectionLiteEditor.cs" t="Include" />
+              <e p="DoorRotationLiteEditor.cs" t="Include" />
+              <e p="EditorStylesHelper.cs" t="Include" />
+              <e p="ErrorWindow.cs" t="Include" />
+              <e p="SupportWindow.cs" t="Include" />
+              <e p="TagHelper.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="DoorDetectionLite.cs" t="Include" />
+              <e p="DoorRotationLite.cs" t="Include" />
+              <e p="Helper Scripts" t="Include">
+                <e p="ConditionalHideAttribute.cs" t="Include" />
+                <e p="MouseLook.cs" t="Include" />
+                <e p="PlayerMovement.cs" t="Include" />
+                <e p="RotationTools.cs" t="Include" />
+                <e p="StayPositiveAttribute.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="multipj1.cs" t="Include" />
+        <e p="placementAléatoire.cs" t="Include" />
         <e p="SampleScenes" t="Include">
           <e p="Menu" t="Include">
             <e p="Scripts" t="Include">
@@ -32,7 +58,7 @@
         <e p="Scripts" t="Include">
           <e p="DatabaseManager.cs" t="Include" />
           <e p="EchapMenu.cs" t="Include" />
-          <e p="Fct portes.cs" t="Include" />
+          <e p="Fctportes.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Hunter.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />

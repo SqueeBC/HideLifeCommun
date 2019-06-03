@@ -60,6 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Editor\ChangeLog.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Editor\ConditionalHidePropertyDrawer.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Editor\DoorDetectionLiteEditor.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Editor\DoorRotationLiteEditor.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Editor\EditorStylesHelper.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Editor\ErrorWindow.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Editor\SupportWindow.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Editor\TagHelper.cs" />
     <Compile Include="Assets\Textures-import\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
     <Compile Include="Assets\Textures-import\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
     <Compile Include="Assets\Textures-import\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />

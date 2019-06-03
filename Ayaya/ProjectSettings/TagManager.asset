@@ -12,6 +12,7 @@ TagManager:
   - Medium Item
   - Big Item
   - Target
+  - Door
   layers:
   - Default
   - TransparentFX

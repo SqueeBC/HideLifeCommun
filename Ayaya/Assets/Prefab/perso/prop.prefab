@@ -10398,6 +10398,7 @@ GameObject:
   - component: {fileID: 3507713117656686790}
   - component: {fileID: 5634134163897020098}
   - component: {fileID: 4924052464879714660}
+  - component: {fileID: 2014127212098274743}
   m_Layer: 0
   m_Name: prop
   m_TagString: Untagged
@@ -10483,3 +10484,24 @@ MonoBehaviour:
   LookSensibility: 6
   IsRunning: 1
   IsAiming: 0
+--- !u!114 &2014127212098274743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066441679320738508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7689643d982fc1441ac84528eb5783c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextPrefab: {fileID: 0}
+  TextPrefabInstance: {fileID: 0}
+  TextActive: 0
+  CrosshairPrefab: {fileID: 0}
+  CrosshairPrefabInstance: {fileID: 0}
+  Reach: 4
+  InReach: 0
+  Character: e
+  DebugRayColor: {r: 0, g: 0, b: 0, a: 0}

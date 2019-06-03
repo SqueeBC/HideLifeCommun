@@ -60,7 +60,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Scripts\DoorDetectionLite.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Scripts\DoorRotationLite.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\ConditionalHideAttribute.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\RotationTools.cs" />
+    <Compile Include="Assets\Ameye\Alex's Door System Lite\Scripts\Helper Scripts\StayPositiveAttribute.cs" />
     <Compile Include="Assets\multipj1.cs" />
+    <Compile Include="Assets\placementAléatoire.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -71,7 +79,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\DatabaseManager.cs" />
     <Compile Include="Assets\Scripts\EchapMenu.cs" />
-    <Compile Include="Assets\Scripts\Fct portes.cs" />
+    <Compile Include="Assets\Scripts\Fctportes.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hunter.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
