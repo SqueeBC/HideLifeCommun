@@ -25,6 +25,7 @@ public class Prop : Player
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxHP = 100;
         currentHP = maxHP;
+        camera.transform.localPosition = new Vector3(0,2,-4);
     }
     
   
@@ -37,7 +38,6 @@ public class Prop : Player
             {
                 Debug.Log(true);
                 _time -= Time.deltaTime;
-
             }
 
             if (_time <= 0)
