@@ -47,13 +47,11 @@ public class EchapMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
-               
+              
             }
             else
             {
-
-                Pause();
-              
+                Pause();            
             }
 
           
@@ -72,6 +70,7 @@ public class EchapMenu : MonoBehaviour
         if(player.GetComponent<PlayerShoot>()!=null)
         player.GetComponent<PlayerShoot>().enabled = true;
         player.GetComponent<PlayerMotor>().enabled = true;
+        Cursor.visible = false;
     }
         
     void Pause()

@@ -31,7 +31,7 @@ public class PlayerMotor : MonoBehaviour
    
 
     private void Start()
-    {
+    { Cursor.visible = false;
         notmovingtime = 20;
         
         taunts = GameObject.Find("Taunts").GetComponentsInChildren<AudioSource>().ToList();
@@ -55,7 +55,7 @@ public class PlayerMotor : MonoBehaviour
     }
 
     private void Update()
-    {     
+    {       
         if (player == null)
             player = GetComponentInParent<Player>();
         if (!gameObject.CompareTag("Spectator"))

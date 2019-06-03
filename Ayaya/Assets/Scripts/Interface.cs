@@ -147,7 +147,7 @@ else
 
 public void ShowHitmarker()
 {
-time = 1;
+time = 0.1f;
 hitmarker.SetActive(true);
 }
 

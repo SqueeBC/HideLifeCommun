@@ -21,7 +21,7 @@ public class GameManager : NetworkBehaviour
     
     public void RegisterPlayer(string netID, Player player) //l'id du joueur selon le serv     
     {       
-        _networkManager.OnServerAddPlayer(player.connectionToServer, player.playerControllerId);
+
         string playerID = "Player " + netID;
         players.Add(playerID, player);
     }

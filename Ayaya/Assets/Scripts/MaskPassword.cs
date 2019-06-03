@@ -48,6 +48,7 @@ public class MaskPassword : MonoBehaviour
 
     void Update()
     {
+        
         Debug.Log(PasswordInput.text);
     }
 

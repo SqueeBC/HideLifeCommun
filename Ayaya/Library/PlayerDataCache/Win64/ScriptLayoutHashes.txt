@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/$7FT000-QMTCQP3IMGOR/projet/HideLifeCommun/Ayaya/ExecutableOperationnel/Ayaya.exe
+C:/Users/$7FT000-QMTCQP3IMGOR/projet/HideLifeCommun/Ayaya/Executable2/Ayaya.exe
 SceneListBegin?
 Assets/Scenes/LoginDatabase.unity
 Assets/Scenes/Menu.unity

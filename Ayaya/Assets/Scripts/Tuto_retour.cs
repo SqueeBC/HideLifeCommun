@@ -6,17 +6,20 @@ using UnityEngine.UI;
 
 public class Tuto_retour : MonoBehaviour
 { private Text message;
+    private float time = 5f;
+    private bool trigger;
     
     void Start()
-    {
+    {trigger = false;
         message = GameObject.Find("message").GetComponent<Text>();
-       
+                            
     }
-    private void OnTriggerEnter(Collider other)
-    {
 
-        float time = 10f;
-        while (time>=0)
+
+
+    private void OnTriggerEnter(Collider other)
+    {  
+        if (trigger&&time>=0)
         {
             if (PlayerPrefs.GetString("language") == "français")
             {
@@ -33,4 +36,7 @@ public class Tuto_retour : MonoBehaviour
         }
         SceneManager.LoadScene(1);
     }
-}
+
+       
+    }
+
