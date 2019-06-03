@@ -38,9 +38,9 @@ public class Interface : MonoBehaviour
                 player = gameObject.GetComponent<Player>();
         }
 
-        
-        Localplayershoot = player.GetComponent<PlayerShoot>(); //a modifier pour le multi, avec GetComponent<Newwork.Behaviour>().IsLocalPlayer
-        playerControler= (PlayerControler) player.GetComponent("PlayerControler");
+        if(player.GetComponent<PlayerShoot>()!=null)
+        Localplayershoot = player.GetComponent<PlayerShoot>(); 
+        playerControler=  player.GetComponent<PlayerControler>();
     }
     // Update is called once per frame
     void Update()

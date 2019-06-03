@@ -17,22 +17,16 @@ public class EchapMenu : MonoBehaviour
     public GameObject pauseMenu;
     public Text ResumeText;
     public Text QuitText;
-   
+    public GameObject Interface;
 
     void Start()
     {
         réticule = GameObject.Find("Réticule");
-
-      
-                foreach (GameObject _player in GameObject.FindGameObjectsWithTag("Player"))
-                {
-                    if (_player.GetComponent<Player>().isLocalPlayer)
-                        player = _player;
-                }
-              
-                
-           
-        
+        foreach (GameObject _player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (_player.GetComponent<Player>().isLocalPlayer)
+                player = _player;
+        }      
     }
 
     void Update()
@@ -47,15 +41,13 @@ public class EchapMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
-              
+                Interface.SetActive(true);
             }
             else
             {
-                Pause();            
+                    Pause();  
+                    Interface.SetActive(false);
             }
-
-          
-
         }
         ChangeLanguage();
             
@@ -68,7 +60,7 @@ public class EchapMenu : MonoBehaviour
         réticule.SetActive(true);
         player.GetComponent<PlayerControler>().enabled = true;
         if(player.GetComponent<PlayerShoot>()!=null)
-        player.GetComponent<PlayerShoot>().enabled = true;
+            player.GetComponent<PlayerShoot>().enabled = true;
         player.GetComponent<PlayerMotor>().enabled = true;
         Cursor.visible = false;
     }
@@ -81,20 +73,23 @@ public class EchapMenu : MonoBehaviour
         player.GetComponent<PlayerControler>().enabled = false;
         player.GetComponent<PlayerMotor>().enabled = false;
         if(player.GetComponent<PlayerShoot>()!=null)
-        player.GetComponent<PlayerShoot>().enabled = false;
+            player.GetComponent<PlayerShoot>().enabled = false;
         player.GetComponent<PlayerShoot>().shotaudio.Pause(); 
         //empêche le joueur de bouger et tirer la camera pendant la pause
     }
 
     public void OptionMenuIG()
     {
+       
         pauseMenu.SetActive(false);
         OptionMenu.SetActive(true);
+       
+        
     }
 
     public void Echap()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    { GameObject.Find("network manager").GetComponent<NetworkManager>().OnClientDisconnect(player.GetComponent<NetworkIdentity>().connectionToClient);
+        SceneManager.LoadScene(1);
     }
 
 

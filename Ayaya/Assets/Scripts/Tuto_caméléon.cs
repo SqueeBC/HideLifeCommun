@@ -8,12 +8,14 @@ public class Tuto_caméléon : MonoBehaviour
     
     private void OnTriggerEnter( Collider other)
     {
-        Debug.Log(other.name);
-        if (other.GetComponent<Hunter>())
+     
+        if (other.transform.parent.transform.parent.GetComponent<Hunter>()!=null)
         {    
-            Destroy(other.gameObject.GetComponent<Player>());
-            other.gameObject.AddComponent<Prop>();
+            Destroy(other.transform.parent.transform.parent.GetComponent<Player>());
+            other.transform.parent.transform.parent.gameObject.AddComponent<Prop>();
+            Destroy(this);
         }
+        
 
     }
 }

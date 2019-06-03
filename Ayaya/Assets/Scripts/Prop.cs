@@ -8,13 +8,13 @@ public class Prop : Player
 {  
     [SerializeField]
     private Camera camera;
+    
     [SerializeField]
-    private LayerMask _layerMask;
-
-    private LayerMask layer;
+    private LayerMask mask;
+ 
     public string propSize;
     private void Start()
-    {   
+    {   mask.value  = 2359;
         id = GetComponent<NetworkIdentity>().netId.ToString();
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true); 
@@ -25,13 +25,12 @@ public class Prop : Player
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxHP = 100;
         currentHP = maxHP;
-        camera.transform.localPosition = new Vector3(0,2,-4);
     }
     
   
     
     private  void Update()
-    { Debug.Log(_layerMask.value);
+    { Debug.Log(mask.value);
         if (_time > -1 && gameObject.GetComponent<Collider>() != null)
         {
             if (CompareTag("Spectator"))
@@ -53,20 +52,20 @@ public class Prop : Player
     {
                 
         RaycastHit hit;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 100)) ;
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 100,mask)) ;
         {
             Debug.Log(hit.collider.name);
-            if (hit.collider != null&&(hit.collider.CompareTag("Big Item")||hit.collider.CompareTag("Medium Item")||hit.collider.CompareTag("Small Item")))
+            if (hit.collider != null&&(hit.collider.CompareTag("Big Item")||hit.collider.CompareTag("Medium Item")||hit.collider.CompareTag("Small Item")&&hit.collider))
             {
                        
-                Destroy(transform.FindChild("Graphics").gameObject);
+                Destroy(transform.GetChild(0).Find("caméléon").gameObject);
                         
                 GameObject gameObject = Instantiate(hit.collider.transform.gameObject);
                 if(gameObject.GetComponent<Rigidbody>()!=null)
                     Destroy(gameObject.GetComponent<Rigidbody>());
-                gameObject.name = "Graphics";
+                gameObject.name = "caméléon";
                 gameObject.transform.localPosition = transform.localPosition;
-                gameObject.transform.parent = transform;
+                gameObject.transform.parent = transform.GetChild(0);
                 if (gameObject.GetComponent<Collider>() != null)
                 {
                     Destroy(this.gameObject.GetComponent<Collider>());
@@ -74,6 +73,7 @@ public class Prop : Player
                             
                 }
 
+                gameObject.layer = 10;
                 gameObject.SetActive(true);
                        
                 propSize = hit.collider.tag;

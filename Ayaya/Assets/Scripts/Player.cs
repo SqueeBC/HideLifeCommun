@@ -26,6 +26,8 @@ namespace trucs_perso
 
         private void Start()
         {
+            if (isLocalPlayer)
+                gameObject.layer = 9;
             maxHP = 100;
             currentHP = 100;
             id = GetComponent<NetworkIdentity>().netId.ToString();

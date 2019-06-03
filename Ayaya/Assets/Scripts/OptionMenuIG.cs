@@ -15,6 +15,7 @@ public class OptionMenuIG : MonoBehaviour
     private void Start()
     {
         slider.value = PlayerPrefs.GetFloat("Volume");
+      
     }
 
     public void SetVolume(float volume)
@@ -31,7 +32,7 @@ public class OptionMenuIG : MonoBehaviour
     }
 
     private void Update()
-    {
+    {Debug.Log(PlayerPrefs.GetFloat("Volume"));
 
         VolumePercentageUpdate();
         

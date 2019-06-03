@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     private Text TutorialText;
    
     private void Start()
-    {    
+    {    GameObject.Find("network manager").SetActive(false);
         Play = GameObject.Find("Play").GetComponent<Button>();
         PlayText = Play.GetComponentInChildren<Text>();
         SettingsText = GameObject.Find("Settings").GetComponent<Button>().GetComponentInChildren<Text>();

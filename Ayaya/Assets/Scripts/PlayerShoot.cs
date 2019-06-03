@@ -39,9 +39,10 @@ public class PlayerShoot : NetworkBehaviour //NETWORKBEHAVIOUR A REMPLACER
 
 
     private void Update()
-
-
     {
+
+        Debug.Log(mask.value);
+        
         if(AudioTimer>0)
             AudioTimer-=Time.deltaTime;
       
