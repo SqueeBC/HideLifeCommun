@@ -74,8 +74,14 @@ namespace trucs_perso
             if(gameObject.GetComponent<PlayerShoot>()!=null)
                 Destroy(gameObject.GetComponent<PlayerShoot>());
             Destroy(gameObject.transform.GetChild(1).gameObject);
+            Destroy(gameObject.transform.GetChild(0).gameObject);
             gameObject.GetComponent<Rigidbody>().useGravity = false;
             gameObject.tag = "Spectator"; 
+            GameObject camera = new GameObject();
+            camera.AddComponent<Camera>();
+            camera.transform.parent = gameObject.transform;
+            camera.transform.rotation = new Quaternion(0,0,0,0);
+            camera.transform.position = transform.position;
         }
 
         private void Update() 
