@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using trucs_perso;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -34,7 +36,15 @@ public class Tuto_retour : MonoBehaviour
 
             time -= 1;
         }
+                    
+        foreach (Player player in GetComponents<Player>())
+        {
+           
+                GameObject.Find("network manager").GetComponent<NetworkManager>().OnClientDisconnect(player.GetComponent<NetworkIdentity>().connectionToClient); 
+                GameObject.Find("network manager").GetComponent<NetworkManager>().OnServerDisconnect(player.GetComponent<NetworkIdentity>().connectionToServer); 
+        }
         SceneManager.LoadScene(1);
+    
     }
 
        
