@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
    
     private void Start()
     {
-        Cursor.visible = true;
+      
         GameObject.Find("network manager").SetActive(false);
         Play = GameObject.Find("Play").GetComponent<Button>();
         PlayText = Play.GetComponentInChildren<Text>();
@@ -38,6 +38,11 @@ public class MainMenu : MonoBehaviour
             QuitText.text = "QUIT";
             TutorialText.text = "TUTORIAL";
         }
+    }
+
+    private void Update()
+    {
+        Cursor.visible = true;
     }
 
     public void PlayGame()
@@ -67,6 +72,6 @@ public class MainMenu : MonoBehaviour
     }   
     public void Leave()
     {
-        
+        Application.Quit();
     }    
 }

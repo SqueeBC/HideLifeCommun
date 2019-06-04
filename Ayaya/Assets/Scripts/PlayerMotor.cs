@@ -55,7 +55,7 @@ public class PlayerMotor : MonoBehaviour
     }
 
     private void Update()
-    {       
+    {   
         if (player == null)
             player = GetComponentInParent<Player>();
         if (!gameObject.CompareTag("Spectator"))

@@ -41,7 +41,7 @@ public class EchapMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
-                Interface.SetActive(true);
+                
             }
             else
             {
@@ -54,7 +54,9 @@ public class EchapMenu : MonoBehaviour
     }
 
     public void Resume()
-    {    pauseMenu.SetActive(false);
+    {    Cursor.visible = false;
+        Interface.SetActive(true);
+        pauseMenu.SetActive(false);
         OptionMenu.SetActive(false);
         GameIsPaused = false; 
         réticule.SetActive(true);
@@ -62,11 +64,12 @@ public class EchapMenu : MonoBehaviour
         if(player.GetComponent<PlayerShoot>()!=null)
             player.GetComponent<PlayerShoot>().enabled = true;
         player.GetComponent<PlayerMotor>().enabled = true;
-        Cursor.visible = false;
+       
+        
     }
         
     void Pause()
-    {  
+    {    Cursor.visible = true;
         pauseMenu.SetActive(true);
         GameIsPaused = true;
         réticule.SetActive(false);
@@ -75,6 +78,7 @@ public class EchapMenu : MonoBehaviour
         if(player.GetComponent<PlayerShoot>()!=null)
             player.GetComponent<PlayerShoot>().enabled = false;
         player.GetComponent<PlayerShoot>().shotaudio.Pause(); 
+      
         //empêche le joueur de bouger et tirer la camera pendant la pause
     }
 
