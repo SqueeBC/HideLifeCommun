@@ -28,15 +28,15 @@ public class PlayerMotor : MonoBehaviour
     private float notmovingtime = 20;
     public bool hasJumped = false;
     private List<AudioSource> taunts;
+    
    
 
     private void Start()
     { Cursor.visible = false;
         notmovingtime = 20;
         
-        taunts = GameObject.Find("Taunts").GetComponentsInChildren<AudioSource>().ToList();
-        
-        player = GetComponentInParent<Player>();
+        taunts = GameObject.Find("Taunts").GetComponentsInChildren<AudioSource>().ToList();        
+        player = GetComponent<Player>();      
         rb = GetComponent<Rigidbody>(); //on implémente le rigidbody au début
     }
 
@@ -69,7 +69,7 @@ public class PlayerMotor : MonoBehaviour
                 isGrounded = false;
             }
 
-            if (notmovingtime <= 0 && taunts.Count > 0)
+            if (notmovingtime <= 0 && taunts.Count > 0&& GetComponent<Prop>() != null)
             {
                 
                 System.Random randomtaunt = new System.Random();
