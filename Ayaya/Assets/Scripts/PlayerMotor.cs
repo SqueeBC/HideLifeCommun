@@ -141,7 +141,7 @@ public class PlayerMotor : MonoBehaviour
                 Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit,
                     cameraRotationLimit); //pour bloquer la caméra entre une valeur max et une valeur min 
             //application des changement apres le clamp
-            camera.transform.localEulerAngles =new Vector3(currentCameraRotationX,0f,0f); 
+            camera.transform.localEulerAngles =new Vector3(currentCameraRotationX,0f,0f);
 
 
 
