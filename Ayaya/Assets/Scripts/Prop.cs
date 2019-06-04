@@ -21,10 +21,12 @@ public class Prop : Player
         gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); 
         gameObject.transform.GetChild(1).gameObject.SetActive(false); 
         Destroy(gameObject.GetComponent<PlayerShoot>());
+        if(isLocalPlayer)
         camera = gameObject.transform.GetChild(0).GetComponentInChildren<Camera>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxHP = 100;
         currentHP = maxHP;
+        
     }
     
   
@@ -55,9 +57,9 @@ public class Prop : Player
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 100,mask)) ;
         {
             Debug.Log(hit.collider.name);
-            if (hit.collider != null&&(hit.collider.CompareTag("Big Item")||hit.collider.CompareTag("Medium Item")||hit.collider.CompareTag("Small Item")&&hit.collider))
+            if (hit.collider != null&&(hit.collider.CompareTag("Big Item")||hit.collider.CompareTag("Medium Item")||hit.collider.CompareTag("Small Item")))
             {
-                       
+                       Debug.Log("transfo");
                 Destroy(transform.GetChild(0).Find("caméléon").gameObject);
                         
                 GameObject gameObject = Instantiate(hit.collider.transform.gameObject);

@@ -88,13 +88,22 @@ public class PlayerShoot : NetworkBehaviour //NETWORKBEHAVIOUR A REMPLACER
         {
 
             if (hit.collider != null)
-            {     Debug.Log("Objet touché" + hit.collider.name);
-                
-                if (hit.collider.CompareTag("Player")||(hit.collider.CompareTag("Target")))
+            {
+                Debug.Log("Objet touché" + hit.collider.name);
+
+                if (hit.collider.CompareTag("Player") || (hit.collider.CompareTag("Target")))
                     GetTarget(hit.collider.GetComponent<Player>().id, weapon.dmg);
                 else
                 {
-                    _player.TakeDamage(2);
+                    if (hit.collider.transform.parent.transform.parent.CompareTag("Player") ||
+                        (hit.collider.transform.parent.transform.parent.CompareTag("Target")))
+                        GetTarget(hit.collider.transform.parent.transform.parent.GetComponent<Player>().id, weapon.dmg);
+
+
+                    else
+                    {
+                        _player.TakeDamage(2);
+                    }
                 }
             }
         }

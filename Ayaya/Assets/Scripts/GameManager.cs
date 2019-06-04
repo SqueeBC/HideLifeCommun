@@ -233,6 +233,7 @@ public class GameManager : NetworkBehaviour
             UnRegisterPlayer("Player "+player.id);       
             Destroy(player);
             RegisterPlayer(player.gameObject.GetComponent<Hunter>().id,player.gameObject.GetComponent<Hunter>());
+           player.transform.position =  GameObject.Find("Hunter Spawn").transform.position;
         }
         else
         {
@@ -241,6 +242,7 @@ public class GameManager : NetworkBehaviour
             UnRegisterPlayer("Player "+player.id);       
             Destroy(player);
             RegisterPlayer(player.gameObject.GetComponent<Prop>().id,player.gameObject.GetComponent<Prop>());
+            player.transform.position =  GameObject.Find("Prop Spawn").transform.position;
         }
     }
 }

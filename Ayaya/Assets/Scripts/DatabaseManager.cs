@@ -46,14 +46,14 @@ public class DatabaseManager : MonoBehaviour
         {
             BtnRegisterText.text = "s'enregistrer";
             BtnLoginText.text = "se connecter";
-            TxtMessageCo.text = "Connection";
+            TxtMessageCo.text = "Connexion";
             placeholder.text = "mot de passe";
         }
         else
         {
             BtnRegisterText.text = "register";
             BtnLoginText.text = "login";
-            TxtMessageCo.text = "Connexion";
+            TxtMessageCo.text = "Connection";
             placeholder.text = "password";
         }
     }

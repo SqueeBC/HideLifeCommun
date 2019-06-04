@@ -16,7 +16,7 @@ public class SetUpPJ : NetworkBehaviour
         if (!isLocalPlayer)
         {
             for (int i = 0; i < compoToDisable.Length; i++)
-            {
+            {Debug.Log(gameObject.name);
                 compoToDisable[i].enabled = false;
             }
         }
