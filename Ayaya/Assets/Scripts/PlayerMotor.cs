@@ -8,8 +8,8 @@ using UnityEngine.Audio;
 
 public class PlayerMotor : MonoBehaviour
 {        
-    [SerializeField] //permet de modifier la valeur via Unity
-    private Camera camera;
+  
+    public Camera camera;
     private Vector3 velocity; //le déplacement du joueur
     private Vector3 rotation; //la rotation de la camera
     private float cameraRotationX; 

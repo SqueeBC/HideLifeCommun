@@ -23,6 +23,7 @@ public class Prop : Player
         Destroy(gameObject.GetComponent<PlayerShoot>());
         if(isLocalPlayer)
         camera = gameObject.transform.GetChild(0).GetComponentInChildren<Camera>();
+        GetComponent<PlayerMotor>().camera = camera;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         maxHP = 100;
         currentHP = maxHP;
@@ -32,7 +33,7 @@ public class Prop : Player
   
     
     private  void Update()
-    { Debug.Log(mask.value);
+    { 
         if (_time > -1 && gameObject.GetComponent<Collider>() != null)
         {
             if (CompareTag("Spectator"))
