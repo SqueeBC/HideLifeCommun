@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using trucs_perso;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -55,6 +56,16 @@ public class Interface : MonoBehaviour
             time -= Time.deltaTime;
         if(hitmarker.active&&time<0)
             hitmarker.SetActive(false);
+        if (PlayerPrefs.GetString("language") == "français")
+        {
+            CooldownReminder.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Sprint en recharge";
+            ReloadingText.GetComponentInChildren<Text>().text = "Rechargement...";
+        }
+        else
+        {
+            CooldownReminder.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Sprint on cooldown";
+            ReloadingText.GetComponentInChildren<Text>().text = "Reloading...";
+        }
         
         HPbar.fillAmount =1-(float)player.currentHP/player.maxHP;
        
